@@ -1,16 +1,70 @@
 Final project Planning
 ------- 
 Project title: 
-Project description - What problem your app solves: This app makes keeping track of financing easy. Allows you to easily set a budget, keep track of daily spending, all spending gets counted and compared to the budget. Gives the users control over how they want to budget.
+  - HappyBudget
+  - Millenial
+  - *MoneySmart
+  - Cash Flow
+  - *Budget Buddy
+  - Pocket Pal
+  - Deep Pockets
+  - *Monefy
+
+Project description - What problem your app solves: 
+  This app makes keeping track of financing easy. Allows you to easily set a budget, keep track of daily spending, all spending gets counted and compared to the budget, a summary/report will be shown. Gives the users control over how they want to budget. This app is a multi-level budgeting app: this means that you can track how much you make, and how much of your income you spend. But you can also make specialized budgets for events or vacations.
+    
     Summary: This budgeting app helps the everyday person stay aware of their spending habits and allows them to make better informed decisions with their money!
 
-Target audience - Your app will be useful to whom?: Our app will be useful to young adults who are entering the real world to help with financial responsibility
-Team members
-Risks: make it a mobile app.
+Target audience - Your app will be useful to whom?: 
+    - Our app will be useful to young adults who are entering the real world to help with financial responsibility (age group: 17-30)
+
+Team members: Hawaa, Amy, Mila
+
+Risks: 
+  - make it a mobile app.
+  - connect to a bank using 128-bit SSL encryption which banks use for security.
 
 
 --------USER STORIES----------
   - users can: 
+  ** Assuming they have a registered account and they're logged in **
+    - HOMEPAGE: Users will see a general overview of their progress in their budget setup (time period) 
+       
+        - If user is in good financial standing: there will be a good job message, and diagram showing Income leftover compared to expenses.
+          Otherwise IF USER IS OVER THEIR ACCOUNT INCOME THERE WILL BE RED FLAGS ALERTING THEM - GIVE THEM A MESSAGE ABOUT MAKING SMART DECISIONS.
+
+        - Add quotes each time a page refreshes - quotes on how to be smart with money.
+
+      *The rest of the diagrams will be dropdown buttons?
+
+        - One diagram for income over time (bar graph) 
+       
+        - Maybe a table showing what user has spent money on (expenses) to compare which category they spend a lot on 
+        
+        - And a general circle diagram that shows how much of their budget they've used and which categories
+
+
+    - Top left corner in nav bar: homepage button
+
+    - Menu icon will slidedown as a side bar with buttons for other "pages": 
+        - Set up your account:
+            - Input income   **
+            - Edit Income (Add to the account)  ** money will be deducted everytime an expense is added to ANY budget/category.
+
+        - Create New Budget - will take us to a new "page": 
+            - Fields: 
+              - Set a Budget Name
+              - Set Budget Amount
+              - Time period, days, months : pop-up calendar with start and end date (API), check HTML/CSS for a possible feature,
+
+       - Update budget - 
+        - Each created budget can show up as the Budget Name created on the Create Budget page.
+          - Fields:
+          - Set a category name
+          - Add amount to CategoryOnce a Budget is made the user can add expenses and assign them categories
+          - Everytime an expense is added, it deducts from the overall income automatically
+          - For each budget have a delete button that will erase it from the records
+
     -input their income, set budget for start and end dates (so user can choose to set it as a week, 2 weeks, or a month, with whichever start and end dates they want), 
     - user can input spending,daily expense tracker (all money spent in a day), 
     - choose what they spent their money on (users can make their own categories)
@@ -19,19 +73,27 @@ Risks: make it a mobile app.
   - Display how much is left to spend within their budget
   - Display the spending for the previous months/budget time periods - like a report, maybe use a diagram as well (how much they spent, what the budget was, and how much their income was)
   - Make the budget their income? or make it an amount the user sets?
+  - give suggestion how to save money. If you spend over budget in special part, tell you to save in this part.
+
   
 
 * Single Page App!!!
 * Also a mobile App???
+Or, It can be a multipage with two pages (summary/report and the input page)
 
 Tech Stack: 
 Front-end: React, Javascript, HTML, CSS/SASS/CSS grid/Flexbox
 Back-end: Node.Js, (how to make requests, use Axios? get,post, put, delete)
 Database: postgresql or mysql?
+Wireframe: 
+
+
+App features:
 
 What we need to do:
 
 Database: 
+ 
   - table of users,
   - table for income
   - table for expenses
@@ -46,9 +108,10 @@ ERD:
   
 
 Stretch: 
-- connect to actual bank account
+- connect to actual bank account --- 128-bit SSL encryption that banks use.
 - maybe add a section for notes (if they paid something late, this can be stretch)
 - if testing use cypress
+- Have the ability to add a specific event budget to the main budget once it is completed.
 
 
 different income categories: from salary, and other sources
@@ -57,3 +120,16 @@ different income categories: from salary, and other sources
 We want the app to dynamically update spending daily as the person updates their app. This will constantly adjust the overall report and show the person if they're getting closer to their goal.
 
   When a person stays below budget, by the end of their time period they will be congratulated. 
+
+
+
+
+
+
+
+  Idea: financial Tech
+    - Millenial: a financial app that allows financing, payments broken up over a year or two. Buy now, pay later.
+    - do a credit check to reduce interest
+    - an account is needed, and personal information will be used
+    - pattern of data: common purchases, predict what they will Buy
+    - if payments aren't made on time then interest goes up

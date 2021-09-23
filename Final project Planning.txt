@@ -1,9 +1,15 @@
 Final project Planning
+------- 
+Project title: 
+Project description - What problem your app solves: This app makes keeping track of financing easy. Allows you to easily set a budget, keep track of daily spending, all spending gets counted and compared to the budget. Gives the users control over how they want to budget.
+    Summary: This budgeting app helps the everyday person stay aware of their spending habits and allows them to make better informed decisions with their money!
 
-- Budgeting app: 
+Target audience - Your app will be useful to whom?: Our app will be useful to young adults who are entering the real world to help with financial responsibility
+Team members
+Risks: make it a mobile app.
 
-Summary: This budgeting app helps the everyday person stay aware of their spending habits and allows them to make better informed decisions with their money!
 
+--------USER STORIES----------
   - users can: 
     -input their income, set budget for start and end dates (so user can choose to set it as a week, 2 weeks, or a month, with whichever start and end dates they want), 
     - user can input spending,daily expense tracker (all money spent in a day), 
@@ -17,6 +23,11 @@ Summary: This budgeting app helps the everyday person stay aware of their spendi
 
 * Single Page App!!!
 * Also a mobile App???
+
+Tech Stack: 
+Front-end: React, Javascript, HTML, CSS/SASS/CSS grid/Flexbox
+Back-end: Node.Js, (how to make requests, use Axios? get,post, put, delete)
+Database: postgresql or mysql?
 
 What we need to do:
 
@@ -32,13 +43,12 @@ ERD:
 - Make log in and sign in
 - Users Can add different expense categories
 
-
-Tech Stack: React (how to make requests, use Axios? get,post, put, delete), Javascript, HTML, CSS/SASS, Node.Js
-  - for database- postgresql or mysql? 
+  
 
 Stretch: 
 - connect to actual bank account
 - maybe add a section for notes (if they paid something late, this can be stretch)
+- if testing use cypress
 
 
 different income categories: from salary, and other sources

@@ -4,29 +4,32 @@ CREATE TABLE users (
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  income INTEGER,
+  income INTEGER NOT NULL,
   income_type VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE mainExpenses (
-  id SERIAL PRIMARY KEY NOT NULL,
-  date DATE,
-  category VARCHAR(255) NOT NULL,
-  amount INTEGER
-)
-
--- CREATE TABLE balance
-
-CREATE TABLE specialBudget (
+DROP TABLE IF EXISTS budgets CASCADE;
+CREATE TABLE budgets (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
-  budget_limit INTEGER
+  budget_limit INTEGER,
   start_date DATE,
-  end_date DATE
+  end_date DATE,
+  user_id REFERENCES users(id) ON DELETE CASCADE
 );
 
+DROP TABLE IF EXISTS categories CASCADE;
 CREATE TABLE categories(
 id SERIAL PRIMARY KEY NOT NULL,
 category_type VARCHAR(255) NOT NULL,
-amount INTEGER
-)
+amount INTEGER NOT NULL,
+budget_id REFERENCES budgets(id) ON DELETE CASCADE
+);
+
+DROP TABLE IF EXISTS expenses CASCADE;
+CREATE TABLE expenses (
+  id SERIAL PRIMARY KEY NOT NULL,
+  date DATE,
+  category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+  amount INTEGER NOT NULL
+);

@@ -88,13 +88,29 @@ Database: postgresql or mysql? * Instead of Express can that be replaced by Reac
 
 
 
-What we need to do:
+ERD
+
+Each USER has a INCOME and a general EXPENSE list. The INCOME can be ADDED as CATEGORIES in dollar amounts ($). The EXPENSES can be put into CATEGORIES. Each CATEGORY has a dollar amount ADDED ($). 
+
+Each USER also has SPECIAL BUDGETS. A USER can CREATE and UPDATE their SPECIAL BUDGET.
+to CREATE a SPECIAL BUDGET, the USER adds a CATEGORY, the USER assigns a dollar amount ($) to the CATEGORY - this will update the math on calculating the progress of the budget.
+
+
 
 Database: 
  
-  - table of users,
-  - table for income
-  - table for expenses
+  - table of users: first_name, last_name, Income(amount), Name of Income, 
+
+  Main Account
+  - table of expenses: date, category, amount
+  - table of Balance
+
+
+  table of Special budgets: budget_name, budget_limit, start_date, end_date
+  table of Special categories: category name, amount per category
+  table of Special balance: ????
+
+
 
   
 

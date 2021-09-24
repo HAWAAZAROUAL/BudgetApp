@@ -82,13 +82,11 @@ Risks:
 Or, It can be a multipage with two pages (summary/report and the input page)
 
 Tech Stack: 
-Front-end: React, Javascript, HTML, CSS/SASS/CSS grid/Flexbox
+Front-end: React, Javascript, HTML, CSS/SASS/CSS grid/Flexbox. 
 Back-end: Node.Js, (how to make requests, use Axios? get,post, put, delete)
-Database: postgresql or mysql?
-Wireframe: 
+Database: postgresql or mysql? * Instead of Express can that be replaced by React-router (installed as react-router-dom)
 
 
-App features:
 
 What we need to do:
 
@@ -97,13 +95,6 @@ Database:
   - table of users,
   - table for income
   - table for expenses
-  
-
-Functions that should be made: 
-ERD: 
-
-- Make log in and sign in
-- Users Can add different expense categories
 
   
 
@@ -122,14 +113,41 @@ We want the app to dynamically update spending daily as the person updates their
   When a person stays below budget, by the end of their time period they will be congratulated. 
 
 
+DAILY GOALS:
 
+Thursday/23
 
+Friday/24
+  - Complete ERD
+  - Setup boilerplate (if we will use it)
+  - Setup Database
+  - Start making components files
+  - Setup routes
 
+Saturday/25
 
+Sunday/26
 
-  Idea: financial Tech
-    - Millenial: a financial app that allows financing, payments broken up over a year or two. Buy now, pay later.
-    - do a credit check to reduce interest
-    - an account is needed, and personal information will be used
-    - pattern of data: common purchases, predict what they will Buy
-    - if payments aren't made on time then interest goes up
+Monday/27
+
+Tuesday/28
+
+Wednesday/29
+
+Thursday/30
+
+Friday/1
+- MUST BE FINISHED THE MAJOR FEATURES!!!!!!!! 
+
+Saturday/2
+
+Sunday/3
+
+Monday/4
+
+Tuesday/5
+
+Wednesday/6
+
+Thursday/7
+

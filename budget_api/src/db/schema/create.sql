@@ -15,7 +15,7 @@ CREATE TABLE budgets (
   budget_limit INTEGER,
   start_date DATE,
   end_date DATE,
-  user_id REFERENCES users(id) ON DELETE CASCADE
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS categories CASCADE;
@@ -23,7 +23,7 @@ CREATE TABLE categories(
 id SERIAL PRIMARY KEY NOT NULL,
 category_type VARCHAR(255) NOT NULL,
 amount INTEGER NOT NULL,
-budget_id REFERENCES budgets(id) ON DELETE CASCADE
+budget_id INTEGER REFERENCES budgets(id) ON DELETE CASCADE
 );
 
 DROP TABLE IF EXISTS expenses CASCADE;

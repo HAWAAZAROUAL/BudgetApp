@@ -1,8 +1,8 @@
-class Car extends React.Component {
-  render() {
-    return <h2>Hi, I am a Car!</h2>;
-  }
+import React from 'react'
+
+export default function Account () {
+
+  return(
+    <h1>This is a message!</h1>
+  )
 }
-function Account () {
-  return <h2>This is your Budget Buddy Account!</h2>
-};

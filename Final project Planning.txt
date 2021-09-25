@@ -137,10 +137,15 @@ Friday/24
   - Complete ERD - DONE
   - Setup boilerplate (if we will use it) - DONE
   - Setup Database - DONE
-  - Start making components files
+  - Start making components files:
+    - for Account page
+    - Create page
+    - Update page
   - Setup routes
 
 Saturday/25
+  - Have all pieces of a page set up
+  - be able to switch from page to page
 
 Sunday/26
 

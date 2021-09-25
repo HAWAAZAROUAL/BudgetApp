@@ -11,7 +11,7 @@ Insert into budgets(user_id, name, budget_limit, start_date, end_date) values(1,
 (5, 'different', 500, '2021-09-05', '2021-09-09');
 
 
-Insert into categories(category_type, amount, budget_id) values('Food', 150,1),
+Insert into categories(category_type, amount, budget_id) values('Food', 150, 1),
 ('gas', 200, 2),
 ('groceries', 300, 3),
 ('gift', 50, 4),

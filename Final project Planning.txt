@@ -134,9 +134,9 @@ DAILY GOALS:
 Thursday/23
 
 Friday/24
-  - Complete ERD
-  - Setup boilerplate (if we will use it)
-  - Setup Database
+  - Complete ERD - DONE
+  - Setup boilerplate (if we will use it) - DONE
+  - Setup Database - DONE
   - Start making components files
   - Setup routes
 

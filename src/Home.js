@@ -27,7 +27,7 @@ export default function Home() {
      <Account />
      <Update />
       
-     <CreateBudget onSave={createBudget}/> 
+     <CreateBudget onSave={createBudget} userId={state.userId}/> 
      <Burger />
     </div>
   );

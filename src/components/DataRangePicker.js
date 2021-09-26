@@ -14,8 +14,8 @@ class DateRange extends React.Component {
   };
   hundleDateChange(startDate, endDate) {
     this.setState(() => ({
-      endDate,
       startDate,
+      endDate  
     }));
     if (startDate != null) {
       this.setState(() => ({
@@ -28,8 +28,8 @@ class DateRange extends React.Component {
       }));
     }
     if(startDate != null && endDate != null){
-      this.props.getDate( this.state.startDate,
-          this.state.endDate, );
+      
+      this.props.getDate( startDate, endDate);
 
   }
   }

@@ -10,6 +10,7 @@ import reducer from "../reducer/reducer";
  */
 export default function useApplicatonData(){
     const [state,dispatch] = useReducer(reducer,{
+      userId:2,
         username: null,
         budgets:{}
       });
@@ -17,7 +18,8 @@ export default function useApplicatonData(){
     useEffect(()=>{
      axios.get('http://localhost:8080/api/users')
      .then((res) => {
-       const username =res.data[3]["first_name"];
+       const username =res.data[2]["first_name"];
+       
        dispatch({
         type: "setData",
         value: {username}
@@ -27,17 +29,10 @@ export default function useApplicatonData(){
     },[]);  
 
 
-    function createBudget(budgetName,budgetLimit,startDate,endDate,userId){
-      const budget={
-        budgetName:budgetName,
-        budgetLimit:budgetLimit,
-        startDate: startDate,
-        endDate:endDate,
-        userId:userId
-
-      };
+    function createBudget(userId,budget){
+      console.log("budget:::::",budget);
       return axios.put(`http://localhost:8080/api/budgets/${userId}`, { budget}).then(res => { 
-        console.log("budget:::::",budget);
+        
         dispatch({ type: "createBudgets", userId:userId, budget: budget});
     })
     }

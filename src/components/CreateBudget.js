@@ -9,19 +9,26 @@ export default function CreateBudget(props) {
     
   const [budgetName, setbudgetName] = useState("");
   const [budgetLimit, setbudgetLimit] = useState(0);
-  const [startDate, setstartDate] = useState("");
-  const [endDate, setendDate] = useState(0);
+  const [startDate, setstartDate] = useState(null);
+  const [endDate, setendDate] = useState(null);
   function reset() {
       setbudgetName("");
-        setbudgetLimit(""); 
+      setbudgetLimit(""); 
     }
  function cancel() {
       reset();
       props.onCancel();
     }
  function onSave() {
-      props.onSave(budgetName,budgetLimit,startDate,endDate,2);
-    }
+  const budget={
+    budgetName:budgetName,
+    budgetLimit:budgetLimit,
+    startDate: startDate,
+    endDate:endDate
+  };
+    props.onSave(props.userId,budget);
+      console.log(budget);
+}
   function getDate(startDate,endDate){
     setstartDate(startDate);
     setendDate(endDate);

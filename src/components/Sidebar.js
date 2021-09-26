@@ -35,7 +35,7 @@ export default class App extends React.Component {
                         <li>
                             <a href="/">
                                 <i className="sf-icon-sidebar sf-icon-file"></i>
-                                <span className="e-text"> Home</span>
+                                <span className="e-text" href="/"> Home</span>
                             </a>
                         </li>
                         <li>

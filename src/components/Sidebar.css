@@ -1,6 +1,4 @@
-.control-section {        
-  overflow: hidden;
-}
+
 
 .e-listview .e-list-parent {
   margin: 0 ;
@@ -25,9 +23,6 @@
   border: 1px solid #BADA55;
 }
 
-.e-listview {
-  overflow: initial;
-}
 
 
 .sf-icon-profile:before {
@@ -81,15 +76,6 @@
   float: left;
   text-align: center;
   padding-left: 40px;
-}
-
-#right {
-  float: right;
-  width: 28px;
-  height: 47px;
-  padding: 16px 0 0 0;
-  color: #ffff;
-
 }
 
 .sf-icon-file:before {
@@ -162,7 +148,6 @@ ul.nav.sidebar-nav {
   padding: 5px 0 5px 0;
   margin: 0px;
   max-height:200px;
-  overflow-y: auto;
 }
 
 .sidebar-nav {
@@ -325,17 +310,4 @@ span.e-text {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-
-
-/* end of newTab support */
-li.e-list-item {
-  border-bottom: 0.5px solid #80808070 !important;
-  cursor: pointer;
-}
-
-.e-content-animation{
-  border-bottom: 0.5px solid #80808070;
-  height: 477px;
 }

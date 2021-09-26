@@ -28,7 +28,6 @@ export default class App extends React.Component {
                             <a className="sidebar-brand" href="#settings-dropdown">
                                 john.doe@gmail.com
                             </a>
-                            <span className="sf-icon-down icon"></span>
                         </div>
                     </div>
                     <ul className="nav sidebar-nav">

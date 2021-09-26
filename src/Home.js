@@ -5,7 +5,7 @@ import useApplicationData from "./hooks/useApplicationData";
 import Nav from './components/Nav';
 import Account from './components/Account';
 import Update from './components/Update';
-
+import BasicDateRangePicker from './components/BasicDateRangePicker';
 
 export default function Home() {
   const {state
@@ -20,6 +20,7 @@ export default function Home() {
      <Nav name={state.username}/>
      <Account />
      <Update />
+     <BasicDateRangePicker />
     </div>
   );
 };

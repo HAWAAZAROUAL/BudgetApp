@@ -5,15 +5,19 @@ import useApplicationData from "./hooks/useApplicationData";
 import Nav from './components/Nav';
 import Account from './components/Account';
 import Update from './components/Update';
-import BasicDateRangePicker from './components/BasicDateRangePicker';
+
 import Burger from './components/Burger';
 import Sidebar from './components/Sidebar';
+import CreateBudget from './components/CreateBudget';
 
 
 export default function Home() {
-  const {state
+  const {
+       state,
+       createBudget
+
   } = useApplicationData();
-    
+   
   return (
       
     
@@ -22,7 +26,8 @@ export default function Home() {
      <Sidebar />
      <Account />
      <Update />
-     <BasicDateRangePicker />
+      
+     <CreateBudget onSave={createBudget}/> 
      <Burger />
     </div>
   );

@@ -7,9 +7,6 @@ import Responsive from "react-responsive";
 
 class DateRange extends React.Component {
   state = {
-    userId: 2,
-    budget_name: "",
-    budget_limit: "",
     startDate: null,
     endDate: null,
     endDateFormatted: null,
@@ -31,10 +28,10 @@ class DateRange extends React.Component {
       }));
     }
     if(startDate != null && endDate != null){
-        this.props.onsave(this.state.budget_name,this.state.budget_limit,this.state.startDate,
-            this.state.endDate,this.state.userId);
+      this.props.getDate( this.state.startDate,
+          this.state.endDate, );
 
-    }
+  }
   }
 
   render() {

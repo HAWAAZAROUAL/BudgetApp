@@ -11,7 +11,7 @@ const app = express();
 const db = require("./db");
 
 const users = require("./routes/users");
-//const income = require("./routes/income");
+const budgets = require("./routes/budgets");
 //const expenses = require("./routes/expenses");
 
 function read(file) {
@@ -38,7 +38,7 @@ module.exports = function application(
   app.use(bodyparser.json());
 
   app.use("/api", users(db));
-  //app.use("/api", appointments(db, actions.updateAppointment));
+  app.use("/api", budgets(db, actions.updateBudget));
   //app.use("/api", interviewers(db));
 
   if (ENV === "development" || ENV === "test") {

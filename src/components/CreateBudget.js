@@ -1,63 +1,52 @@
 
 import React, { useState } from "react";
 import Button from "./Button";
-
+import BasicDateRangePicker from './BasicDateRangePicker';
 import DateRange from "./DataRangePicker";
+
 
 export default function CreateBudget(props) {
     
-    const [state, setState] = useState({
-         budget_name: "",
-         budget_limit: "",
-        })
-    function handleChange(evt) {
-        const value = evt.target.value;
-        setState({
-               ...state,
-               [evt.target.name]: value
-              });
+  const [budgetName, setbudgetName] = useState("");
+  const [budgetLimit, setbudgetLimit] = useState(0);
+  const [startDate, setstartDate] = useState("");
+  const [endDate, setendDate] = useState(0);
+  function reset() {
+      setbudgetName("");
+        setbudgetLimit(""); 
     }
-    function reset() {
-      setState(
-        { 
-          budget_name: "",
-          budget_limit: "",
-         
-        });
-    }
-    function cancel() {
+ function cancel() {
       reset();
       props.onCancel();
     }
-    function onSave() {
-      props.onSave(state.budget_name,state.budget_limit,state.startDate,state.endDate,props.userId);
+ function onSave() {
+      props.onSave(budgetName,budgetLimit,startDate,endDate,2);
     }
+  function getDate(startDate,endDate){
+    setstartDate(startDate);
+    setendDate(endDate);
+  }
      
     return (
       <div>
         <div>
         <form autoComplete="off">
           <input   name="budgetName"
-            value={state.budget_name}
+            value={ budgetName}
             type="text"
             placeholder="Enter Budget Name"
-            onChange={event => {handleChange()}}
+            onChange={event => setbudgetName(event.target.value)}
             />
              <input
             name="budgetLimit"
-            value={state.budget_limit}
+            value={budgetLimit}
             type="text"
             placeholder="Enter Budget Limit"
-            onChange={event => {handleChange()}}
+            onChange={event => setbudgetLimit(event.target.value)}
             />
-            <DateRange startDate/>
         </form>
-         
-        
-          
       </div>
-     
-       
+      <DateRange getDate={getDate}/> 
         <div>  <Button danger onClick={cancel}>Cancel</Button>
         <Button confirm onClick={event => onSave()}> Save </Button>
         </div>

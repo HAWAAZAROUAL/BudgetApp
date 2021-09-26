@@ -10,7 +10,8 @@ import reducer from "../reducer/reducer";
  */
 export default function useApplicatonData(){
     const [state,dispatch] = useReducer(reducer,{
-        username: null
+        username: null,
+        budgets:{}
       });
       
     useEffect(()=>{
@@ -24,6 +25,27 @@ export default function useApplicatonData(){
      });
      // eslint-disable-next-line
     },[]);  
-    return {state};
+
+
+    function createBudget(budgetName,budgetLimit,startDate,endDate,userId){
+      const budget={
+        budgetName:budgetName,
+        budgetLimit:budgetLimit,
+        startDate: startDate,
+        endDate:endDate,
+        userId:userId
+
+      };
+      return axios.put(`http://localhost:8080/api/budgets/${userId}`, { budget}).then(res => { 
+        console.log("budget:::::",budget);
+        dispatch({ type: "createBudgets", userId:userId, budget: budget});
+    })
+    }
+   
+        
+  
+
+
+    return {state,createBudget};
     
 }

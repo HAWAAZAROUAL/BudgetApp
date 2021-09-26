@@ -6,6 +6,9 @@ import Nav from './components/Nav';
 import Account from './components/Account';
 import Update from './components/Update';
 import BasicDateRangePicker from './components/BasicDateRangePicker';
+import Burger from './components/Burger';
+import Sidebar from './components/Sidebar'
+
 
 export default function Home() {
   const {state
@@ -21,6 +24,8 @@ export default function Home() {
      <Account />
      <Update />
      <BasicDateRangePicker />
+     <Sidebar />
+     <Burger />
     </div>
   );
 };

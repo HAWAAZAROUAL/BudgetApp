@@ -32,39 +32,27 @@ export default class App extends React.Component {
                     </div>
                     <ul className="nav sidebar-nav">
                         <li>
-                            <a href="#">
+                            <a href="/">
                                 <i className="sf-icon-sidebar sf-icon-file"></i>
-                                <span className="e-text"> Inbox</span>
+                                <span className="e-text" href="/"> Home</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/">
                                 <i className="sf-icon-sidebar sf-icon-starred"></i>
-                                <span className="e-text"> Starred</span>
+                                <span className="e-text"> Create</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/">
                                 <i className="sf-icon-sidebar sf-icon-recent"></i>
-                                <span className="e-text">Snoozed</span>
+                                <span className="e-text">Update</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="/">
                                 <i className="sf-icon-sidebar sf-icon-important"></i>
-                                <span className="e-text">Important</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i className="sf-icon-sidebar sf-icon-offline"></i>
-                                <span className="e-text"> Sent</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i className="sf-icon-sidebar sf-icon-backup"></i>
-                                <span className="e-text"> Draft</span>
+                                <span className="e-text">Reports</span>
                             </a>
                         </li>
                     </ul>

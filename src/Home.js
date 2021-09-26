@@ -7,7 +7,7 @@ import Account from './components/Account';
 import Update from './components/Update';
 import BasicDateRangePicker from './components/BasicDateRangePicker';
 import Burger from './components/Burger';
-import Sidebar from './components/Sidebar'
+import Sidebar from './components/Sidebar';
 
 
 export default function Home() {
@@ -18,13 +18,14 @@ export default function Home() {
   
    
   return (
-   
+      
+    
     <div className="App">
      <Nav name={state.username}/>
+     <Sidebar />
      <Account />
      <Update />
      <BasicDateRangePicker />
-     <Sidebar />
      <Burger />
     </div>
   );

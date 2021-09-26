@@ -5,10 +5,6 @@ module.exports = (db) => {
     router.get("/budgets", (request, response) => {
          
 
-
-
-
-
       });
 
     router.put("/budgets/:userid", (request, response) => {

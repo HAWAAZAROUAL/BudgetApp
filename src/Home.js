@@ -8,7 +8,7 @@ import Update from './components/Update';
 
 import Burger from './components/Burger';
 import Sidebar from './components/Sidebar';
-import CreateBudget from './components/CreateBudget';
+import CreateBudget from './components/budgets/Budget_Create';
 
 
 export default function Home() {

@@ -1,17 +1,18 @@
-import CreateBudget from './CreateBudget'
+import CreateBudget from './Budget_Create'
+import ShowBudget from './Budget_Show'
 export default function budget(props) {
     const budget={
         
     };
-      function save(){
-      props.CreateBudget(props.userId,buget)
-      }
+     
+    
 
     return (
      
       <div className="App">
        
-       <CreateBudget onSave={save}/>
+       <CreateBudget />
+       <ShowBudget/>
         
       </div>
     );

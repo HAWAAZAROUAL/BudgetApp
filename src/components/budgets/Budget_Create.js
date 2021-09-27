@@ -3,18 +3,20 @@ import React, { useState } from "react";
 import Button from "../Button";
  
 import DateRange from "./DataRangePicker";
-
+ 
+ 
+ 
 
 export default function CreateBudget(props) {
   
-  const [budgetName, setbudgetName] = useState("");
-  const [budgetLimit, setbudgetLimit] = useState(0);
-  const [startDate, setstartDate] = useState(null);
-  const [endDate, setendDate] = useState(null);
+  const [name, setName] = useState("");
+  const [budget_limit, setbudget_limit] = useState(0);
+  const [start_date, setstart_date] = useState(null);
+  const [end_date, setend_date] = useState(null);
  
   function reset() {
-      setbudgetName("");
-      setbudgetLimit(""); 
+      name("");
+      setbudget_limit(""); 
     }
  function cancel() {
       reset();
@@ -22,37 +24,37 @@ export default function CreateBudget(props) {
     }
  function onSave() {
   const budget={
-    budgetName:budgetName,
-    budgetLimit:budgetLimit,
-    startDate: startDate,
-    endDate:endDate 
+    name:name,
+    budget_limit:budget_limit,
+    start_date: start_date,
+    end_date:end_date
   };
   props.onSave(props.userId,budget)
-  .then(()=>{
-   console.log(props.budgets);
-  } 
-  );  
+  .then((res)=>{
+    console.log(res);
+  });
+  
 }
   function getDate(startDate,endDate){
-    setstartDate(startDate);
-    setendDate(endDate);
+    setstart_date(startDate);
+    setend_date(endDate);
   } 
 return (
       <div>
         <div>
         <form autoComplete="off">
-          <input   name="budgetName"
-            value={ budgetName}
+          <input   name="name"
+            value={ name}
             type="text"
             placeholder="Enter Budget Name"
-            onChange={event => setbudgetName(event.target.value)}
+            onChange={event => setName(event.target.value)}
             />
              <input
-            name="budgetLimit"
-            value={budgetLimit}
+            name="budget_imit"
+            value={budget_limit}
             type="text"
             placeholder="Enter Budget Limit"
-            onChange={event => setbudgetLimit(event.target.value)}
+            onChange={event => setbudget_limit(event.target.value)}
             />
         </form>
       </div>

@@ -34,10 +34,20 @@ export default function useApplicatonData(){
 
 
     function createBudget(userId,budget){
-     
-      return axios.put(`http://localhost:8080/api/budgets/${userId}`, { budget}).then(res => { 
+   
+      return axios.put(`http://localhost:8080/api/budgets/${userId}`, {budget}).then(res=> { 
+       
+        const result= JSON.parse(res.config.data)["budget"];
         
-        dispatch({ type: "createBudgets", userId:userId, budget: budget});
+        dispatch({ 
+          type: "createBudgets", 
+          
+          user_id:   userId, 
+          name:  result.name,
+          budget_limit:  result.budget_limit,
+          start_date: result.start_date,
+          end_date:  result.end_date
+        });
     })
     }
    

@@ -8,6 +8,7 @@ import Update from './components/Update';
 import Sidebar from './components/Sidebar';
 
 import Budget from './components/budgets/index';
+import Pie from './components/charts/Pie';
 
 export default function Home() {
   const {
@@ -15,7 +16,7 @@ export default function Home() {
        createBudget,
   } = useApplicationData();
   
-  
+ 
   return (
     <div className="App">
      <Nav name={state.username}/>
@@ -29,6 +30,7 @@ export default function Home() {
          createBudget={createBudget}
          userId={state.userId}
      />
+     <Pie />
     </div>
   );
 };

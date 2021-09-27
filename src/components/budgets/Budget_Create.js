@@ -3,14 +3,17 @@ import React, { useState } from "react";
 import Button from "../Button";
  
 import DateRange from "./DataRangePicker";
+import Budget from "./index"
+ 
 
 
 export default function CreateBudget(props) {
-    
+  
   const [budgetName, setbudgetName] = useState("");
   const [budgetLimit, setbudgetLimit] = useState(0);
   const [startDate, setstartDate] = useState(null);
   const [endDate, setendDate] = useState(null);
+ 
   function reset() {
       setbudgetName("");
       setbudgetLimit(""); 
@@ -24,17 +27,20 @@ export default function CreateBudget(props) {
     budgetName:budgetName,
     budgetLimit:budgetLimit,
     startDate: startDate,
-    endDate:endDate
+    endDate:endDate 
   };
-    props.onSave(props.userId,budget);
-      console.log(budget);
+  props.onSave(props.userId,budget)
+  .then(()=>{
+   return (<Budget />);
+
+  });
+  
 }
   function getDate(startDate,endDate){
     setstartDate(startDate);
     setendDate(endDate);
-  }
-     
-    return (
+  } 
+return (
       <div>
         <div>
         <form autoComplete="off">

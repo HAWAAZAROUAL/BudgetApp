@@ -8,27 +8,30 @@ import Update from './components/Update';
 
 import Burger from './components/Burger';
 import Sidebar from './components/Sidebar';
-import CreateBudget from './components/budgets/Budget_Create';
 
+import Budget from './components/budgets/index';
 
 export default function Home() {
   const {
        state,
-       createBudget
-
+       createBudget,
   } = useApplicationData();
-   
+  
+  
   return (
-      
-    
     <div className="App">
      <Nav name={state.username}/>
      <Sidebar />
      <Account />
      <Update />
-      
-     <CreateBudget onSave={createBudget} userId={state.userId}/> 
+     
      <Burger />
+     <Budget 
+         budgets={ state.budgets}
+         userid={state.userId}
+         createBudget={createBudget}
+         userId={state.userId}
+     />
     </div>
   );
 };

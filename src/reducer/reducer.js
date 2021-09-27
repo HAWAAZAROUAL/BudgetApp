@@ -14,19 +14,17 @@ const reducers = {
     
         const arr=Object.keys(state.budgets);
         const id= arr[arr.length-1] ;
-         
-
+        const newID= Number(id)+1;
         const budgets = {...state.budgets};
-        budgets[id]= {
-          id:Number(id),
-          name:  action.budgetName,
-          budgetLimit: action.budgetLimit ,
-          startDate: action.startDate ,  
-          endDate:  action.endDate,
-          user_id: action.userId
+        budgets[newID]= {
+          id:Number(newID),
+          name:  action.name,
+          budget_limit: action.budget_limit ,
+          start_date: action.start_date ,  
+          end_date:  action.end_date,
+          user_id: action.user_id
         };
-         console.log({...state.budgets});
-        return {...state.budgets};
+        return {...state,budgets:budgets};
         },
   };
  export default function reducer(state, action){

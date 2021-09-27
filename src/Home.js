@@ -18,8 +18,7 @@ export default function Home() {
        createBudget,
   } = useApplicationData();
   
-  console.log('state', state)
-  
+ 
   return (
     <div className="App">
      <Nav name={state.username}/>

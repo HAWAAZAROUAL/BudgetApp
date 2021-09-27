@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import './Update.css';
+import "./Button.css";
 
 export default function Update () {
 

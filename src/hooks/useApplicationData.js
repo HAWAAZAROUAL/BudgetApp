@@ -10,19 +10,23 @@ import reducer from "../reducer/reducer";
  */
 export default function useApplicatonData(){
     const [state,dispatch] = useReducer(reducer,{
-      userId:2,
+        userId:2,
         username: null,
         budgets:{}
       });
       
     useEffect(()=>{
-     axios.get('http://localhost:8080/api/users')
-     .then((res) => {
-       const username =res.data[2]["first_name"];
+     Promise.all([
+       axios.get('http://localhost:8080/api/users'),
+       axios.get(`http://localhost:8080/api/budgets/`)
+    ])
+       .then((all) => {
+       const username =all[0].data[2]["first_name"];
+       const budgets= all[1].data;
        
        dispatch({
         type: "setData",
-        value: {username}
+        value: {username,budgets}
       });
      });
      // eslint-disable-next-line
@@ -30,7 +34,7 @@ export default function useApplicatonData(){
 
 
     function createBudget(userId,budget){
-      console.log("budget:::::",budget);
+     
       return axios.put(`http://localhost:8080/api/budgets/${userId}`, { budget}).then(res => { 
         
         dispatch({ type: "createBudgets", userId:userId, budget: budget});

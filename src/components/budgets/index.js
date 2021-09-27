@@ -1,12 +1,12 @@
 import ShowBudget from './Budget_Show';
 import CreateBudget from './Budget_Create';
+
 export default function Budget(props) {
    
  function getBudgetByUserID(budgets,userId) {
     const budgetArr=[];
     for(const i in budgets){
       if(budgets[i]["user_id"]===userId){
-
         budgetArr.push(budgets[i]);
       }
     }
@@ -32,7 +32,7 @@ export default function Budget(props) {
   });
   return (
     <>
-    <CreateBudget onSave={props.createBudget} userId={props.userId} budgets={budgets}/> 
+     <CreateBudget onSave={props.createBudget} userId={props.userId} budgets={budgets}/> 
       <div className="App">
         <table>
         <thead>
@@ -46,6 +46,7 @@ export default function Budget(props) {
           {budgets}
        </table>
       </div>
+ 
       </>
     );
   }

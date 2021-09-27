@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Button from "../Button";
  
 import DateRange from "./DataRangePicker";
+import Budget from "./index"
+ 
 
 
 export default function CreateBudget(props) {
@@ -29,9 +31,10 @@ export default function CreateBudget(props) {
   };
   props.onSave(props.userId,budget)
   .then(()=>{
-   console.log(props.budgets);
-  } 
-  );  
+   return (<Budget />);
+
+  });
+  
 }
   function getDate(startDate,endDate){
     setstartDate(startDate);

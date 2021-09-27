@@ -11,16 +11,22 @@ const reducers = {
     },
     
     createBudgets(state,action){
-      const budget={
-        ...state.budgets[action.userId],
-        budget:{...action.budget}
-      }
-          const budgets = {
-            ...state.budgets,
-            [action.userId]:budget
-          };
-          
-          return { ...state, budgets: budgets  };
+    
+        const arr=Object.keys(state.budgets);
+        const id= arr[arr.length-1] ;
+         
+
+        const budgets = {...state.budgets};
+        budgets[id]= {
+          id:Number(id),
+          name:  action.budgetName,
+          budgetLimit: action.budgetLimit ,
+          startDate: action.startDate ,  
+          endDate:  action.endDate,
+          user_id: action.userId
+        };
+         console.log({...state.budgets});
+        return {...state.budgets};
         },
   };
  export default function reducer(state, action){

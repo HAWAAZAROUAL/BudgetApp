@@ -22,9 +22,8 @@ export default function Budget(props){
    */
   const userBudget=getBudgetByUserID(props.budgets,props.userid)
   const budgets=userBudget.map((budget)=>{
-    
-     const  starDate=budget.start_date.split('T')[0];
-     const endDate=budget.end_date.split('T')[0];
+    const  starDate=budget.start_date;
+    const endDate=budget.end_date;
     
     return(
      <ShowBudget 

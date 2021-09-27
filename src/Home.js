@@ -9,6 +9,7 @@ import Sidebar from './components/Sidebar';
 
 import Budget from './components/budgets/index';
 import Pie from './components/charts/Pie';
+import BarGraph from './components/charts/BarGraph';
 
 export default function Home() {
   const {
@@ -31,6 +32,7 @@ export default function Home() {
          userId={state.userId}
      />
      <Pie />
+     <BarGraph />
     </div>
   );
 };

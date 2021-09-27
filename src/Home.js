@@ -10,6 +10,7 @@ import Burger from './components/Burger';
 import Sidebar from './components/Sidebar';
 
 import Budget from './components/budgets/index';
+import Pie from './components/charts/Pie';
 
 export default function Home() {
   const {
@@ -17,6 +18,7 @@ export default function Home() {
        createBudget,
   } = useApplicationData();
   
+  console.log('state', state)
   
   return (
     <div className="App">
@@ -32,6 +34,7 @@ export default function Home() {
          createBudget={createBudget}
          userId={state.userId}
      />
+     <Pie />
     </div>
   );
 };

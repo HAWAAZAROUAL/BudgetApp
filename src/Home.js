@@ -5,12 +5,11 @@ import useApplicationData from "./hooks/useApplicationData";
 import Nav from './components/Nav';
 import Account from './components/Account';
 import Update from './components/Update';
-
-import Burger from './components/Burger';
 import Sidebar from './components/Sidebar';
 
 import Budget from './components/budgets/index';
 import Pie from './components/charts/Pie';
+import BarGraph from './components/charts/BarGraph';
 
 export default function Home() {
   const {
@@ -26,7 +25,6 @@ export default function Home() {
      <Account />
      <Update />
      
-     <Burger />
      <Budget 
          budgets={ state.budgets}
          userid={state.userId}
@@ -34,6 +32,7 @@ export default function Home() {
          userId={state.userId}
      />
      <Pie />
+     <BarGraph />
     </div>
   );
 };

@@ -38,19 +38,19 @@ export default class App extends React.Component {
                             </a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="/budgets">
                                 <i className="sf-icon-sidebar sf-icon-starred"></i>
                                 <span className="e-text"> Create</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="/Update">
                                 <i className="sf-icon-sidebar sf-icon-recent"></i>
                                 <span className="e-text">Update</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="/Reports">
                                 <i className="sf-icon-sidebar sf-icon-important"></i>
                                 <span className="e-text">Reports</span>
                             </a>

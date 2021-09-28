@@ -48,6 +48,7 @@ module.exports = (db) => {
       return;
     }
 
+
     db.query(`DELETE FROM budgets WHERE id = $1::integer`, [
       request.params.id
     ]).then(() => {
@@ -59,7 +60,32 @@ module.exports = (db) => {
   });
 
 
+ router.put("/budgets/:userid/:budgetid", (request, response) => {
 
+
+    if (process.env.TEST_ERROR) {
+      setTimeout(() => response.status(500).json({}), 1000);
+      return;
+    }
+    const { name, budget_limit, start_date, end_date } = request.body.budget;
+
+    db.query(
+      `
+           
+          UPDATE budgets SET name = $1::text, budget_limit = $2::integer,start_date =$3::DATE,end_date=$4::DATE
+          `,
+      [name, Number(budget_limit), start_date, end_date, Number(request.params.userid)]
+    )
+      .then(() => {
+        setTimeout(() => {
+          response.status(204).json({});
+
+        }, 1000);
+      })
+      .catch(error => console.log(error));
+  });
+
+ 
 
 
 

@@ -7,7 +7,7 @@ module.exports = (db) => {
   router.get("/expenses", (request, response) => {
   
     db.query(`SELECT * FROM expenses`).then(({ rows: expenses}) => {
-      
+      console.log(request.body);
       response.json(
         expenses.reduce(
           (previous, current) => ({ ...previous, [current.id]: current }),

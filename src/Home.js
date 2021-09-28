@@ -21,13 +21,16 @@ export default function Home() {
   return (
     <div className="App">
      <Nav name={state.username}/>
-     <Sidebar />
+     <Sidebar email={state.email}/>
      <Account />
      <Update />
      
      <Budget/>
-     <Pie />
-     <BarGraph />
+      <Pie />
+     <BarGraph categories= {state.categories}
+     expenses={state.expenses}/>
     </div>
   );
 };
+
+

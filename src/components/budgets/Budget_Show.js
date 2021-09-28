@@ -1,30 +1,54 @@
+import ShowBudgetItem from './BudgetItemShow';
+import CreateBudget from './Budget_Create';
+import useVisualMode from "../../hooks/useVisulMode";
 
 
-export default function ShowBudget(props){
-     
-    return(
-     <thead>
-      <tr>
-        <th>{props.budgetName}</th>
-        <th>{props.budgetLimit}</th>
-        <th>{props.startDate}</th>
-        <th>{props.endDate}</th>
-        <th> 
-            <img
-              className="appointment__actions-button"
-              src=""
-              alt="Edit"
-              onClick={props.onEdit}
-              />
-            <img
-              className="appointment__actions-button"
-              src="images/trash.png"
-              alt="Delete"
-              onClick={props.onDelete}
-              />
-          </th>
-      </tr>
-     </thead>
-        
-    );
+export default function BudgetShow(props) {
+
+  const SHOW = "SHOW";
+  const CREATE = "CREATE";
+  const EDIT = "EDIT";
+  const { mode, transition, back } = useVisualMode(
+    SHOW
+  );
+
+  function deleteBudget(id) {
+    props
+      .deleteBudget(props.id)
+      .then(() => transition(SHOW))
+  }
+
+  function edit() {
+    transition(EDIT);
+  }
+
+  return (
+    <article>
+      {mode === SHOW && <ShowBudgetItem
+        id={props.id}
+        userid={props.userid}
+        budgetName={props.budgetName}
+        budgetLimit={props.budgetLimit}
+        startDate={props.startDate}
+        endDate={props.endDate}
+        onEdit={edit}
+        onDelete={deleteBudget}
+      />
+      }
+      {mode === CREATE && <CreateBudget onSave={props.createBudget} userId={props.userid} onCancel={back} />}
+      {mode === EDIT && <CreateBudget
+
+        onSave={props.createBudget}
+        onCancel={back}
+        userId={props.userid}
+        name={props.budgetName}
+        budgetLimit={props.budgetLimit}
+        startDate={props.starDate}
+        endDate={props.endDate}
+
+
+      />
+      }
+    </article>
+  );
 }

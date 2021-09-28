@@ -1,60 +1,54 @@
-import ShowBudget from './Budget_Show';
-import CreateBudget from './Budget_Create';
-import useVisualMode from '../../hooks/useVisulMode';
-import {getBudgetByUserID} from '../../helpers/selectors';
-export default function Budget(props){
-    
-    const SHOW = "SHOW";
-    const CREATE ="CREATE";
-    const EDIT = "EDIT";
-    const { mode, transition, back } = useVisualMode(
-         SHOW
-    );
+import useApplicatonData from '../../hooks/useApplicationData';
+import { getBudgetByUserID } from '../../helpers/selectors';
+import BudgetShow from './Budget_Show'
+export default function Budget() {
+  const {
+    state,
+    createBudget,
+    deleteBudget
+  } = useApplicatonData();
 
-  function onEdit(){
-   props.updateBudget();
-  }
-  function onDelete(){
-    props.deleteBudget();
-  }
-  /**
-   * Get budget by userID
-   */
-  const userBudget=getBudgetByUserID(props.budgets,props.userid)
-  const budgets=userBudget.map((budget)=>{
-    const  starDate=budget.start_date;
-    const endDate=budget.end_date;
-    
-    return(
-     <ShowBudget 
+  const userBudget = getBudgetByUserID(state.budgets, state.userId)
+  const budgets = userBudget.map((budget) => {
+    let starDate;
+    let endDate;
+    if (budget.start_date && budget.end_date) {
+      starDate = budget.start_date.split('T')[0];
+      endDate = budget.end_date.split('T')[0];
+    }
+
+    return (
+      <BudgetShow
+        id={budget.id}
         budgetName={budget.name}
         budgetLimit={budget.budget_limit}
         startDate={starDate}
         endDate={endDate}
-        onEdit={onEdit}
-        onDelete={onDelete}
-     />
-     );
-  });
-  
-  return (
-    <>
-     <CreateBudget onSave={props.createBudget} userId={props.userId} budgets={budgets}/> 
-      <div className="App">
-        <table>
-        <thead>
-        <tr>     
-         <th>BudgetName</th>
-         <th>BudgetLimit</th>
-         <th>StartDate</th>
-         <th>EndDate</th>     
-        </tr>
-        </thead>
-          {budgets}
-       </table>
-      </div>
-      {mode === EDIT &&  <CreateBudget onSave={props.createBudget} userId={props.userId} budgets={budgets}/>}
-      </>
+        createBudget={createBudget}
+        deleteBudget={deleteBudget}
+        userid={budget.user_id}
+      />
     );
-  }
-  
+  });
+  return (
+    <div className="App">
+      <table>
+        <thead>
+          <tr>
+            <th>BudgetName</th>
+            <th>BudgetLimit</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        {budgets}
+      </table>
+    </div>
+  );
+}
+
+
+
+

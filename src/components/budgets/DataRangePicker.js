@@ -6,6 +6,7 @@ import "react-dates/lib/css/_datepicker.css";
 import Responsive from "react-responsive";
 
 class DateRange extends React.Component {
+
   state = {
     startDate: null,
     endDate: null,
@@ -15,7 +16,7 @@ class DateRange extends React.Component {
   hundleDateChange(startDate, endDate) {
     this.setState(() => ({
       startDate,
-      endDate  
+      endDate
     }));
     if (startDate != null) {
       this.setState(() => ({
@@ -27,19 +28,21 @@ class DateRange extends React.Component {
         endDateFormatted: endDate.format("D-MM-Y"),
       }));
     }
-    if(startDate != null && endDate != null){
-      
-      this.props.getDate( startDate, endDate);
+    if (startDate != null && endDate != null) {
 
+      this.props.getDate(startDate, endDate);
+
+    }
   }
-  }
+
 
   render() {
     return (
       <div className="DateRange" >
         <pre style={{ textAlign: "left" }}>
-          <p> start date:  {this.state.startDateFormatted} </p>
-          <p> end date:  {this.state.endDateFormatted} </p>
+
+          <p> start date:  {this.state.startDateFormatted} end date:  {this.state.endDateFormatted}</p>
+
         </pre>
         <Mobile>
           <DateRangePicker

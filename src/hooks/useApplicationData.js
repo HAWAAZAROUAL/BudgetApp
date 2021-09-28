@@ -40,7 +40,7 @@ export default function useApplicatonData(){
     function createBudget(userId,budget){
    
       return axios.put(`http://localhost:8080/api/budgets/${userId}`, {budget}).then(res=> { 
-       
+       console.log("userid",userId);
         const result= JSON.parse(res.config.data)["budget"];
         
         dispatch({ 
@@ -70,10 +70,14 @@ export default function useApplicatonData(){
 
     }
    
-        
+    function deleteBudget(id){
+      return axios.delete(`http://localhost:8080/api/budgets/${id}`).then(res => {
+       dispatch({ type: "deleteBudget",id: id});
+      });
+    } 
   
 
 
-    return {state,createBudget, addCategories};
+    return {state,createBudget, addCategories,deleteBudget};
     
 }

@@ -15,7 +15,7 @@
   }
   
   .DateRange-header {
-    background-color: #282c34;
+    background-color: #4056a1;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
   }
   
   .DateRange-link {
-    color: #61dafb;
+    color: #4056a1;
   }
   
   @keyframes DateRange-logo-spin {

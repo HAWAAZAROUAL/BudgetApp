@@ -56,7 +56,32 @@ export default function useApplicatonData(){
         });
     })
     }
+   
+   function updateBudget(id,budget,userid){
+      return axios.put(`http://localhost:8080/api/budgets/${userid}/${id}`,{budget}).then(res => {
+        const result= JSON.parse(res.config.data)["budget"];
+        dispatch({ 
+          type: "updateBudgets", 
+          
+          id:     id,
+          name:  result.name,
+          budget_limit:  result.budget_limit,
+          start_date: result.start_date,
+          end_date:  result.end_date
+        });
+      });
+    } 
 
+
+
+    function deleteBudget(id){
+      return axios.delete(`http://localhost:8080/api/budgets/${id}`).then(res => {
+       dispatch({ type: "deleteBudget",id: id});
+      });
+    } 
+  
+      
+   
     function addCategories(budgetID, category) {
       return axios.put(`http://localhost:8080/api/categories/${budgetID}`, {category})
       .then((res) => {
@@ -71,15 +96,7 @@ export default function useApplicatonData(){
       })
 
     }
-   
-    function deleteBudget(id){
-      return axios.delete(`http://localhost:8080/api/budgets/${id}`).then(res => {
-       dispatch({ type: "deleteBudget",id: id});
-      });
-    } 
-  
 
-
-    return {state,createBudget, addCategories,deleteBudget};
+    return {state,createBudget, addCategories,deleteBudget,updateBudget};
     
 }

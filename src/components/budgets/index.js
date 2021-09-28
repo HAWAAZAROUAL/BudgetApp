@@ -1,4 +1,3 @@
-
 import useApplicatonData from '../../hooks/useApplicationData';
 import { getBudgetByUserID } from '../../helpers/selectors';
 import BudgetShow from './Budget_Show'
@@ -17,7 +16,6 @@ export default function Budget() {
       starDate = budget.start_date.split('T')[0];
       endDate = budget.end_date.split('T')[0];
     }
-
 
     return (
       <BudgetShow
@@ -50,4 +48,7 @@ export default function Budget() {
     </div>
   );
 }
- 
+
+
+
+

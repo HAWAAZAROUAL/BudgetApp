@@ -16,6 +16,16 @@ wss.on("connection", socket => {
   };
 });
 
+app.get("/Create", (request, response) => {
+  response.json({
+    budget: "Name",
+    amount: "limit"
+  }
+    
+  );
+  
+})
+
 server.listen(PORT, () => {
   console.log(`Listening on port ${PORT} in ${ENV} mode.`);
 });

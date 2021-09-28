@@ -12,7 +12,6 @@ export default function BudgetShow(props) {
     SHOW
   );
 
-
   function deleteBudget(id) {
     props
       .deleteBudget(props.id)

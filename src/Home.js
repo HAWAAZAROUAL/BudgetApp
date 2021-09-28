@@ -5,25 +5,29 @@ import useApplicationData from "./hooks/useApplicationData";
 import Nav from './components/Nav';
 import Account from './components/Account';
 import Update from './components/Update';
-import Burger from './components/Burger';
 import Sidebar from './components/Sidebar';
 import Budget from './components/budgets/index';
+import Pie from './components/charts/Pie';
+import BarGraph from './components/charts/BarGraph';
+ 
+
 export default function Home() {
   const {
        state,
-        
+       addCategories
   } = useApplicationData();
   
- 
+ console.log('state', state);
   return (
     <div className="App">
      <Nav name={state.username}/>
      <Sidebar />
      <Account />
      <Update />
-      <Budget/>
-     <Burger />
      
+     <Budget/>
+     <Pie />
+     <BarGraph />
     </div>
   );
 };

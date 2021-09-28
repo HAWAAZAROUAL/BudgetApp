@@ -6,7 +6,9 @@ const reducers = {
         return {
             ...state,
             username: action.value.username, 
-            budgets: action.value.budgets
+            budgets: action.value.budgets,
+            categories: action.value.categories,
+            expenses: action.value.expenses
           };
     },
     

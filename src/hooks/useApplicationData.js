@@ -20,17 +20,18 @@ export default function useApplicatonData(){
        axios.get('http://localhost:8080/api/users'),
        axios.get(`http://localhost:8080/api/budgets/`),
        axios.get(`http://localhost:8080/api/categories/`),
-       axios.get(`http://localhost:8080/api/expenses/`)
+       axios.get(`http://localhost:8080/api/expenses/`),
     ])
        .then((all) => {
        const username =all[0].data[2]["first_name"];
        const budgets= all[1].data;
        const categories = all[2].data;
-       const expenses = all[3].data
+       const expenses = all[3].data;
+       const email = all[0].data[2]["email"];
        
        dispatch({
         type: "setData",
-        value: {username,budgets, categories, expenses}
+        value: {username,budgets, categories, expenses, email}
       });
      });
      // eslint-disable-next-line

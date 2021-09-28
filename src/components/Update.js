@@ -10,19 +10,19 @@ export default function Update () {
     <h2> Update </h2>
     <form>
 
-    <Button>Add Category</Button> <input type='text'></input> <Button id = "add-category">&#43;</Button>
+    <p>Add Category</p> <input type='text'></input> <Button id = "add-category">Add</Button>
     <br>
 
     </br>
-    <Button>Add Expense</Button> <input type='text'></input> <Button id = "add-amount">&#43;</Button>
+    <p>Add Expense</p> <input type='text'></input> <Button id = "add-amount">Add</Button>
     <br>
 
     </br>
-    <Button>Save Changes</Button> <input type='text'></input>
+    <Button>Save Changes</Button> 
     <br>
     
     </br>
-    <Button>Delete Budget</Button> <input type='text'></input>
+    <Button>Delete Budget</Button> 
     </form>
     
  

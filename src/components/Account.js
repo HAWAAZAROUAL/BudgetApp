@@ -7,11 +7,14 @@ export default function Account() {
   }
   return (
     <div class="account">
+      <body>
       <h1>Welcome to Budget Buddy!</h1>
       <h2> Set up your account by adding an Income!</h2>
-      <Button onClick={clickMe}> Add Income </Button>
+      <p> Add Income </p>
       <input type="text"></input>
-      <Button id="add-income"> &#43;</Button>
+      <Button id="add-income"> Add</Button>
+      </body>
+
     </div>
   )
 }

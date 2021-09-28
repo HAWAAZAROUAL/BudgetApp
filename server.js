@@ -16,7 +16,7 @@ wss.on("connection", socket => {
   };
 });
 
-app.get("/Create", (request, response) => {
+app.get("/Update", (request, response) => {
   response.json({
     budget: "Name",
     amount: "limit"

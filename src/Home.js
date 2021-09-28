@@ -26,7 +26,8 @@ export default function Home() {
      <Update />
      
      <Budget/>
-      <Pie />
+      <Pie categories= {state.categories}
+     expenses={state.expenses}/>
      <BarGraph categories= {state.categories}
      expenses={state.expenses}/>
     </div>

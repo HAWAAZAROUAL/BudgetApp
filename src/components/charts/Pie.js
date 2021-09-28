@@ -1,17 +1,23 @@
 import { PieChart } from 'reaviz';
+import React from 'react';
 
-const Pie = () => (
+const Pie = (props) => {
 
-  <PieChart
+  const displayData = function(categories, expenses) {
+    if (expenses) {
+      return Object.keys(expenses).map((expenseId) => {
+        return {
+          key: categories[expenses[expenseId].category_id].category_type,
+          data: expenses[expenseId].amount
+        }
+      })
+    }
+  }
+  return <PieChart
     height={300}
     width={300}
-    data={[
-      { key: 'Bread', data: 25 },
-      { key: 'Eggs', data: 13 },
-      { key: 'Cheese', data: 13 },
-    ]}
-    
+    data= {displayData(props.categories, props.expenses)}
   />
-);
+};
 
 export default Pie;

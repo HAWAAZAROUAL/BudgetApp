@@ -26,6 +26,15 @@ const reducers = {
         };
         return {...state,budgets:budgets};
         },
+    deleteBudget(state,action){
+       
+      const budgets = {...state.budgets};
+      delete budgets[action.id]
+      return {
+        ...state,
+        budgets:budgets
+      };   
+    }
   };
  export default function reducer(state, action){
     return reducers[action.type](state, action) || state;

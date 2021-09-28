@@ -5,16 +5,13 @@ import useApplicationData from "./hooks/useApplicationData";
 import Nav from './components/Nav';
 import Account from './components/Account';
 import Update from './components/Update';
-
 import Burger from './components/Burger';
 import Sidebar from './components/Sidebar';
-
 import Budget from './components/budgets/index';
-
 export default function Home() {
   const {
        state,
-       createBudget,
+        
   } = useApplicationData();
   
  
@@ -24,14 +21,9 @@ export default function Home() {
      <Sidebar />
      <Account />
      <Update />
-     
+      <Budget/>
      <Burger />
-     <Budget 
-         budgets={ state.budgets}
-         userid={state.userId}
-         createBudget={createBudget}
-         userId={state.userId}
-     />
+     
     </div>
   );
 };

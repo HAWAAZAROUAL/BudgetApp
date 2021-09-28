@@ -12,6 +12,7 @@ export default function BudgetShow(props) {
     SHOW
   );
 
+
   function deleteBudget(id) {
     props
       .deleteBudget(props.id)
@@ -35,18 +36,20 @@ export default function BudgetShow(props) {
         onDelete={deleteBudget}
       />
       }
-      {mode === CREATE && <CreateBudget onSave={props.createBudget} userId={props.userid} onCancel={back} />}
+      {mode === CREATE && <CreateBudget 
+             onSave={props.createBudget} 
+             userId={props.userid} 
+             onCancel={back} 
+             />}
       {mode === EDIT && <CreateBudget
-
-        onSave={props.createBudget}
+        userId={props.userid} 
+        onSave={props.updateBudget}
         onCancel={back}
-        userId={props.userid}
         name={props.budgetName}
         budgetLimit={props.budgetLimit}
-        startDate={props.starDate}
+        startDate={props.startDate}
         endDate={props.endDate}
-
-
+        id={props.id}
       />
       }
     </article>

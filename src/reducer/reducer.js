@@ -29,7 +29,8 @@ const reducers = {
         };
         return {...state,budgets:budgets};
         },
-    deleteBudget(state,action){
+
+     deleteBudget(state,action){
        
       const budgets = {...state.budgets};
       delete budgets[action.id]
@@ -37,9 +38,31 @@ const reducers = {
         ...state,
         budgets:budgets
       };   
-    }
-  };
- export default function reducer(state, action){
+    },
+
+  updateBudgets(state,action){
+       
+      const budgets = {...state.budgets};
+      const budget = {
+                    id:    action.id,
+                  name:    action.name,
+          budget_limit:    action.budget_limit ,
+            start_date:    action.start_date ,  
+              end_date:    action.end_date,   
+        };
+        const obj={
+        ...state,
+        budgets: {...budgets,[action.id]: budget}
+        }
+      console.log("obj",obj);
+      return {
+        ...state,
+        budgets: {...budgets,[action.id]: budget}
+        };   
+   }
+};
+  
+  export default function reducer(state, action){
     return reducers[action.type](state, action) || state;
-}      
+}    
  

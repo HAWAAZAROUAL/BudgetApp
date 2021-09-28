@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import Button from "../Button";
-
+import useVisualMode from "../../hooks/useVisulMode";
 import DateRange from "./DataRangePicker";
 
 export default function CreateBudget(props) {
@@ -26,11 +26,19 @@ export default function CreateBudget(props) {
       start_date: start_date,
       end_date: end_date
     };
-    console.log("props.userId", props.userId);
-    props.onSave(props.userId, budget)
+   
+    if(props.id){
+       props.onSave(props.id, budget,props.userId)
       .then((res) => {
-        console.log(res);
+        props.onCancel();
       });
+    } else{
+       props.onSave(props.userId, budget)
+      .then((res) => {
+        props.onCancel();
+      });
+    }
+   
 
   }
   function getDate(startDate, endDate) {

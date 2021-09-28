@@ -5,15 +5,16 @@ export default function Budget() {
   const {
     state,
     createBudget,
+    updateBudget,
     deleteBudget
   } = useApplicatonData();
-
+  
   const userBudget = getBudgetByUserID(state.budgets, state.userId)
   const budgets = userBudget.map((budget) => {
-    let starDate;
+    let startDate;
     let endDate;
     if (budget.start_date && budget.end_date) {
-      starDate = budget.start_date.split('T')[0];
+      startDate = budget.start_date.split('T')[0];
       endDate = budget.end_date.split('T')[0];
     }
 
@@ -22,10 +23,11 @@ export default function Budget() {
         id={budget.id}
         budgetName={budget.name}
         budgetLimit={budget.budget_limit}
-        startDate={starDate}
+        startDate={startDate}
         endDate={endDate}
         createBudget={createBudget}
         deleteBudget={deleteBudget}
+        updateBudget={updateBudget}
         userid={budget.user_id}
       />
     );

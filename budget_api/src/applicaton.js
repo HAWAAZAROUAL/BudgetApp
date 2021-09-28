@@ -12,7 +12,8 @@ const db = require("./db");
 
 const users = require("./routes/users");
 const budgets = require("./routes/budgets");
-//const expenses = require("./routes/expenses");
+const categories = require("./routes/categories");
+const expenses = require("./routes/expenses");
 
 function read(file) {
   return new Promise((resolve, reject) => {
@@ -39,6 +40,8 @@ module.exports = function application(
 
   app.use("/api", users(db));
   app.use("/api", budgets(db, actions.updateBudget));
+  app.use("/api", categories(db));
+  app.use("/api", expenses(db));
   //app.use("/api", interviewers(db));
 
   if (ENV === "development" || ENV === "test") {

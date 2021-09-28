@@ -18,15 +18,19 @@ export default function useApplicatonData(){
     useEffect(()=>{
      Promise.all([
        axios.get('http://localhost:8080/api/users'),
-       axios.get(`http://localhost:8080/api/budgets/`)
+       axios.get(`http://localhost:8080/api/budgets/`),
+       axios.get(`http://localhost:8080/api/categories/`),
+       axios.get(`http://localhost:8080/api/expenses/`)
     ])
        .then((all) => {
        const username =all[0].data[2]["first_name"];
        const budgets= all[1].data;
+       const categories = all[2].data;
+       const expenses = all[3].data
        
        dispatch({
         type: "setData",
-        value: {username,budgets}
+        value: {username,budgets, categories, expenses}
       });
      });
      // eslint-disable-next-line
@@ -50,11 +54,26 @@ export default function useApplicatonData(){
         });
     })
     }
+
+    function addCategories(budgetID, category) {
+      return axios.put(`http://localhost:8080/api/ctegories/${budgetID}`, {category})
+      .then((res) => {
+        const result = JSON.parse(res.config.data)['category'];
+
+        dispatch({
+          type: "addCategories",
+          budget_id: budgetID,
+          category_type: result.category_type,
+          amount: result.amount
+        })
+      })
+
+    }
    
         
   
 
 
-    return {state,createBudget};
+    return {state,createBudget, addCategories};
     
 }

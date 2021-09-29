@@ -1,3 +1,4 @@
+import Update from "./src/components/Update";
 const PORT = process.env.PORT || 8080;
 const ENV = require("./budget_api/src/environment");
 const app = require("./budget_api/src/applicaton")(ENV, {  });
@@ -16,15 +17,6 @@ wss.on("connection", socket => {
   };
 });
 
-app.get("/Update", (request, response) => {
-  response.json({
-    budget: "Name",
-    amount: "limit"
-  }
-    
-  );
-  
-})
 
 server.listen(PORT, () => {
   console.log(`Listening on port ${PORT} in ${ENV} mode.`);

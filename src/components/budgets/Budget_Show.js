@@ -1,5 +1,5 @@
 import ShowBudgetItem from './BudgetItemShow';
-import CreateBudget from './Budget_Create';
+import Form from './Form';
 import useVisualMode from "../../hooks/useVisulMode";
 
 
@@ -37,7 +37,7 @@ export default function BudgetShow(props) {
       />
       }
       
-      {mode === EDIT && <CreateBudget
+      {mode === EDIT && <Form
         userId={props.userid} 
         onSave={props.updateBudget}
         onCancel={back}

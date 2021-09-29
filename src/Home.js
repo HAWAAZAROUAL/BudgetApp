@@ -1,62 +1,95 @@
-
+import React from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './Home.css';
-import './components/Nav';
 import useApplicationData from "./hooks/useApplicationData";
 import Nav from './components/Nav';
 import Account from './components/Account';
-import Update from './components/Update';
+import MyBudgets from './components/MyBudgets';
 import Sidebar from './components/Sidebar';
 import Budget from './components/budgets/index';
 import Pie from './components/charts/Pie';
 import BarGraph from './components/charts/BarGraph';
-import useVisualMode from "./hooks/useVisulMode"
-import CreateBudget from './components/budgets/Budget_Create';
+import CreateBudget from './components/budgets/index';
+import LeftOver from './components/charts/LeftOver';
 
-const CREATE = 'CREATE'
-const HOME = 'HOME'
-const UPDATE = 'UPDATE'
-const REPORTS = 'REPORTS'
  
 
-export default function Home() {
-  const { mode, transition, back } = useVisualMode(HOME)
-  const {
-       state,
-       addCategories
-  } = useApplicationData();
 
-   
-  
- console.log('state', state);
+const Home = () => {
+  const {
+    state,
+    addCategories
+  } = useApplicationData();
   return (
     <div className="App">
-     <Nav name={state.username}/>
-     <Sidebar />
 
+    <Router>
+      <nav>
+<Nav name={state.username}/>
+        <div>
+        <Sidebar email={state.email}/>
+        </div>
 
-     {mode === HOME && (
-       <Account />
-     )}
-     {mode === CREATE && (
-       <CreateBudget />
+      </nav>
 
-     )}
-     {mode === UPDATE && (
-       <Update />
+      <Switch>
 
-     )}
-     {mode === REPORTS && (
-       <Budget/>
+        <Route path="/Account">
+        
+          </Route>
 
-     )}
-     
+          <Route path="/Create">
+            <CreateBudget/>
+          </Route>
 
-      <Pie categories= {state.categories}
-     expenses={state.expenses}/>
-     <BarGraph categories= {state.categories}
-     expenses={state.expenses}/>
-    </div>
-  );
-};
+          <Route path="/MyBudgets">
+            <MyBudgets />
 
+          </Route>
 
+          <Route path="/">
+            <Account />
+<Pie categories= {state.categories}
+           expenses={state.expenses}/>
+
+           <BarGraph categories= {state.categories}
+           expenses={state.expenses}/>
+
+           <LeftOver />
+
+          </Route>
+        
+        </Switch>
+        
+        </Router>
+        </div>
+        
+        )
+      };
+
+      export default Home;
+      
+      
+      
+      // export default function Home() {
+      //   const {
+      //        state,
+      //        addCategories
+      //   } = useApplicationData();
+        
+      //  console.log('state', state);
+      //   return (
+      //     <div className="App">
+      //      <Nav name={state.username}/>
+      //      <Sidebar email={state.email}/>
+      //      <Account />
+      //      <Update />
+           
+      //      <Budget/>
+      //       <Pie categories= {state.categories}
+      //      expenses={state.expenses}/>
+      //      <BarGraph categories= {state.categories}
+      //      expenses={state.expenses}/>
+      //     </div>
+      //   );
+      // };

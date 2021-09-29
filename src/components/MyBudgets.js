@@ -3,11 +3,10 @@ import Button from './Button';
 import './Update.css';
 import "./Button.css";
 
-export default function Update () {
+export default function MyBudgets () {
 
   return(
     <>
-    <h2> Update </h2>
     <form>
 
     <p>Add Category</p> <input type='text'></input> <Button id = "add-category">Add</Button>

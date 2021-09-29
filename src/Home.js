@@ -31,8 +31,7 @@ export default function Home() {
   return (
     <div className="App">
      <Nav name={state.username}/>
-     <Sidebar email={state.email}
-          create={mode}/>
+
 
      {mode === HOME && (
        <Account />

@@ -11,7 +11,7 @@ export  function getBudgetByUserID(budgets,userId) {
  
 export  function getBudgetByMonth(budgets,month,userId) {
  
-  const result=[];
+  const result={};
   let arr = Object.values(budgets);
   for(const budget of arr){
 
@@ -24,8 +24,8 @@ export  function getBudgetByMonth(budgets,month,userId) {
      d2=d2.toISOString().split('T')[0];
      console.log(startDate,endDate,d1,d2);
     if((startDate>=d1)&&(endDate<=d2) && (userid===userId )) {
-      result.push(budget)
+      result[budget["name"]]=budget["budget_limit"];
     }   
   }
-  return result;
+  return  result;
 }

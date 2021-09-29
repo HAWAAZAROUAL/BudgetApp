@@ -31,16 +31,6 @@ export default function Home() {
   return (
     <div className="App">
      <Nav name={state.username}/>
-<<<<<<< HEAD
-     <Sidebar email={state.email}/>
-         <Budget/> 
-         <Account /> 
-   
-     <Update />
-     
-     
-      <Pie />
-=======
      <Sidebar email={state.email}
           create={mode}/>
 
@@ -63,7 +53,6 @@ export default function Home() {
 
       <Pie categories= {state.categories}
      expenses={state.expenses}/>
->>>>>>> 69c0a28f2a4b82fea26c895d823935e8a48783ab
      <BarGraph categories= {state.categories}
      expenses={state.expenses}/>
     </div>

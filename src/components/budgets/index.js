@@ -2,8 +2,8 @@ import useApplicatonData from '../../hooks/useApplicationData';
 
 import { getBudgetByUserID,getBudgetByMonth,getExpenseByMonth } from '../../helpers/selectors';
 import BudgetShow from './Budget_Show'
-import CreateBudget from './Budget_Create'
-export default function Budget() {
+import Form from './Form';
+export default function CreateBudget() {
   const {
     state,
     createBudget,
@@ -11,8 +11,8 @@ export default function Budget() {
     deleteBudget
   } = useApplicatonData();
 
-  const monthBudget= getBudgetByMonth(state.budgets,2021,9,2);
-  const monthExpense=getExpenseByMonth(state.expenses,state.categories,9,2);
+  const monthBudget= getBudgetByMonth(state.budgets,2021,10,2);
+  const monthExpense=getExpenseByMonth(state.expenses,state.categories,10,2);
   console.log("expense",monthExpense,"budgets",monthBudget);
   
 
@@ -42,7 +42,7 @@ export default function Budget() {
   });
   return (
     <>
-     <CreateBudget 
+     <Form
              onSave={createBudget} 
              userId={state.userId} 
              

@@ -4,7 +4,7 @@ import Button from "../Button";
 import useVisualMode from "../../hooks/useVisulMode";
 import DateRange from "./DataRangePicker";
 
-export default function CreateBudget(props) {
+export default function Form(props) {
   console.log("props", props);
   const [name, setName] = useState(props.name || "");
   const [budget_limit, setbudget_limit] = useState(props.budgetLimit || 0);

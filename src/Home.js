@@ -9,7 +9,7 @@ import Sidebar from './components/Sidebar';
 import Budget from './components/budgets/index';
 import Pie from './components/charts/Pie';
 import BarGraph from './components/charts/BarGraph';
-import CreateBudget from './components/budgets/Budget_Create';
+import CreateBudget from './components/budgets/index';
 import LeftOver from './components/charts/LeftOver';
 
  

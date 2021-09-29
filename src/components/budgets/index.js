@@ -2,8 +2,8 @@ import useApplicatonData from '../../hooks/useApplicationData';
 
 import { getBudgetByUserID,getBudgetByMonth,getExpenseByMonth } from '../../helpers/selectors';
 import BudgetShow from './Budget_Show'
-import CreateBudget from './Budget_Create'
-export default function Budget() {
+import Form from './Form';
+export default function CreateBudget() {
   const {
     state,
     createBudget,
@@ -42,7 +42,7 @@ export default function Budget() {
   });
   return (
     <>
-     <CreateBudget 
+     <Form
              onSave={createBudget} 
              userId={state.userId} 
              

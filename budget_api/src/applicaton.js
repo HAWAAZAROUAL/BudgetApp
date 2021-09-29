@@ -1,4 +1,4 @@
-import Update from "../../src/components/Update";
+
 const fs = require("fs");
 const path = require("path");
 
@@ -30,13 +30,6 @@ function read(file) {
     );
   });
 }
-
-// I am trying to make a "route" for a new "page"!!!!!
-app.post("/Update", (request, response) => {
-  console.log("This is the post")
-  return <Update />
-  
-});
 
 module.exports = function application(
   ENV,

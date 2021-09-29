@@ -97,7 +97,22 @@ export default function useApplicatonData(){
       })
 
     }
+    function addIncome(userId,incomes){
+   
+      return axios.put(`http://localhost:8080/api/income/${userId}`, {incomes}).then(res=> { 
+       console.log("userid",userId);
+        const result= JSON.parse(res.config.data)["income"];
+        
+        dispatch({ 
+          type: "addIncome", 
+          
+          user_id:   userId, 
+          income:  result.income,
+          income_type: result.income_type
+        });
+    })
+    }
 
-    return {state,createBudget, addCategories,deleteBudget,updateBudget};
+    return {state,createBudget, addCategories,deleteBudget,updateBudget,addCategories,addIncome};
     
 }

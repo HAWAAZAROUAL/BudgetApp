@@ -1,12 +1,17 @@
  
-import Button from './Button'
+ import Button from './Button'
 import React, { useState } from "react";
-export default function Account() {
-  function clickMe() {
-    alert('clicked!')
-  }
-  const [income, setIncome] = useState(0);
+export default function Account(props) {
+   
+ const [income, setIncome] = useState(0);
   const [income_type, setIncome_type] = useState( "");
+   function onAdd() {
+    const incomes= {
+      income: income,
+     income_type:income_type
+    };
+    props.onAdd(props.userId, incomes)
+  }
   return (
     <div class="account">
       <body>
@@ -26,7 +31,7 @@ export default function Account() {
             onChange={event => setIncome_type(event.target.value)}
           />
         </form>
-      <Button id="add-income"> Add</Button>
+      <Button id="add-income" onClick={()=>onAdd()}> Add</Button>
        
       </body>
 

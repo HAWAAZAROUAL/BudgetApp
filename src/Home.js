@@ -18,7 +18,8 @@ import LeftOver from './components/charts/LeftOver';
 const Home = () => {
   const {
     state,
-    addCategories
+    addCategories,
+    addIncome
   } = useApplicationData();
   return (
     <div className="App">
@@ -48,8 +49,8 @@ const Home = () => {
           </Route>
 
           <Route path="/">
-            <Account />
-<Pie categories= {state.categories}
+            <Account onAdd={addIncome} userid={state.userId}/>
+           <Pie categories= {state.categories}
            expenses={state.expenses}/>
 
            <BarGraph categories= {state.categories}

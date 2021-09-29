@@ -108,7 +108,7 @@ function getCategoryName(result,categories){
   Object.keys(result).map((id) => {
           
           obj[categories[id].category_type] =result[id];
-        console.log("obj",obj);
+        
     });
     return obj;
 }

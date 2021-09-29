@@ -1,83 +1,4 @@
 
-
-.e-listview .e-list-parent {
-  margin: 0 ;
-  padding: 15px 0 15px 0 ;
-}
-
-.e-listview .e-list-group-item {
-  background-color: #ffffff ;
-}
-
-.e-second-heading {
-  color: rgba(0, 0, 0, 0.64) ;
-  display: block;
-  font-size: 15px ;
-  font-weight: 500 ;
-}
-
-.e-listview.e-list-template .e-list-wrapper.e-list-multi-line.e-list-avatar .e-avatar {
-  top: 1.5666em;
-  border-radius: 50%;
-  border-color: #4f4b4b ;
-  border: 1px solid #BADA55;
-}
-
-
-
-.sf-icon-profile:before {
-  float: right;
-  content: '\e717';
-  font-size: 25px;
-  padding-top:8px;
-  padding-right: 4px;
-  padding-bottom: 3px;
-  padding-left: 3px;
-}
-
-.e-avatar {
-  background: none;
-  color: #000;
-}
-
-.e-today {
-  height: 50px;
-  padding: 15px;
-}
-
-.e-today span {
-  border-color: rgba(0, 0, 0, 0.12);
-  color: rgba(0, 0, 0, 0.54);
-  font-size: 15px;
-  font-weight: 600;
-  height: 36px;
-}
-
-.content {
-  height: 47px;
-  background: #0378d5;
-  width: 100%;
-}
-
-#left {
-  float: left;
-  width: 30px;
-  height: 47px;
-}
-
-#center {
-  display: inline-block;
-  margin: 0 auto;
-  width: 0px;
-  height: 47px;
-  padding: 9px 0 12px 0;
-  font-size: 18px;
-  color: #ffff;
-  float: left;
-  text-align: center;
-  padding-left: 40px;
-}
-
 .sf-icon-file:before {
   content: '\e701';
 
@@ -186,19 +107,6 @@ span.sf-icon-down.icon {
 
 }
 
-/* sample-level styles */
-.image-container {
-  padding: 18px 0 0 16px;
-}
-
-.sidebar-image {
-  background: url(https://ej2.syncfusion.com/showcase/angular/expensetracker/assets/images/user.svg) no-repeat scroll 0 0 transparent;
-  background-position-x: left;
-  height: 85px;
-  width: 100%;
-  background-size: 85px;
-  /* margin-left: 20px; */
-}
 
 .sidebar-brand {
   height: 48px;

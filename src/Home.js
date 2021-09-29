@@ -9,9 +9,17 @@ import Sidebar from './components/Sidebar';
 import Budget from './components/budgets/index';
 import Pie from './components/charts/Pie';
 import BarGraph from './components/charts/BarGraph';
+import useVisualMode from "./hooks/useVisulMode"
+import CreateBudget from './components/budgets/Budget_Create';
+
+const CREATE = 'CREATE'
+const HOME = 'HOME'
+const UPDATE = 'UPDATE'
+const REPORTS = 'REPORTS'
  
 
 export default function Home() {
+  const { mode, transition, back } = useVisualMode(HOME)
   const {
        state,
        addCategories
@@ -21,11 +29,26 @@ export default function Home() {
   return (
     <div className="App">
      <Nav name={state.username}/>
-     <Sidebar email={state.email}/>
-     <Account />
-     <Update />
+     <Sidebar email={state.email}
+          create={mode}/>
+
+     {mode === HOME && (
+       <Account />
+     )}
+     {mode === CREATE && (
+       <CreateBudget />
+
+     )}
+     {mode === UPDATE && (
+       <Update />
+
+     )}
+     {mode === REPORTS && (
+       <Budget/>
+
+     )}
      
-     <Budget/>
+
       <Pie categories= {state.categories}
      expenses={state.expenses}/>
      <BarGraph categories= {state.categories}

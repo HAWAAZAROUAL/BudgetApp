@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Link, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './Home.css';
 import useApplicationData from "./hooks/useApplicationData";
 import Nav from './components/Nav';
@@ -46,6 +46,7 @@ const Home = () => {
           </Route>
 
           <Route path="/">
+            <Account />
 <Pie categories= {state.categories}
            expenses={state.expenses}/>
            <BarGraph categories= {state.categories}

@@ -36,11 +36,7 @@ export default function BudgetShow(props) {
         onDelete={deleteBudget}
       />
       }
-      {mode === CREATE && <CreateBudget 
-             onSave={props.createBudget} 
-             userId={props.userid} 
-             onCancel={back} 
-             />}
+      
       {mode === EDIT && <CreateBudget
         userId={props.userid} 
         onSave={props.updateBudget}

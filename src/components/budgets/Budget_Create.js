@@ -16,8 +16,7 @@ export default function CreateBudget(props) {
     setbudget_limit(0);
   }
   function cancel() {
-    reset();
-    props.onCancel();
+    props.id? props.onCancel():reset();
   }
   function onSave() {
     const budget = {
@@ -35,7 +34,7 @@ export default function CreateBudget(props) {
     } else{
        props.onSave(props.userId, budget)
       .then((res) => {
-        props.onCancel();
+       reset();
       });
     }
    

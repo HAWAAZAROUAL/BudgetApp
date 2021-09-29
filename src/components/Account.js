@@ -8,7 +8,7 @@ export default function Account() {
   const [income, setIncome] = useState(0);
   const [income_type, setIncome_type] = useState( "");
   return (
-    <div class="account">
+    <div className="account">
       <body>
       <p> Add Income </p>
       <form autoComplete="off">

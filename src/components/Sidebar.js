@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {Link} from 'react-router-dom';
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations';
 import './Sidebar.css';
 
@@ -26,23 +27,24 @@ import './Sidebar.css';
                           <div className="image-container">
                           </div>
                           <div style={{ padding: '0 0 5px 0' }}>
-                              <a className="sidebar-brand" href="#settings-dropdown">
+                              
                                 {this.props.email}
-                              </a>
+                              
                           </div>
                       </div>
                       <ul className="nav sidebar-nav">
                           <li>
-                              <a href="/">
+                              
                                   <i className="sf-icon-sidebar sf-icon-file"></i>
-                                  <span className="e-text" href="/"> Home</span>
-                              </a>
+                                  <Link path to="/"> <span className="e-text"> Home</span>
+                                  </Link>
+                             
                           </li>
                           <li>
-                              <a href="/budgets">
+                              
                                   <i className="sf-icon-sidebar sf-icon-starred"></i>
-                                  <span className="e-text"> Create</span>
-                              </a>
+                                  <Link to="/Create"><span className="e-text"> Create</span></Link>
+                              
                           </li>
                           <li>
                               <a href="/Update">
@@ -63,7 +65,7 @@ import './Sidebar.css';
   }
 
 
-
+// use React Router
 
 
 // this component is for the side-bar, using an imported react component, the push rotate needs to be page wrapped and an outerContainer Id needs to be within this.

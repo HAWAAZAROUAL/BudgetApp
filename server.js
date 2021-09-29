@@ -18,13 +18,6 @@ wss.on("connection", socket => {
 });
 
 
-// I am trying to make a "route" for a new "page"!!!!!
-app.post("/Update", (request, response) => {
-  console.log("This is the post")
-  return <Update />
-  
-});
-
 server.listen(PORT, () => {
   console.log(`Listening on port ${PORT} in ${ENV} mode.`);
 });

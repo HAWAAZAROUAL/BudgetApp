@@ -1,3 +1,4 @@
+import Update from "../../src/components/Update";
 const fs = require("fs");
 const path = require("path");
 
@@ -30,6 +31,13 @@ function read(file) {
   });
 }
 
+// I am trying to make a "route" for a new "page"!!!!!
+app.post("/Update", (request, response) => {
+  console.log("This is the post")
+  return <Update />
+  
+});
+
 module.exports = function application(
   ENV,
   actions = {  }
@@ -42,7 +50,7 @@ module.exports = function application(
   app.use("/api", budgets(db, actions.updateBudget));
   app.use("/api", categories(db));
   app.use("/api", expenses(db));
-  //app.use("/api", interviewers(db));
+
 
   if (ENV === "development" || ENV === "test") {
     Promise.all([

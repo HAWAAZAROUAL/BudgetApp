@@ -154,6 +154,16 @@ Monday/27
 Tuesday/28
 
 Wednesday/29
+What is done:
+- Add, delete Update
+- Create Budget
+- 
+
+What needs to be done:
+- Make the routes using react router
+- Add new expenses
+- 
+
 
 Thursday/30
 

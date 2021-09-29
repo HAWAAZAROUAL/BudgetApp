@@ -9,7 +9,7 @@ import Sidebar from "./components/Sidebar";
 import Budget from "./components/budgets/index";
 import Pie from "./components/charts/Pie";
 import BarGraph from "./components/charts/BarGraph";
-import CreateBudget from "./components/budgets/Budget_Create";
+import CreateBudget from "./components/budgets/index";
 import LeftOver from "./components/charts/LeftOver";
 
 const Home = () => {
@@ -26,19 +26,24 @@ const Home = () => {
         
 
         <Switch>
-          <Route path="/Account"></Route>
 
           <Route path="/Create">
-            <CreateBudget />
+            <body id="create">
+             <CreateBudget /> 
+            </body>
+            
           </Route>
 
           <Route path="/MyBudgets">
-            <MyBudgets />
+            <body id="budgets">
+              <MyBudgets />
+            </body>
+            
           </Route>
 
           <Route path="/">
+              <h1 id="income"> <Account /> </h1>
             <body id="homepage">
-              <Account />
               <div>
                 <Pie categories={state.categories} expenses={state.expenses} />
                 <br />

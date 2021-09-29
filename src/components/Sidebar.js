@@ -46,7 +46,7 @@ import './Sidebar.css';
                           <li>
                               <a href="/budgets">
                                   <i className="sf-icon-sidebar sf-icon-starred"></i>
-                                  <span create={this.create} className="e-text"> Create</span>
+                                  <span  className="e-text"> Create</span>
                               </a>
                           </li>
                           <li>

@@ -6,7 +6,7 @@ export default function Account() {
     alert('clicked!')
   }
   return (
-    <div class="account">
+    <div className="account">
       <body>
       <h1>Welcome to Budget Buddy!</h1>
       <h2> Set up your account by adding an Income!</h2>

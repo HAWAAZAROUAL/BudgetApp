@@ -29,6 +29,16 @@ const reducers = {
         };
         return {...state,budgets:budgets};
         },
+      addIncome(state,action){
+          
+          
+          user_id:   userId, 
+          income:  result.income,
+          income_type: result.income_type
+
+
+         },
+        
 
      deleteBudget(state,action){
        

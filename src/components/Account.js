@@ -13,7 +13,7 @@ export default function Account(props) {
     props.onAdd(props.userId, incomes)
   }
   return (
-    <div class="account">
+    <div className="account">
       <body>
       <p> Add Income </p>
       <form autoComplete="off">

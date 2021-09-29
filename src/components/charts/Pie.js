@@ -21,3 +21,6 @@ const Pie = (props) => {
 };
 
 export default Pie;
+
+// So now we need to return 2 keys with 2 separate sets of data
+// One key for income and one key for expenses

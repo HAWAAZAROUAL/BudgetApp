@@ -10,7 +10,7 @@ export default function Budget() {
     updateBudget,
     deleteBudget
   } = useApplicatonData();
-  const monthBudget= getBudgetByMonth(state.budgets,1,2);
+  const monthBudget= getBudgetByMonth(state.budgets,2021,8,2);
   console.log("....",monthBudget);
   const userBudget = getBudgetByUserID(state.budgets, state.userId)
   const budgets = userBudget.map((budget) => {

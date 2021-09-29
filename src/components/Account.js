@@ -10,8 +10,6 @@ export default function Account() {
   return (
     <div class="account">
       <body>
-      <h1>Welcome to Budget Buddy!</h1>
-      <h2> Set up your account by adding an Income!</h2>
       <p> Add Income </p>
       <form autoComplete="off">
           <input name="income"

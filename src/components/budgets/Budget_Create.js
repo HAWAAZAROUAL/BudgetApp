@@ -33,6 +33,7 @@ export default function CreateBudget(props) {
       });
     } else{
        props.onSave(props.userId, budget)
+
       .then((res) => {
        reset();
       });

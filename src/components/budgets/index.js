@@ -1,6 +1,6 @@
 import useApplicatonData from '../../hooks/useApplicationData';
 
-import { getBudgetByUserID,getBudgetByMonth } from '../../helpers/selectors';
+import { getBudgetByUserID,getBudgetByMonth,getExpenseByMonth } from '../../helpers/selectors';
 import BudgetShow from './Budget_Show'
 import CreateBudget from './Budget_Create'
 export default function Budget() {
@@ -10,8 +10,13 @@ export default function Budget() {
     updateBudget,
     deleteBudget
   } = useApplicatonData();
-  const monthBudget= getBudgetByMonth(state.budgets,2021,8,2);
-  console.log("....",monthBudget);
+
+  const monthBudget= getBudgetByMonth(state.budgets,2021,9,2);
+  const monthExpense=getExpenseByMonth(state.expenses,state.categories,9,2);
+  console.log("expense",monthExpense,"budgets",monthBudget);
+  
+
+
   const userBudget = getBudgetByUserID(state.budgets, state.userId)
   const budgets = userBudget.map((budget) => {
     let startDate;

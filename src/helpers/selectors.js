@@ -84,3 +84,32 @@ export  function getBudgetByMonth(budgets,year,month,userId) {
   }
   return  result;
 }
+export  function getExpenseByMonth(expenses,categories,month,userId) {
+   const result={};
+  let arr = Object.values(expenses);
+  for(const expense of arr){
+    
+    const m=(new Date(expense.date)).getMonth()+1;
+  
+    if( m === month){
+     
+      if(Object.keys(result).includes((expense.category_id).toString())){
+         
+         result[expense.category_id] +=  expense.amount;
+      }else{
+         result[expense.category_id]= expense.amount;
+      }  
+    }
+  }
+  return getCategoryName(result,categories);
+}
+function getCategoryName(result,categories){
+  const obj={};
+  Object.keys(result).map((id) => {
+          
+          obj[categories[id].category_type] =result[id];
+        console.log("obj",obj);
+    });
+    return obj;
+}
+ 

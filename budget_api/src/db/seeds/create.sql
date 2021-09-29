@@ -11,14 +11,19 @@ Insert into budgets(user_id, name, budget_limit, start_date, end_date) values(1,
 (5, 'different', 500, '2021-09-05', '2021-09-09');
 
 
-Insert into categories(category_type, amount, budget_id) values('Food', 150, 1),
-('gas', 200, 2),
-('groceries', 300, 3),
-('gift', 50, 4),
-('pet', 75, 5);
+Insert into categories(category_type, amount, budget_id) values('Food', 150, 185),
+('wedding', 200, 123),
+('car expences', 300, 184),
+('gift', 50, 127),
+('pet', 75, 126);
 
-Insert into expenses(category_id, date, amount) values (1, '2021-09-23', 300),
-(2, '2021-09-24', 50),
-(3, '2021-09-21', 10),
-(4, '2021-09-20', 0),
-(5, '2021-09-19', 5);
+Insert into expenses(category_id, date, amount)
+ values 
+ (11, '2021-10-23', 300),
+(12, '2021-09-24', 50),
+(13, '2021-09-21', 10),
+(14, '2021-09-20', 0),
+ (11, '2021-10-13', 300),
+(12, '2021-10-24', 50),
+(13, '2021-10-21', 10),
+(14, '2021-08-20', 0);

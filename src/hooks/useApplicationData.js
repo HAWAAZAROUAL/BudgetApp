@@ -12,7 +12,8 @@ export default function useApplicatonData(){
     const [state,dispatch] = useReducer(reducer,{
         userId:2,
         username: null,
-        budgets:{}
+        budgets:{},
+        expenses:{}
       });
       
     useEffect(()=>{
@@ -23,7 +24,7 @@ export default function useApplicatonData(){
        axios.get(`http://localhost:8080/api/expenses/`),
     ])
        .then((all) => {
-         console.log("data fetched")
+       
        const username =all[0].data[2]["first_name"];
        const budgets= all[1].data;
        const categories = all[2].data;

@@ -52,16 +52,10 @@ import './Sidebar.css';
                               
                           </li>
                           <li>
-                              <a href="/Update">
+                              
                                   <i className="sf-icon-sidebar sf-icon-recent"></i>
-                                  <span className="e-text">Update</span>
-                              </a>
-                          </li>
-                          <li>
-                              
-                                  <i className="sf-icon-sidebar sf-icon-important"></i>
-                                  <span className="e-text">Reports</span>
-                              
+                                  <Link path to= "/MyBudgets"><span className="e-text">My Budgets</span>
+                             </Link>
                           </li>
                       </ul>
                   </SidebarComponent>

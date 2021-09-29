@@ -182,3 +182,30 @@ Wednesday/6
 
 Thursday/7
 
+
+
+
+
+
+
+
+
+
+
+
+
+Pages:
+Home page "/"
+  - Add income
+  - Display the diagrams
+  - Display Special budget names (and make diagrams for each budget)
+
+Create Page "/Create"
+  - Add budget Name
+  - Add budget budget_limit
+  - Add Expenses (category and amount)
+  - Add start and End date
+
+My Budgets "/MyBudgets"
+  - Display the Special budget names
+  - Add expenses to Budget (category and amount)

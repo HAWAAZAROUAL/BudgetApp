@@ -4,12 +4,13 @@ import './Home.css';
 import useApplicationData from "./hooks/useApplicationData";
 import Nav from './components/Nav';
 import Account from './components/Account';
-import Update from './components/Update';
+import MyBudgets from './components/MyBudgets';
 import Sidebar from './components/Sidebar';
 import Budget from './components/budgets/index';
 import Pie from './components/charts/Pie';
 import BarGraph from './components/charts/BarGraph';
 import CreateBudget from './components/budgets/Budget_Create';
+import LeftOver from './components/charts/LeftOver';
 
  
 
@@ -41,7 +42,8 @@ const Home = () => {
             <CreateBudget/>
           </Route>
 
-          <Route path="/Update">
+          <Route path="/MyBudgets">
+            <MyBudgets />
 
           </Route>
 
@@ -49,8 +51,11 @@ const Home = () => {
             <Account />
 <Pie categories= {state.categories}
            expenses={state.expenses}/>
+
            <BarGraph categories= {state.categories}
            expenses={state.expenses}/>
+
+           <LeftOver />
 
           </Route>
         

@@ -8,8 +8,6 @@ export default function Account() {
   return (
     <div class="account">
       <body>
-      <h1>Welcome to Budget Buddy!</h1>
-      <h2> Set up your account by adding an Income!</h2>
       <p> Add Income </p>
       <input type="text"></input>
       <Button id="add-income"> Add</Button>

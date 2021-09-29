@@ -24,8 +24,3 @@ import React from 'react';
     };
     
     export default BarGraph;
-    // [
-      // { key:"${props.categories}", data: "${props.expenses}"},
-      // { key: props.categories[1].category_type, data: props.categories[1].amount },
-    //   { key: 'Category3', data: 250}
-    // ]

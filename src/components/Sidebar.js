@@ -5,17 +5,22 @@ import './Sidebar.css';
 
 
   export default class App extends React.Component {
+      
       constructor(props) {
           super(props);
           this.width = '260px';
           this.toggleClick = this.toggleClick.bind(this);
           this.onCreate = this.onCreate.bind(this);
-      }
+          this.create = this.create.bind(this)
+        }
       toggleClick() {
           this.sidebarobj.toggle();
       }
       onCreate() {
           this.sidebarobj.element.style.visibility = '';
+      }
+      create() {
+          this.mode = 'CREATE'
       }
       render() {
           return (
@@ -35,13 +40,13 @@ import './Sidebar.css';
                           <li>
                               <a href="/">
                                   <i className="sf-icon-sidebar sf-icon-file"></i>
-                                  <span className="e-text" href="/"> Home</span>
+                                  <span onClick={this.props.onClick} className="e-text" href="/"> Home</span>
                               </a>
                           </li>
                           <li>
                               <a href="/budgets">
                                   <i className="sf-icon-sidebar sf-icon-starred"></i>
-                                  <span className="e-text"> Create</span>
+                                  <span create={this.create} className="e-text"> Create</span>
                               </a>
                           </li>
                           <li>

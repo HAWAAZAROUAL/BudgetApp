@@ -1,4 +1,4 @@
-import Update from "./src/components/MyBudgets";
+
 const PORT = process.env.PORT || 8080;
 const ENV = require("./budget_api/src/environment");
 const app = require("./budget_api/src/applicaton")(ENV, {  });

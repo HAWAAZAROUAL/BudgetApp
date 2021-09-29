@@ -6,7 +6,6 @@ import Nav from "./components/Nav";
 import Account from "./components/Account";
 import MyBudgets from "./components/MyBudgets";
 import Sidebar from "./components/Sidebar";
-import Budget from "./components/budgets/index";
 import Pie from "./components/charts/Pie";
 import BarGraph from "./components/charts/BarGraph";
 import CreateBudget from "./components/budgets/index";
@@ -77,26 +76,3 @@ const Home = () => {
 >>>>>>> 7a1d0fa474fb063e81a1a87c04416b884c1afd49
 
 export default Home;
-
-// export default function Home() {
-//   const {
-//        state,
-//        addCategories
-//   } = useApplicationData();
-
-//  console.log('state', state);
-//   return (
-//     <div className="App">
-//      <Nav name={state.username}/>
-//      <Sidebar email={state.email}/>
-//      <Account />
-//      <Update />
-
-//      <Budget/>
-//       <Pie categories= {state.categories}
-//      expenses={state.expenses}/>
-//      <BarGraph categories= {state.categories}
-//      expenses={state.expenses}/>
-//     </div>
-//   );
-// };

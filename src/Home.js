@@ -16,16 +16,20 @@ export default function Home() {
        state,
        addCategories
   } = useApplicationData();
+
+   
   
  console.log('state', state);
   return (
     <div className="App">
      <Nav name={state.username}/>
      <Sidebar email={state.email}/>
-     <Account />
+         <Budget/> 
+         <Account /> 
+   
      <Update />
      
-     <Budget/>
+     
       <Pie />
      <BarGraph categories= {state.categories}
      expenses={state.expenses}/>

@@ -11,8 +11,8 @@ export default function Budget() {
     deleteBudget
   } = useApplicatonData();
 
-  const monthBudget= getBudgetByMonth(state.budgets,2021,9,2);
-  const monthExpense=getExpenseByMonth(state.expenses,state.categories,9,2);
+  const monthBudget= getBudgetByMonth(state.budgets,2021,10,2);
+  const monthExpense=getExpenseByMonth(state.expenses,state.categories,10,2);
   console.log("expense",monthExpense,"budgets",monthBudget);
   
 

@@ -47,18 +47,16 @@ export default function Home() {
      {mode === HOME && (
        <Account />
      )}
-     {mode === CREATE && (
-       <CreateBudget />
-
-     )}
+     
+       
      {mode === UPDATE && (
        <Update />
 
      )}
-     {mode === REPORTS && (
+    
        <Budget/>
 
-     )}
+     
      
 
       <Pie categories= {state.categories}

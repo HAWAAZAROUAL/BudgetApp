@@ -4,6 +4,8 @@ import { getBudgetByUserID,getBudgetByMonth,getExpenseByMonth } from '../../help
 import BudgetShow from './Budget_Show'
 import Form from './Form';
 import './style.css'
+
+
 export default function CreateBudget() {
   const {
     state,
@@ -28,34 +30,38 @@ export default function CreateBudget() {
     }
 
     return (
+      <div id="budgetshow">
       <BudgetShow
-        id={budget.id}
-        budgetName={budget.name}
-        budgetLimit={budget.budget_limit}
-        startDate={startDate}
-        endDate={endDate}
-        createBudget={createBudget}
-        deleteBudget={deleteBudget}
-        updateBudget={updateBudget}
-        userid={budget.user_id}
+      id={budget.id}
+      budgetName={budget.name}
+      budgetLimit={budget.budget_limit}
+      startDate={startDate}
+      endDate={endDate}
+      createBudget={createBudget}
+      deleteBudget={deleteBudget}
+      updateBudget={updateBudget}
+      userid={budget.user_id}
       />
-    );
+      </div>
+      );
   });
   return (
     <>
+    <div id="form">
      <Form
              onSave={createBudget} 
              userId={state.userId} 
              
              />
+             </div>
     <div className="App">
       <table border="1" frame="void" rules="rows" className="budget-table">
         <thead>
           <tr>
-            <th>BudgetName</th>
-            <th>BudgetLimit</th>
-            <th>StartDate</th>
-            <th>EndDate</th>
+            <th>Budget Name</th>
+            <th>Budget Limit</th>
+            <th>Start Date</th>
+            <th>End Date</th>
           </tr>
         </thead>
         {budgets}

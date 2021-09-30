@@ -1,3 +1,5 @@
+// import expenses from "../../budget_api/src/routes/expenses";
+
 export  function getBudgetByUserID(budgets,userId) {
   const budgetArr=[];
   for(const i in budgets){
@@ -131,5 +133,12 @@ export  function getincomeByMonth(incomes,month,userId) {
   }
   return result;
 }
+
+
+// -------This is to add expense to the Budget----------
+// export function addExpense() {
+//   return
+
+// }
 
  

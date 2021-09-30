@@ -77,7 +77,7 @@ export  function getBudgetByMonth(budgets,year,month,userId) {
        default:
          break;
      }
-     console.log(d1,d2);
+    
     if((startDate>=d1)&&(endDate<=d2) && (userid===userId )) {
       result[budget["name"]]=budget["budget_limit"];
     }   
@@ -100,7 +100,7 @@ export  function getExpenseByMonth(expenses,categories,month,userId) {
     
     const m=(new Date(expense.date)).getMonth()+1;
   
-    if( m === month){
+    if( m === month && expense.user_id === userId){
      
       if(Object.keys(result).includes((expense.category_id).toString())){
          
@@ -119,7 +119,7 @@ export  function getincomeByMonth(incomes,month,userId) {
     
     const m=(new Date(income.date)).getMonth()+1;
   
-    if( m === month){
+    if( m === month && income.user_id === userId){
      
       if(Object.keys(result).includes((income.income_type).toString())){
          
@@ -132,4 +132,17 @@ export  function getincomeByMonth(incomes,month,userId) {
   return result;
 }
 
- 
+ export  function getTotalIncome(incomes, userId) {
+   const month=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+   const monthTotal={};
+   for(let i=1;i<=12;i++){
+     const result= getincomeByMonth(incomes,i,userId);
+     let total=0;
+     Object.values(result).map((val)=>
+       { total+=val;}
+     );
+     monthTotal[month[i-1]]=total;
+   }
+   
+  return monthTotal;
+}

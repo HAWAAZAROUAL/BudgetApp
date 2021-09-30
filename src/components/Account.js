@@ -2,7 +2,7 @@
  import Button from './Button'
  import { BubbleChart } from 'reaviz';
 import React, { useState } from "react";
-import { getincomeByMonth  } from '../helpers/selectors';
+import { getincomeByMonth, getTotalIncome}  from '../helpers/selectors';
 export default function Account(props) {
    
   const [income, setIncome] = useState(0);
@@ -19,7 +19,7 @@ export default function Account(props) {
   console.log("props.income",props);
   const monthIncome = getincomeByMonth(props.income,9,props.userId);
   const keys=Object.keys(monthIncome);
-      
+  console.log("totalincome.....",getTotalIncome(props.income, props.userId)); 
   
   return (
     <>

@@ -13,6 +13,7 @@ import LeftOver from './components/charts/LeftOver'
 
 const Home = () => {
   const { state, addCategories, addIncome } = useApplicationData()
+  console.log("state",state);
   return (
     <div className="App">
       <Router>
@@ -39,7 +40,7 @@ const Home = () => {
           <Route path="/">
             <h1 id="income">
               {' '}
-              <Account onAdd={addIncome} userId={state.userId} />{' '}
+              <Account onAdd={addIncome} userId={state.userId} income={state.incomes}/>{' '}
             </h1>
             <div id="homepage">
               <div>

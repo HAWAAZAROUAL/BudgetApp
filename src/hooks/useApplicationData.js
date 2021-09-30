@@ -18,8 +18,7 @@ export default function useApplicatonData(){
       });
       
     useEffect(()=>{
-      let abortController = new AbortController();
-       let aborted = abortController.signal.aborted;
+   
      Promise.all([
        axios.get('http://localhost:8080/api/users'),
        axios.get(`http://localhost:8080/api/budgets/`),
@@ -35,16 +34,15 @@ export default function useApplicatonData(){
        const expenses = all[3].data;
        const email = all[0].data[2]["email"];
        const incomes=all[4].data;
-       aborted = abortController.signal.aborted; // before 'if' statement check again if aborted
-       if (aborted === false) {
+      
+       
        dispatch({
         type: "setData",
         value: {username,budgets, categories, expenses, email,incomes}
          });
-       }
+      
      });
-        return () => {
-            abortController.abort();};
+    
     },[]);  
 
 

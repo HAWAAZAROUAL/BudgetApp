@@ -16,26 +16,14 @@ export default function Account(props) {
     props.onAdd(props.userId, incomes)
     .then(()=>{});
   }
+  console.log("props.income",props);
+  const monthIncome = getincomeByMonth(props.income,9,props.userId);
+  const keys=Object.keys(monthIncome);
+      
   
- // const monthIncome = getincomeByMonth(props.income,9,props.userId);
-  const babbledata=function(monthIncome){
-
-     const keys=Object.keys(monthIncome);
-     return (<BubbleChart
-                 height={300}
-                 width={300}
-              data={[
-                { key: keys[0], data: monthIncome[keys[0]] },
-                { key: keys[1], data: monthIncome[keys[1]] },
-                { key: keys[2], data: monthIncome[keys[2]] },
-                 { key: keys[3], data: monthIncome[keys[3]] },
-                  ]}
-              />);
-  }
-  console.log(babbledata);
   return (
     <>
-     {   babbledata(getincomeByMonth(props.income,9,props.userId))}
+  
     <div className="account">
       <body>
       <p> Add Income </p>

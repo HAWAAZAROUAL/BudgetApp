@@ -47,7 +47,11 @@ export default function CreateBudget() {
   });
   return (
     <>
+<<<<<<< HEAD
     <div id="form">
+=======
+    <div className="new-budget">
+>>>>>>> d43f07cee9cb1a43f9b66f71ef91d8c8f4f9c65b
      <Form
              onSave={createBudget} 
              userId={state.userId} 

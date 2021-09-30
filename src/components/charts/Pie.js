@@ -1,5 +1,6 @@
 import { PieChart } from 'reaviz';
 import React from 'react';
+import './Pie.css'
 
 const Pie = (props) => {
 

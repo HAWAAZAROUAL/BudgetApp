@@ -3,6 +3,7 @@ import useApplicatonData from '../../hooks/useApplicationData';
 import { getBudgetByUserID,getBudgetByMonth,getExpenseByMonth } from '../../helpers/selectors';
 import BudgetShow from './Budget_Show'
 import Form from './Form';
+import './style.css'
 export default function CreateBudget() {
   const {
     state,
@@ -48,15 +49,13 @@ export default function CreateBudget() {
              
              />
     <div className="App">
-      <table>
+      <table border="1" frame="void" rules="rows" className="budget-table">
         <thead>
           <tr>
             <th>BudgetName</th>
             <th>BudgetLimit</th>
             <th>StartDate</th>
             <th>EndDate</th>
-            <th></th>
-            <th></th>
           </tr>
         </thead>
         {budgets}

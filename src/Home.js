@@ -12,7 +12,7 @@ import CreateBudget from "./components/budgets/index";
 import LeftOver from "./components/charts/LeftOver";
 
 const Home = () => {
-  const { state, addCategories } = useApplicationData();
+  const { state, addCategories ,addIncome} = useApplicationData();
   return (
     <div className="App">
       <Router>
@@ -41,8 +41,8 @@ const Home = () => {
           </Route>
 
           <Route path="/">
-              <h1 id="income"> <Account /> </h1>
-            <div id="homepage">
+              <h1 id="income"> <Account onAdd={addIncome} userId={state.userId}/> </h1>
+            <body id="homepage">
               <div>
                 <Pie categories={state.categories} expenses={state.expenses} />
                 <br />

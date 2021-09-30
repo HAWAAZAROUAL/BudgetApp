@@ -22,6 +22,7 @@ export default function useApplicatonData(){
        axios.get(`http://localhost:8080/api/budgets/`),
        axios.get(`http://localhost:8080/api/categories/`),
        axios.get(`http://localhost:8080/api/expenses/`),
+       axios.get(`http://localhost:8080/api/incomes/`),
     ])
        .then((all) => {
        
@@ -30,10 +31,11 @@ export default function useApplicatonData(){
        const categories = all[2].data;
        const expenses = all[3].data;
        const email = all[0].data[2]["email"];
+       const incomes=all[4].data;
        
        dispatch({
         type: "setData",
-        value: {username,budgets, categories, expenses, email}
+        value: {username,budgets, categories, expenses, email,incomes}
       });
      });
      // eslint-disable-next-line
@@ -97,7 +99,22 @@ export default function useApplicatonData(){
       })
 
     }
+    function addIncome(userId,incomes){
+     console.log("!!!",userId,incomes);
+      return axios.put(`http://localhost:8080/api/incomes/${userId}`, {incomes}).then(res=> { 
+      
+        const result= JSON.parse(res.config.data)["incomes"];
+         console.log("userid",result);
+        dispatch({ 
+          type: "addIncome", 
+          
+          user_id:   userId, 
+          income:  result.income,
+          income_type: result.income_type
+        });
+    })
+    }
 
-    return {state,createBudget, addCategories,deleteBudget,updateBudget};
+    return {state,createBudget, addCategories,deleteBudget,updateBudget,addCategories,addIncome};
     
 }

@@ -6,7 +6,7 @@ import useVisualMode from "../../hooks/useVisulMode";
 export default function BudgetShow(props) {
 
   const SHOW = "SHOW";
-  const CREATE = "CREATE";
+ 
   const EDIT = "EDIT";
   const { mode, transition, back } = useVisualMode(
     SHOW

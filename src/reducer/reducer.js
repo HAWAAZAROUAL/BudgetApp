@@ -9,6 +9,7 @@ const reducers = {
             budgets: action.value.budgets,
             categories: action.value.categories,
             expenses: action.value.expenses,
+            incomes:action.value.incomes,
             email: action.value.email
           };
     },
@@ -29,6 +30,24 @@ const reducers = {
         };
         return {...state,budgets:budgets};
         },
+    addIncome(state,action){
+      console.log("addstate",state);
+       const arr=Object.keys(state.incomes);
+        const id= arr[arr.length-1] ;
+        const newID= Number(id)+1;
+        const incomes = {...state.incomes};
+        incomes[newID]= {
+          id:Number(newID),
+          user_id:   action.user_id,
+          income:  action.income,
+          income_type: action.income_type
+        };
+        const obj= {...state,incomes:incomes};
+       console.log(obj); 
+        return {...state,incomes:incomes};
+
+    },
+        
 
      deleteBudget(state,action){
        

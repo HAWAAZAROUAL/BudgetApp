@@ -33,16 +33,14 @@ export default class App extends React.Component {
         >
           <div
             className="sidebar-header"
-            style={{ backgroundColor: '#c184a4;' }}
           >
             <div className="image-container"></div>
-            <div>{this.props.email}</div>
+            <div>Alice Smith</div>
           </div>
           <ul className="nav sidebar-nav">
             <li className="list-items">
               <Link path to="/">
               <i className="sf-icon-sidebar sf-icon-file"></i>
-                {' '}
                 <span className="e-text"> Home</span>
               </Link>
             </li>

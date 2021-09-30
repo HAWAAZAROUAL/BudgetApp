@@ -1,6 +1,5 @@
-import Button from "../Button";
+import Button from '../Button'
 export default function ShowBudgetItem(props) {
-
   return (
     <thead>
       <tr>
@@ -9,17 +8,12 @@ export default function ShowBudgetItem(props) {
         <th>{props.startDate}</th>
         <th>{props.endDate}</th>
         <th>
-
-          <Button onClick={props.onEdit}>Edit</Button> </th>
-        <th>
-          < Button onClick={props.onDelete}>Delete</Button>
-
-
-
+          <Button onClick={props.onEdit}>Edit</Button>{' '}
         </th>
-
+        <th>
+          <Button onClick={props.onDelete}>Delete</Button>
+        </th>
       </tr>
     </thead>
-
-  );
+  )
 }

@@ -1,15 +1,16 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import './Home.css'
-import useApplicationData from './hooks/useApplicationData'
-import Nav from './components/Nav'
-import Account from './components/Account'
-import MyBudgets from './components/MyBudgets'
-import Sidebar from './components/Sidebar'
-import Pie from './components/charts/Pie'
-import BarGraph from './components/charts/BarGraph'
-import CreateBudget from './components/budgets/index'
-import LeftOver from './components/charts/LeftOver'
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./Home.css";
+import useApplicationData from "./hooks/useApplicationData";
+import Nav from "./components/Nav";
+import Account from "./components/Account";
+import MyBudgets from "./components/MyBudgets";
+import Sidebar from "./components/Sidebar";
+import Pie from "./components/charts/Pie";
+import BarGraph from "./components/charts/BarGraph";
+import CreateBudget from "./components/budgets/index";
+import LeftOver from "./components/charts/LeftOver";
+import IncomeTime from "./components/charts/IncomeTime";
 
 const Home = () => {
   const { state, addCategories, addIncome } = useApplicationData()
@@ -51,6 +52,7 @@ const Home = () => {
                   expenses={state.expenses}
                 />
                 <br />
+                <IncomeTime />
                 <LeftOver />
               </div>
             </div>

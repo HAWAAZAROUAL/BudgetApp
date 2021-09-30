@@ -53,7 +53,7 @@ const Home = () => {
                 <br />
                 <LeftOver />
               </div>
-            </div>
+            </body>
           </Route>
         </Switch>
       </Router>

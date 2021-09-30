@@ -5,10 +5,7 @@
 import React, { useState } from "react";
 import { getincomeByMonth, getTotalIncome}  from '../helpers/selectors';
  
-import Button from './Button'
-import { BubbleChart } from 'reaviz'
-import React, { useState } from 'react'
-import { getincomeByMonth } from '../helpers/selectors'
+  
  
 export default function Account(props) {
   const [income, setIncome] = useState(0)

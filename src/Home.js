@@ -52,7 +52,7 @@ const Home = () => {
                   expenses={state.expenses}
                 />
                 <br />
-                <IncomeTime userId={state.userId} incomes={state.incomes}/>
+                <IncomeTime  />
                 <LeftOver />
               </div>
             </div>

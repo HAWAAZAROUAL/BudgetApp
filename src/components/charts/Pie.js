@@ -16,7 +16,7 @@ const Pie = (props) => {
   }
   return <PieChart
     height={300}
-    width={300}
+    width={450}
     data= {displayData(props.categories, props.expenses)}
   />
 };

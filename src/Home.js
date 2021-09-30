@@ -17,6 +17,10 @@ const Home = () => {
   console.log("state",state);
   return (
     <div className="App">
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Arima+Madurai&display=swap');
+      </style>
       <Router>
         <nav>
           <Nav name={state.username} />
@@ -43,19 +47,30 @@ const Home = () => {
               {' '}
               <Account onAdd={addIncome} userId={state.userId} income={state.incomes}/>{' '}
             </h1>
-            <div id="homepage">
-              <div>
+          
+              <div id="pie-chart">
+                <p>Expenses</p>
                 <Pie categories={state.categories} expenses={state.expenses} />
+                </div>
                 <br />
+                <div id="bar-graph">
+                <p>Expenses</p>
                 <BarGraph
                   categories={state.categories}
                   expenses={state.expenses}
                 />
+                </div>
                 <br />
-                <IncomeTime  />
-                <LeftOver />
+                <div id="time-graph">
+                <p>Income</p>
+                <section>
+                <IncomeTime 
+                className="income-time"
+                incomes={state.incomes}/>
+                </section>
+                {/* <LeftOver /> */}
               </div>
-            </div>
+            
           </Route>
         </Switch>
       </Router>

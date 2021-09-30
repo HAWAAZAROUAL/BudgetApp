@@ -1,6 +1,6 @@
 import { BarChart } from 'reaviz';
 import React from 'react';
-
+import './Pie.css'
 
   const BarGraph = (props) => {
     const displayData = function(categories, expenses) {
@@ -16,9 +16,9 @@ import React from 'react';
 
     
     return <BarChart
-    
+    className="income-time"
     height={300}
-    width={300}
+    width={450}
     data={displayData(props.categories, props.expenses)}
     />
     };

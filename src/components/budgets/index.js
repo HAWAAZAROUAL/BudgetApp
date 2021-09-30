@@ -43,11 +43,13 @@ export default function CreateBudget() {
   });
   return (
     <>
+    <div className="new-budget">
      <Form
              onSave={createBudget} 
              userId={state.userId} 
              
              />
+             </div>
     <div className="App">
       <table border="1" frame="void" rules="rows" className="budget-table">
         <thead>

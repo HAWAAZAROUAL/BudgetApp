@@ -31,7 +31,7 @@ const reducers = {
         return {...state,budgets:budgets};
         },
     addIncome(state,action){
-
+      console.log("addstate",state);
        const arr=Object.keys(state.incomes);
         const id= arr[arr.length-1] ;
         const newID= Number(id)+1;
@@ -42,6 +42,8 @@ const reducers = {
           income:  action.income,
           income_type: action.income_type
         };
+        const obj= {...state,incomes:incomes};
+       console.log(obj); 
         return {...state,incomes:incomes};
 
     },

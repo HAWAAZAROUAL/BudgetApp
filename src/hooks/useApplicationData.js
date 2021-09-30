@@ -101,10 +101,10 @@ export default function useApplicatonData(){
     }
     function addIncome(userId,incomes){
      console.log("!!!",userId,incomes);
-      return axios.put(`http://localhost:8080/api/income/${userId}`, {incomes}).then(res=> { 
-       console.log("userid",userId);
-        const result= JSON.parse(res.config.data)["income"];
-        
+      return axios.put(`http://localhost:8080/api/incomes/${userId}`, {incomes}).then(res=> { 
+      
+        const result= JSON.parse(res.config.data)["incomes"];
+         console.log("userid",result);
         dispatch({ 
           type: "addIncome", 
           

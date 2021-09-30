@@ -13,6 +13,7 @@ import LeftOver from "./components/charts/LeftOver";
 
 const Home = () => {
   const { state, addCategories ,addIncome} = useApplicationData();
+  console.log("...",state);
   return (
     <div className="App">
       <Router>
@@ -22,10 +23,7 @@ const Home = () => {
           <div>
             <Sidebar email={state.email} />
           </div>
-        
-
         <Switch>
-
           <Route path="/Create">
             <div id="create">
              <CreateBudget /> 
@@ -41,7 +39,7 @@ const Home = () => {
           </Route>
 
           <Route path="/">
-              <h1 id="income"> <Account onAdd={addIncome} userId={state.userId}/> </h1>
+              <h1 id="income"> <Account onAdd={addIncome} userId={state.userId} income={state.incomes}/> </h1>
             <body id="homepage">
               <div>
                 <Pie categories={state.categories} expenses={state.expenses} />

@@ -20,12 +20,12 @@ module.exports = (db) => {
       return;
     }
     const { income,income_type } = request.body.incomes;
-    
+   
     db.query(
       `
-          INSERT INTO incomes ( income,income_type ) VALUES (  $1::INTEGER, $2::TEXT ) 
+          INSERT INTO incomes ( income,income_type,user_id ) VALUES (  $1::INTEGER, $2::TEXT ,$3::INTEGER) 
           `,
-      [Number(income),income_type]
+      [Number(income),income_type,Number(request.params.userid)]
     )
       .then(() => {
         setTimeout(() => {

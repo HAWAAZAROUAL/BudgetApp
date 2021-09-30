@@ -84,6 +84,15 @@ export  function getBudgetByMonth(budgets,year,month,userId) {
   }
   return  result;
 }
+function getCategoryName(result,categories){
+  const obj={};
+  Object.keys(result).map((id) => {
+          
+          obj[categories[id].category_type] =result[id];
+        
+    });
+    return obj;
+}
 export  function getExpenseByMonth(expenses,categories,month,userId) {
    const result={};
   let arr = Object.values(expenses);
@@ -103,13 +112,24 @@ export  function getExpenseByMonth(expenses,categories,month,userId) {
   }
   return getCategoryName(result,categories);
 }
-function getCategoryName(result,categories){
-  const obj={};
-  Object.keys(result).map((id) => {
-          
-          obj[categories[id].category_type] =result[id];
-        
-    });
-    return obj;
+export  function getincomeByMonth(incomes,month,userId) {
+   const result={};
+  let arr = Object.values(incomes);
+  for(const income of arr){
+    
+    const m=(new Date(income.date)).getMonth()+1;
+  
+    if( m === month){
+     
+      if(Object.keys(result).includes((income.income_type).toString())){
+         
+         result[income.income_type] +=  income.income;
+      }else{
+         result[income.income_type]= income.income;
+      }  
+    }
+  }
+  return result;
 }
+
  

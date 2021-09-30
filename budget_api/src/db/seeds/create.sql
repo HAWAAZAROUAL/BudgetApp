@@ -41,7 +41,6 @@ values(40000,'salary','2021-07-30',2),
 (200,'clean','2021-06-08',2);
 
 
-
 Insert into expenses(category_id, date, amount,user_id)
  values 
  (1, '2021-10-23', 300,2),

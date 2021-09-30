@@ -15,7 +15,7 @@ const users = require("./routes/users");
 const budgets = require("./routes/budgets");
 const categories = require("./routes/categories");
 const expenses = require("./routes/expenses");
-
+const incomes = require("./routes/incomes");
 function read(file) {
   return new Promise((resolve, reject) => {
     fs.readFile(
@@ -40,10 +40,10 @@ module.exports = function application(
   app.use(bodyparser.json());
 
   app.use("/api", users(db));
-  app.use("/api", budgets(db, actions.updateBudget));
+  app.use("/api", budgets(db ));
   app.use("/api", categories(db));
   app.use("/api", expenses(db));
-
+  app.use("/api", incomes(db));
 
   if (ENV === "development" || ENV === "test") {
     Promise.all([

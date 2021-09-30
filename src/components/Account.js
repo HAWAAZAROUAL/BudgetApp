@@ -16,7 +16,9 @@ export default function Account(props) {
       income: Number(income),
       income_type: income_type,
     }
-    props.onAdd(props.userId, incomes).then(() => {})
+    props.onAdd(props.userId, incomes).then(() => {
+      
+    })
   }
   console.log("props.income",props);
   const monthIncome = getincomeByMonth(props.income,9,props.userId);

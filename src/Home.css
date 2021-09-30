@@ -2,11 +2,33 @@ body {
   background-color: #fafaf4bf;
 }
 
-#homepage, #income, #budgets, #create {
+#homepage, #income, #budgets, #create, #pie-chart, #bar-graph, #time-graph {
   margin:auto;
-  width: 650px;
+  width: 550px;
   margin-top: 30px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 0 15px rgb(192, 155, 173);
+  padding: 25px;
+  font-family: 'Arima Madurai';
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+#time-graph section {
+  
+}
+
+#pie-chart p, #bar-graph p, #time-graph p {
+  font-size: 20px;
+  margin: 0;
+  border-radius: 10px;
+  background-color: #491386;
+  padding: 20px;
+  color: whitesmoke;
+  width: 510px;
+  position: relative;
+  top: -40px;
+}
+#create {
+  width: 650px;
 }

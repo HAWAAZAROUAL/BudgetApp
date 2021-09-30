@@ -15,7 +15,7 @@ const IncomeTime = (props) => {
   }
   return <AreaChart
     height={300}
-    width={500}
+    width={450}
     data={displayData(props.incomes)}
   />
   };

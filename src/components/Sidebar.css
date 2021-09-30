@@ -219,3 +219,23 @@ span.e-text {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.control-section {
+  position: absolute;
+  background-color: #c184a4;;
+  height: 700px;
+  font-size: 25px;
+}
+.e-text {
+  font-size: 20px;
+  font-weight:bold;
+  padding-bottom: 40px;
+}
+.sidebar-header {
+  padding-top: 20px;
+  padding-left: 40px;
+}
+.list-items {
+
+  padding: 20px 0 20px 0;
+}

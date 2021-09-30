@@ -1,0 +1,15 @@
+.input-form, .date-range {
+  padding: 25px;
+}
+.input-form input {
+  height: 30px;
+  margin-right: 20px;
+}
+.date-range {
+  padding-top: 0;
+}
+.input-btns {
+  padding-left: 25px;
+  display: inline-block;
+  margin-right: 25px;
+}

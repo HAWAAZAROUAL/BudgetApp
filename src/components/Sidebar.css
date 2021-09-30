@@ -222,7 +222,8 @@ span.e-text {
 
 .control-section {
   position: absolute;
-  background-color: #c184a4;;
+  background-color: #c184a4;
+  /* background: url('../img/Home-Four-Banner-Background-Image.png'); */
   height: 700px;
   font-size: 25px;
 }

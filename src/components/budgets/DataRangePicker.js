@@ -41,7 +41,7 @@ class DateRange extends React.Component {
       <div className="DateRange" >
         <pre style={{ textAlign: "left" }}>
 
-          <p> start date:  {this.state.startDateFormatted} end date:  {this.state.endDateFormatted}</p>
+          <p>     start date:  {this.state.startDateFormatted}        end date:  {this.state.endDateFormatted}</p>
 
         </pre>
         <Mobile>

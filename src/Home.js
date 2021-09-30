@@ -27,22 +27,22 @@ const Home = () => {
         <Switch>
 
           <Route path="/Create">
-            <body id="create">
+            <div id="create">
              <CreateBudget /> 
-            </body>
+            </div>
             
           </Route>
 
           <Route path="/MyBudgets">
-            <body id="budgets">
+            <div id="budgets">
               <MyBudgets />
-            </body>
+            </div>
             
           </Route>
 
           <Route path="/">
               <h1 id="income"> <Account /> </h1>
-            <body id="homepage">
+            <div id="homepage">
               <div>
                 <Pie categories={state.categories} expenses={state.expenses} />
                 <br />
@@ -53,7 +53,7 @@ const Home = () => {
                 <br />
                 <LeftOver />
               </div>
-            </body>
+            </div>
           </Route>
         </Switch>
       </Router>

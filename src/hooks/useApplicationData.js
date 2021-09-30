@@ -13,10 +13,13 @@ export default function useApplicatonData(){
         userId:2,
         username: null,
         budgets:{},
+        incomes:{},
         expenses:{}
       });
       
     useEffect(()=>{
+      let abortController = new AbortController();
+       let aborted = abortController.signal.aborted;
      Promise.all([
        axios.get('http://localhost:8080/api/users'),
        axios.get(`http://localhost:8080/api/budgets/`),
@@ -32,13 +35,16 @@ export default function useApplicatonData(){
        const expenses = all[3].data;
        const email = all[0].data[2]["email"];
        const incomes=all[4].data;
-       
+       aborted = abortController.signal.aborted; // before 'if' statement check again if aborted
+       if (aborted === false) {
        dispatch({
         type: "setData",
         value: {username,budgets, categories, expenses, email,incomes}
-      });
+         });
+       }
      });
-     // eslint-disable-next-line
+        return () => {
+            abortController.abort();};
     },[]);  
 
 
@@ -100,17 +106,18 @@ export default function useApplicatonData(){
 
     }
     function addIncome(userId,incomes){
-     console.log("!!!",userId,incomes);
+    
       return axios.put(`http://localhost:8080/api/incomes/${userId}`, {incomes}).then(res=> { 
       
         const result= JSON.parse(res.config.data)["incomes"];
-         console.log("userid",result);
+     
         dispatch({ 
           type: "addIncome", 
           
-          user_id:   userId, 
+          
           income:  result.income,
-          income_type: result.income_type
+          income_type: result.income_type,
+          user_id:   userId 
         });
     })
     }

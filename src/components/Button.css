@@ -1,6 +1,7 @@
 Button {
-  background-color: rgb(77, 171, 230);
+  background-color: #491386;
   color: white;
+  font-weight: bold;
   padding: 5px 15px;
   border-radius: 5px;
   outline: 0;

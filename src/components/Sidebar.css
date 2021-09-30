@@ -222,7 +222,7 @@ span.e-text {
 
 .control-section {
   position: absolute;
-  background-color: #c184a4;
+  background-color: #491386;
   /* background: url('../img/Home-Four-Banner-Background-Image.png'); */
   height: 700px;
   font-size: 25px;
@@ -231,6 +231,7 @@ span.e-text {
   font-size: 20px;
   font-weight:bold;
   padding-bottom: 40px;
+  color: grey;
 }
 .sidebar-header {
   padding-top: 20px;

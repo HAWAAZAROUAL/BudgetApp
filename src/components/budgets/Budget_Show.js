@@ -24,7 +24,7 @@ export default function BudgetShow(props) {
   }
 
   return (
-    <article>
+    <>
       {mode === SHOW && <ShowBudgetItem
         id={props.id}
         userid={props.userid}
@@ -48,6 +48,6 @@ export default function BudgetShow(props) {
         id={props.id}
       />
       }
-    </article>
+    </>
   );
 }

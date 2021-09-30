@@ -13,37 +13,36 @@ import LeftOver from "./components/charts/LeftOver";
 import IncomeTime from "./components/charts/IncomeTime";
 
 const Home = () => {
-  const { state, addCategories ,addIncome} = useApplicationData();
+  const { state, addCategories, addIncome } = useApplicationData()
   return (
     <div className="App">
       <Router>
         <nav>
           <Nav name={state.username} />
-          </nav>
-          <div>
-            <Sidebar email={state.email} />
-          </div>
-        
+        </nav>
+        <div>
+          <Sidebar email={state.email} />
+        </div>
 
         <Switch>
-
           <Route path="/Create">
             <div id="create">
-             <CreateBudget /> 
+              <CreateBudget />
             </div>
-            
           </Route>
 
           <Route path="/MyBudgets">
             <div id="budgets">
               <MyBudgets />
             </div>
-            
           </Route>
 
           <Route path="/">
-              <h1 id="income"> <Account onAdd={addIncome} userId={state.userId}/> </h1>
-            <body id="homepage">
+            <h1 id="income">
+              {' '}
+              <Account onAdd={addIncome} userId={state.userId} />{' '}
+            </h1>
+            <div id="homepage">
               <div>
                 <Pie categories={state.categories} expenses={state.expenses} />
                 <br />
@@ -55,12 +54,12 @@ const Home = () => {
                 <IncomeTime />
                 <LeftOver />
               </div>
-            </body>
+            </div>
           </Route>
         </Switch>
       </Router>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

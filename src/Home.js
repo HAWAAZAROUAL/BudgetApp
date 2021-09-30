@@ -64,7 +64,9 @@ const Home = () => {
                 <div id="time-graph">
                 <p>Income</p>
                 <section>
-                <IncomeTime incomes={state.incomes}/>
+                <IncomeTime 
+                className="income-time"
+                incomes={state.incomes}/>
                 </section>
                 {/* <LeftOver /> */}
               </div>

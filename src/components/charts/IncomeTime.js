@@ -1,5 +1,6 @@
 import { AreaChart } from 'reaviz';
 import React from 'react';
+import './Pie.css'
 
 const IncomeTime = (props) => {
   const displayData = function(incomes) {
@@ -14,6 +15,7 @@ const IncomeTime = (props) => {
     }
   }
   return <AreaChart
+  className="income-time"
     height={300}
     width={450}
     data={displayData(props.incomes)}

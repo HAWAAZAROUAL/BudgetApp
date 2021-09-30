@@ -10,6 +10,7 @@ import Pie from "./components/charts/Pie";
 import BarGraph from "./components/charts/BarGraph";
 import CreateBudget from "./components/budgets/index";
 import LeftOver from "./components/charts/LeftOver";
+import IncomeTime from "./components/charts/IncomeTime";
 
 const Home = () => {
   const { state, addCategories ,addIncome} = useApplicationData();
@@ -51,6 +52,7 @@ const Home = () => {
                   expenses={state.expenses}
                 />
                 <br />
+                <IncomeTime />
                 <LeftOver />
               </div>
             </body>

@@ -52,7 +52,11 @@ const Home = () => {
                   expenses={state.expenses}
                 />
                 <br />
+<<<<<<< HEAD
                 <IncomeTime incomes={state.incomes}/>
+=======
+                <IncomeTime  />
+>>>>>>> 3e625fb7da042a9ca877876a50296aba653e664d
                 <LeftOver />
               </div>
             </div>

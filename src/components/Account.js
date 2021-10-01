@@ -1,7 +1,7 @@
 import Button from './Button'
-import { BubbleChart } from 'reaviz'
+ 
 import React, { useState } from 'react'
-import { getincomeByMonth, getTotalIncome } from '../helpers/selectors'
+import { getincomeByMonth } from '../helpers/selectors'
 import '../Home.css'
 
 export default function Account(props) {
@@ -13,16 +13,30 @@ export default function Account(props) {
       income: Number(income),
       income_type: income_type,
     }
-    props.onAdd(props.userId, incomes).then(() => {})
+    props.onAdd(props.userId, incomes).then(() => {
+    })
   }
-  console.log('props.income', props)
-  const monthIncome = getincomeByMonth(props.income, 9, props.userId)
-  const keys = Object.keys(monthIncome)
-  console.log('totalincome.....', getTotalIncome(props.income, props.userId))
+const currentMonth=new Date().getMonth()+1;
+const monthIncome = getincomeByMonth(props.income,currentMonth,props.userId);
+console.log("mont..",monthIncome);
+ const data = Object.keys(monthIncome).map(key=>{
+     return(
+       <tr><td>{key}</td><td>---{monthIncome[key]}</td></tr>
+      ); 
+   });
+ 
+   
 
   return (
     <>
+   
       <div id="account">
+      <div>
+         <table>
+            <tr><td>{new Date().getMonth()+1}</td><td></td></tr>
+             {data}
+            </table>
+      </div>
         <p> Add Income </p>
         <form autoComplete="off">
           <input className="income-input"
@@ -39,14 +53,18 @@ export default function Account(props) {
             placeholder="Enter income type"
             onChange={(event) => setIncome_type(event.target.value)}
           />
+          
         </form>
         <div>
           <Button id="add-income" onClick={() => onAdd()}>
             {' '}
             Add
           </Button>
+          
         </div>
+        
       </div>
+      
     </>
   )
 }

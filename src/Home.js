@@ -14,7 +14,9 @@ import IncomeTime from "./components/charts/IncomeTime";
 import Quotes from "./components/Quotes";
 
 const Home = () => {
-  const { state, addCategories, addIncome } = useApplicationData()
+  const { state, addCategories, addIncome,createBudget,
+    updateBudget,
+    deleteBudget} = useApplicationData()
   console.log("state",state);
   return (
     <div className="App">
@@ -33,8 +35,11 @@ const Home = () => {
 
         <Switch>
           <Route path="/Create">
-            <div>
-              <CreateBudget />
+            <div id="create">
+              <CreateBudget  budgets={state.budgets}  userId={state.userId}
+                            createBudget={createBudget}
+                            updateBudget={updateBudget}
+                            deleteBudget={deleteBudget}/>
             </div>
           </Route>
 

@@ -140,12 +140,10 @@ export  function getincomeByMonth(incomes,month,userId) {
    for(let i=1;i<=12;i++){
      const result= getincomeByMonth(incomes,i,userId);
      let total=0;
-     Object.values(result).map((val)=>
-       { total+=val;}
+     Object.values(result).map((val)=>{ total+=val;}
      );
      monthTotal[month[i-1]]=total;
    }
-   
   return monthTotal;
 }
 

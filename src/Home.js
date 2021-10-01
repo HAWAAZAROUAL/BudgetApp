@@ -12,11 +12,16 @@ import CreateBudget from "./components/budgets/index";
 import LeftOver from "./components/charts/LeftOver";
 import IncomeTime from "./components/charts/IncomeTime";
 import Quotes from "./components/Quotes";
+ 
+import IncomeReport from "./components/reports/income.js";
 
 const Home = () => {
-  const { state, addCategories, addIncome } = useApplicationData()
+  const { state, addCategories, addIncome,createBudget,
+    updateBudget,
+    deleteBudget} = useApplicationData()
   console.log("state",state);
   return (
+   
     <div className="App">
       <style>
         @import
@@ -24,17 +29,22 @@ const Home = () => {
       </style>
       <Router>
         <nav>
+        
           <Nav name={state.username} />
         </nav>
         <div>
           <Sidebar email={state.email} />
+       
         </div>
         <div><Quotes /></div>
 
         <Switch>
           <Route path="/Create">
-            <div>
-              <CreateBudget />
+            <div id="create">
+              <CreateBudget  budgets={state.budgets}  userId={state.userId}
+                            createBudget={createBudget}
+                            updateBudget={updateBudget}
+                            deleteBudget={deleteBudget}/>
             </div>
           </Route>
 

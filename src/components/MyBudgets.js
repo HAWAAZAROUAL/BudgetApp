@@ -1,31 +1,65 @@
-import React from 'react';
+ 
 import Button from './Button';
 import './Update.css';
 import "./Button.css";
+import React, { useState } from 'react'
 // import budgets from '../../budget_api/src/routes/budgets';
 
-export default function MyBudgets () {
+export default function MyBudgets (props) {
+   
+  const [category, setCategory] = useState('')
+  const [amount, setAmount] = useState(0)
+   
+  function onSave() {
+    const expense = {
+      category: category,
+      amount: amount,  
+    }
+      props
+        .onSave(props.userId, expense)
 
+        .then((res) => {
+          reset()
+        })
+    }
+  
+  function reset() {
+    setCategory('')
+    setAmount( 0)
+  }
+  const currentMonth=((new Date()).getMonth())+1;
+  
   return(
     <>
-    <form>
-   {/* <h3> {this.budgets.name} </h3> */}
-    <p>Add Category</p> <input type='text'></input> <Button id = "add-category">Add</Button>
-    <br>
-
-    </br>
-    <p>Add Expense</p> <input type='text'></input> <Button id = "add-amount">Add</Button>
-    <br>
-
-    </br>
-    <Button>Save Changes</Button> 
-    <br>
-    
-    </br>
-    <Button>Delete Budget</Button> 
-    </form>
-    
- 
+    <div className="input-form">
+     <form autoComplete="off">
+   {<h3>   </h3> }
+   
+    <p>Add Category</p>
+          <input
+            name="category"
+            value={category}
+            type="text"
+             
+            onChange={(event) => setCategory(event.target.value)}
+          /> 
+          <br></br>
+          <p>Add Expense</p> 
+          <input
+            name="amount"
+            value={amount}
+            type="text"
+             
+            onChange={(event) => setAmount(event.target.value)}
+          />
+        </form>
+        </div>
+        <div className="input-btns">
+        <Button confirm onClick={(event) => onSave()}>
+          {' '}
+          Save Change{' '}
+        </Button>
+      </div>
   </>
   );
 }

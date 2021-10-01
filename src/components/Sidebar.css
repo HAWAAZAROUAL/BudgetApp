@@ -158,11 +158,11 @@ span.sf-icon-down.icon {
 
 
 
-span.e-text {
+/* span.e-text {
   display: flex;
   align-items: center;
   color: #000000;
-}
+} */
 
 .title {
   text-align: center;
@@ -196,10 +196,10 @@ span.e-text {
 .e-text {
   font-family: 'Dosis', sans-serif;
   display: flex;
-  align-items: center;
+  justify-content: center;
   font-size: 20px;
   font-weight:bold;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
   color: grey;
 }
 .sidebar-header {

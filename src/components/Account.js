@@ -14,22 +14,25 @@ export default function Account(props) {
       income_type: income_type,
     }
     props.onAdd(props.userId, incomes).then(() => {
+      reset();
     })
+  }
+
+  function reset() {
+    setIncome('')
+    setIncome_type('')
   }
 const currentMonth=new Date().getMonth()+1;
 const monthIncome = getincomeByMonth(props.income,currentMonth,props.userId);
-console.log("mont..",monthIncome);
+ 
  const data = Object.keys(monthIncome).map(key=>{
      return(
        <tr><td>{key}</td><td>---{monthIncome[key]}</td></tr>
       ); 
    });
  
-   
-
   return (
     <>
-   
       <div id="account">
       <div>
          <table>

@@ -4,21 +4,15 @@ import { getBudgetByUserID,getBudgetByMonth,getExpenseByMonth } from '../../help
 import BudgetShow from './Budget_Show'
 import Form from './Form';
 import './style.css'
-export default function CreateBudget() {
-  const {
-    state,
-    createBudget,
-    updateBudget,
-    deleteBudget
-  } = useApplicatonData();
+export default function CreateBudget(props) {
+  
 
-  const monthBudget= getBudgetByMonth(state.budgets,2021,10,2);
-  const monthExpense=getExpenseByMonth(state.expenses,state.categories,10,2);
-  console.log("expense",monthExpense,"budgets",monthBudget);
+   
+ 
   
 
 
-  const userBudget = getBudgetByUserID(state.budgets, state.userId)
+  const userBudget = getBudgetByUserID(props.budgets, props.userId)
   const budgets = userBudget.map((budget) => {
     let startDate;
     let endDate;
@@ -34,9 +28,9 @@ export default function CreateBudget() {
         budgetLimit={budget.budget_limit}
         startDate={startDate}
         endDate={endDate}
-        createBudget={createBudget}
-        deleteBudget={deleteBudget}
-        updateBudget={updateBudget}
+        createBudget={props.createBudget}
+        deleteBudget={props.deleteBudget}
+        updateBudget={props.updateBudget}
         userid={budget.user_id}
       />
     );
@@ -45,9 +39,8 @@ export default function CreateBudget() {
     <>
     <div className="new-budget">
      <Form
-             onSave={createBudget} 
-             userId={state.userId} 
-             
+             onSave={props.createBudget} 
+             userId={props.userId} 
              />
              </div>
     <div className="App">

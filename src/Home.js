@@ -13,7 +13,9 @@ import LeftOver from "./components/charts/LeftOver";
 import IncomeTime from "./components/charts/IncomeTime";
 
 const Home = () => {
-  const { state, addCategories, addIncome } = useApplicationData()
+  const { state, addCategories, addIncome,createBudget,
+    updateBudget,
+    deleteBudget} = useApplicationData()
   console.log("state",state);
   return (
     <div className="App">
@@ -32,7 +34,10 @@ const Home = () => {
         <Switch>
           <Route path="/Create">
             <div id="create">
-              <CreateBudget />
+              <CreateBudget  budgets={state.budgets}  userId={state.userId}
+                            createBudget={createBudget}
+                            updateBudget={updateBudget}
+                            deleteBudget={deleteBudget}/>
             </div>
           </Route>
 

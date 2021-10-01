@@ -11,6 +11,7 @@ import BarGraph from "./components/charts/BarGraph";
 import CreateBudget from "./components/budgets/index";
 import LeftOver from "./components/charts/LeftOver";
 import IncomeTime from "./components/charts/IncomeTime";
+import Quotes from "./components/Quotes";
 
 const Home = () => {
   const { state, addCategories, addIncome } = useApplicationData()
@@ -28,6 +29,7 @@ const Home = () => {
         <div>
           <Sidebar email={state.email} />
         </div>
+        <div><Quotes /></div>
 
         <Switch>
           <Route path="/Create">
@@ -43,16 +45,16 @@ const Home = () => {
           </Route>
 
           <Route path="/">
-            <h1 id="income">
+            <div id="income">
               {' '}
               <Account onAdd={addIncome} userId={state.userId} income={state.incomes}/>{' '}
-            </h1>
+            </div>
           
               <div id="pie-chart">
                 <p>Expenses</p>
                 <Pie categories={state.categories} expenses={state.expenses} />
                 </div>
-                <br />
+                
                 <div id="bar-graph">
                 <p>Expenses</p>
                 <BarGraph
@@ -60,7 +62,7 @@ const Home = () => {
                   expenses={state.expenses}
                 />
                 </div>
-                <br />
+                
                 <div id="time-graph">
                 <p>Income</p>
                 <section>

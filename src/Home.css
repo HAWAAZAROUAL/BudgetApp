@@ -25,7 +25,7 @@ body {
   color: whitesmoke;
   width: 494px;
   position: relative;
-  top: -50px;
+  top: -60px;
   box-shadow: 0 0 10px blueviolet;
 }
 #create {
@@ -35,4 +35,22 @@ body {
   height: 30px;
   margin: 0 15px 25px 0
 }
+#account p {
+  top: -95px;
+}
+.inc-table {
+  position: relative;
+  top: 40px;
+}
+.budget-calendar {
+  position: absolute;
+  right: 40px;
+  top: 650px;
+  box-shadow: 0 0 10px rgb(192, 155, 173);
+  width: 290px;
+}
+.react-calendar {
+ border: 0;
+}
+
 

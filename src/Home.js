@@ -31,7 +31,7 @@ const Home = () => {
 
         <Switch>
           <Route path="/Create">
-            <div id="create">
+            <div>
               <CreateBudget />
             </div>
           </Route>

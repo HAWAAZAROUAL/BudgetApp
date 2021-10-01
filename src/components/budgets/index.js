@@ -48,24 +48,38 @@ export default function CreateBudget() {
   return (
     <>
     <div className="new-budget">
+      <div className="title-boxes">Create new budget</div>
+      <div>
      <Form
              onSave={createBudget} 
              userId={state.userId} 
              
              />
              </div>
-    <div className="App">
-      <table border="1" frame="void" rules="rows" className="budget-table">
+             </div>
+    <div className="app">
+      <p className="title-boxes">Your Budgets</p>
+      
+      {/* <table border="1" frame="void" rules="rows" className="budget-table">
         <thead>
           <tr>
-            <th>Budget Name</th>
-            <th>Budget Limit</th>
-            <th>Start Date</th>
-            <th>End Date</th>
+            <th>Name</th>
+            <th>Limit</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
           </tr>
         </thead>
         {budgets}
-      </table>
+      </table> */}
+
+      <div>
+        <span className="budget-table title">Title</span>
+        <span className="budget-table title">Limit</span>
+        <span className="budget-table title">Start</span>
+        <span className="budget-table title">End</span>
+        {budgets}
+      </div>
+      
     </div>
     </>
   );

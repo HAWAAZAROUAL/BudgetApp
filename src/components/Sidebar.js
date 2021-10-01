@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations'
 import './Sidebar.css'
 
+// import font
+
 export default class App extends React.Component {
   constructor(props) {
     super(props)
@@ -22,9 +24,11 @@ export default class App extends React.Component {
   }
   render() {
     return (
+
       // Sidebar Element Declaration
       <div className="control-section">
         <SidebarComponent
+        
           id="default-sidebar"
           ref={(Sidebar) => (this.sidebarobj = Sidebar)}
           style={{ visibility: 'hidden' }}
@@ -34,12 +38,16 @@ export default class App extends React.Component {
           <div
             className="sidebar-header"
           >
-            <div className="image-container"></div>
-            <div> <b>Alice Smith</b></div>
+            
           </div>
           <ul className="nav sidebar-nav">
+          
+            <div> <b>Alice Smith</b></div>
             <li className="list-items">
               <Link path to="/">
+              <style>
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
+</style>
                 <span className="e-text"> Home</span>
               </Link>
             </li>

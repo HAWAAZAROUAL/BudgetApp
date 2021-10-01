@@ -150,14 +150,14 @@ export  function getincomeByMonth(incomes,month,userId) {
 }
 
 // this expense calculation will be done for each category
-export default function getTotalExpense (expense, category_id) {
-  const expenseTotal = {};
-  for (let i = 1; i <= expense.length; i++) {
-    const result = 
+// export default function getTotalExpense (expense, category_id) {
+//   const expenseTotal = {};
+//   for (let i = 1; i <= expense.length; i++) {
+//     const result = 
 
-  let total = 0;
-  Object.values(result).map((val) =>
-  { total += val}
-  )
-  }
-}
+//   let total = 0;
+//   Object.values(result).map((val) =>
+//   { total += val}
+//   )
+//   }
+// }

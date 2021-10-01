@@ -35,24 +35,21 @@ export default class App extends React.Component {
             className="sidebar-header"
           >
             <div className="image-container"></div>
-            <div>Alice Smith</div>
+            <div> <b>Alice Smith</b></div>
           </div>
           <ul className="nav sidebar-nav">
             <li className="list-items">
               <Link path to="/">
-              <i className="sf-icon-sidebar sf-icon-file"></i>
                 <span className="e-text"> Home</span>
               </Link>
             </li>
             <li className="list-items">
               <Link to="/Create">
-              <i className="sf-icon-sidebar sf-icon-starred"></i>
                 <span className="e-text"> Create</span>
               </Link>
             </li>
             <li className="list-items">
               <Link path to="/MyBudgets">
-              <i className="sf-icon-sidebar sf-icon-recent"></i>
                 <span className="e-text">My Budgets</span>
               </Link>
             </li>

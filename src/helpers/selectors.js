@@ -1,3 +1,5 @@
+// import expenses from "../../budget_api/src/routes/expenses";
+
 export  function getBudgetByUserID(budgets,userId) {
   const budgetArr=[];
   for(const i in budgets){
@@ -144,3 +146,16 @@ export  function getincomeByMonth(incomes,month,userId) {
    }
   return monthTotal;
 }
+
+// this expense calculation will be done for each category
+// export default function getTotalExpense (expense, category_id) {
+//   const expenseTotal = {};
+//   for (let i = 1; i <= expense.length; i++) {
+//     const result = 
+
+//   let total = 0;
+//   Object.values(result).map((val) =>
+//   { total += val}
+//   )
+//   }
+// }

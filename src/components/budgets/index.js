@@ -22,6 +22,7 @@ export default function CreateBudget(props) {
     }
 
     return (
+      <div id="budgetshow">
       <BudgetShow
         id={budget.id}
         budgetName={budget.name}
@@ -33,28 +34,43 @@ export default function CreateBudget(props) {
         updateBudget={props.updateBudget}
         userid={budget.user_id}
       />
-    );
+      </div>
+      );
   });
   return (
     <>
     <div className="new-budget">
+      <div className="title-boxes">Create new budget</div>
+      <div>
      <Form
              onSave={props.createBudget} 
              userId={props.userId} 
              />
              </div>
-    <div className="App">
-      <table border="1" frame="void" rules="rows" className="budget-table">
+             </div>
+    <div className="app">
+      <p className="title-boxes">Your Budgets</p>
+      
+      {/* <table border="1" frame="void" rules="rows" className="budget-table">
         <thead>
           <tr>
-            <th>BudgetName</th>
-            <th>BudgetLimit</th>
+            <th>Name</th>
+            <th>Limit</th>
             <th>StartDate</th>
             <th>EndDate</th>
           </tr>
         </thead>
         {budgets}
-      </table>
+      </table> */}
+
+      <div>
+        <span className="budget-table title">Title</span>
+        <span className="budget-table title">Limit</span>
+        <span className="budget-table title">Start</span>
+        <span className="budget-table title">End</span>
+        {budgets}
+      </div>
+      
     </div>
     </>
   );

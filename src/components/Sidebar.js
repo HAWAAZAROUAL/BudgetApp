@@ -2,6 +2,8 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations'
 import './Sidebar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 
 // import font
 
@@ -45,17 +47,30 @@ export default class App extends React.Component {
                   @import
                   url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
                 </style>
-                <span className="e-text"> Home</span>
+                <span className="e-text">
+                  <span>
+                    <FontAwesomeIcon className="sidebar-icons" icon="home" />
+                  </span>
+                  Home
+                </span>
               </Link>
             </li>
             <li className="list-items">
               <Link to="/Create">
-                <span className="e-text"> Create</span>
+                <span className="e-text">
+                <span>
+                    <FontAwesomeIcon className="sidebar-icons" icon="edit" />
+                  </span>
+                   Create</span>
               </Link>
             </li>
             <li className="list-items">
               <Link path to="/MyBudgets">
-                <span className="e-text">My Budgets</span>
+                <span className="e-text">
+                <span>
+                    <FontAwesomeIcon className="sidebar-icons" icon="stream" />
+                  </span>
+                  My Budgets</span>
               </Link>
             </li>
           </ul>

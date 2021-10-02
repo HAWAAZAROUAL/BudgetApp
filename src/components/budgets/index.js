@@ -6,12 +6,6 @@ import Form from './Form';
 import './style.css'
 export default function CreateBudget(props) {
   
-
-   
- 
-  
-
-
   const userBudget = getBudgetByUserID(props.budgets, props.userId)
   const budgets = userBudget.map((budget) => {
     let startDate;

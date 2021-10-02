@@ -1,65 +1,36 @@
- 
-import Button from './Button';
 import './Update.css';
 import "./Button.css";
-import React, { useState } from 'react'
-// import budgets from '../../budget_api/src/routes/budgets';
-
+import {   getBudgetByMonth } from '../helpers/selectors';
+import MyBudgetsForm from './MyBudgetsForm';
+import ShowExpense from './ShowExpense'
 export default function MyBudgets (props) {
-   
-  const [category, setCategory] = useState('')
-  const [amount, setAmount] = useState(0)
-   
-  function onSave() {
-    const expense = {
-      category: category,
-      amount: amount,  
-    }
-      props
-        .onSave(props.userId, expense)
-
-        .then((res) => {
-          reset()
-        })
-    }
   
-  function reset() {
-    setCategory('')
-    setAmount( 0)
-  }
+ 
   const currentMonth=((new Date()).getMonth())+1;
   
+  const budgets   = getBudgetByMonth(props.budgets,new Date().getFullYear(), currentMonth ,props.userId) ; 
+  
+  const myBudgets=   Object.keys(budgets).map((k)=>{
+    return (
+     <ShowExpense name={k} budget={budgets[k][0]}  available={budgets[k][1]}/>
+    );
+  }
+  
+  );   
   return(
     <>
-    <div className="input-form">
-     <form autoComplete="off">
-   {<h3>   </h3> }
-   
-    <p>Add Category</p>
-          <input
-            name="category"
-            value={category}
-            type="text"
-             
-            onChange={(event) => setCategory(event.target.value)}
-          /> 
-          <br></br>
-          <p>Add Expense</p> 
-          <input
-            name="amount"
-            value={amount}
-            type="text"
-             
-            onChange={(event) => setAmount(event.target.value)}
-          />
-        </form>
-        </div>
-        <div className="input-btns">
-        <Button confirm onClick={(event) => onSave()}>
-          {' '}
-          Save Change{' '}
-        </Button>
+    <MyBudgetsForm 
+    budgets={props.budgets} 
+    onAdd={props.onAdd} 
+    bugets={props.budgets}
+    userId={props.userId}/>
+    
+    <div>
+        <span className="budget-table">{"     "}</span>
+        <span className="budget-table">Budget</span>
+        <span className="budget-table">Available</span>
       </div>
+      {myBudgets}
   </>
   );
 }

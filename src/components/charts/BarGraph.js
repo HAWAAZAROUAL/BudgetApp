@@ -16,7 +16,7 @@ import './Pie.css'
 
     
     return <BarChart
-    className="income-time"
+    className="bar-expense"
     height={300}
     width={450}
     data={displayData(props.categories, props.expenses)}

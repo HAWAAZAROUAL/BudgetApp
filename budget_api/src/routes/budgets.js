@@ -5,8 +5,11 @@ module.exports = (db) => {
 
   router.get("/budgets", (request, response) => {
 
-    db.query(`SELECT * FROM budgets`).then(({ rows: budgets }) => {
-
+    db.query(`
+    select categories.id as category_id,budgets.*,categories.amount from categories 
+    join budgets on categories.budget_id= budgets.id;`
+    ).then(({ rows: budgets }) => {
+      
       response.json(
         budgets.reduce(
           (previous, current) => ({ ...previous, [current.id]: current }),
@@ -27,11 +30,19 @@ module.exports = (db) => {
 
     db.query(
       `
-          INSERT INTO budgets ( name,budget_limit, start_date,end_date,user_id) VALUES ($1::TEXT, $2::INTEGER, $3::DATE,$4::DATE,$5::INTEGER) 
+          INSERT INTO budgets ( name,budget_limit, start_date,end_date,user_id) VALUES ($1::TEXT, $2::INTEGER, $3::DATE,$4::DATE,$5::INTEGER) returning *;
           `,
       [name, Number(budget_limit), start_date, end_date, Number(request.params.userid)]
     )
-      .then(() => {
+      .then((data) => {
+        
+        const budgetId=data.rows[0]["id"];
+        db.query(
+          `
+              INSERT INTO categories ( category_type ,amount ,budget_id) VALUES ($1::TEXT, $2::INTEGER,  $3::INTEGER) returning *;
+              `,
+          [name, Number(budget_limit),  Number(budgetId)]
+        )
         setTimeout(() => {
           response.status(204).json({});
 

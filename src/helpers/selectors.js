@@ -22,6 +22,7 @@ export  function getBudgetByUserID(budgets,userId) {
  */
  function dateFormat(day){
      let d= new Date(day);
+      
      d=d.toISOString().split('T')[0];
      return d;   
  }
@@ -98,8 +99,8 @@ export  function getBudgetByMonth(budgets,year,month,userId) {
          break;
      }
     
-    if((startDate>=d1)&&(endDate<=d2) && (userid===userId )) {
-      result[budget["name"]]=budget["budget_limit"];
+    if((startDate >= d1) && (endDate <= d2) && (userid===userId )) {
+      result[budget["name"]]=[budget["budget_limit"],budget["amount"]];
     }   
   }
   return  result;
@@ -198,3 +199,15 @@ export  function getincomeByMonth(incomes,month,userId) {
 //   )
 //   }
 // }
+ export  function getBudgetId(name,budgets){
+   let budgetId;
+   
+   Object.keys(budgets).map((k)=>{
+    
+    if(budgets[k]["name"]===name){
+      budgetId=k;
+      }
+    });
+    
+    return budgetId; 
+ }

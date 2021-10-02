@@ -8,7 +8,7 @@ export default class IncomeReport extends Component {
 
 	eachMonth = () => {
 		const monthIncome=getincomeByMonth(this.props.incomes,this.props.month,this.props.userId);
-		return Object.keys(this.props.monthIncome).map((k)=>{ 
+		return Object.keys(monthIncome).map((k)=>{ 
 		  return {name:`${k}`,y:`${monthIncome[k]}`}	;
 		});
 	  };
@@ -19,7 +19,7 @@ export default class IncomeReport extends Component {
 				text:  `${this.props.month} Income`
 			},
 			subtitles: [{
-				text:  1000,
+				text:  '',
 				verticalAlign: "center",
 				fontSize: 24,
 				dockInsidePlotArea: true
@@ -28,7 +28,7 @@ export default class IncomeReport extends Component {
 				type: "doughnut",
 				showInLegend: true,
 				indexLabel: "{name}: {y}",
-				yValueFormatString: "#,###'%'",
+				yValueFormatString: "#,###''",
 				dataPoints: this.eachMonth()
 			}]
         }

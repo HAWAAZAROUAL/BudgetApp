@@ -8,7 +8,7 @@ export default class IncomeReport extends Component {
 
 	eachMonth = () => {
 		const monthIncome=getincomeByMonth(this.props.incomes,this.props.month,this.props.userId);
-		return Object.keys(this.props.monthIncome).map((k)=>{ 
+		return Object.keys(monthIncome).map((k)=>{ 
 		  return {name:`${k}`,y:`${monthIncome[k]}`}	;
 		});
 	  };

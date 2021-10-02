@@ -76,6 +76,7 @@ const Home = () => {
 
           <Route path="/">
             <div id="income">
+           < IncomeReport   incomes={state.incomes} month={10} userId={state.userId}/>
               <Account
                 onAdd={addIncome}
                 userId={state.userId}

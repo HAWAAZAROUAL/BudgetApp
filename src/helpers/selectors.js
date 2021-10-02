@@ -211,3 +211,8 @@ export  function getincomeByMonth(incomes,month,userId) {
     
     return budgetId; 
  }
+
+ export function getQuotesKey(quotes) {
+   let quoteKey = Object.keys(quotes);
+   return quoteKey;
+ }

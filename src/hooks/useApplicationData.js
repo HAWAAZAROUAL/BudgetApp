@@ -14,7 +14,8 @@ export default function useApplicatonData(){
         username: null,
         budgets:{},
         incomes:{},
-        expenses:{}
+        expenses:{},
+        quotes: {0: {quote: '...', author: '...'}}
       });
       
     useEffect(()=>{
@@ -25,6 +26,7 @@ export default function useApplicatonData(){
        axios.get(`http://localhost:8080/api/categories/`),
        axios.get(`http://localhost:8080/api/expenses/`),
        axios.get(`http://localhost:8080/api/incomes/`),
+       axios.get(`http://localhost:8080/api/quotes/`),
     ])
        .then((all) => {
        
@@ -34,6 +36,8 @@ export default function useApplicatonData(){
        const expenses = all[3].data;
        const email = all[0].data[2]["email"];
        const incomes=all[4].data;
+       const quotes = all[5].data;
+      //console.log('QUOTE', quotes)
 
        dispatch({ 
         type: "setData",
@@ -43,10 +47,10 @@ export default function useApplicatonData(){
           categories, 
           expenses, 
           email,
-          incomes}
+          incomes,
+          quotes,
+        }
         }); 
-      
-      
      }) 
     
     },[]);  
@@ -143,6 +147,7 @@ export default function useApplicatonData(){
         });
     });
     }
+
 
     return {state,createBudget, addCategories,deleteBudget,updateBudget,addCategories,addIncome,addExpense};
     

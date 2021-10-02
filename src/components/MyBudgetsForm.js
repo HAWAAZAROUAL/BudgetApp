@@ -5,18 +5,18 @@ export default function MyBudgetsForm(props) {
     const [category, setCategory] = useState('')
     const [amount, setAmount] = useState(0)
      
-   
+    
     function onSave() {
-       
-     if(props.budgets){
-
-     
-      const budgetId=getBudgetId(category,props.budgets);
+      
+      if(props.budgets){
+        
+        
+        const budgetId=getBudgetId(category,props.budgets);
+        console.log('BUDGET AMOUNT', budgetId);
      
      const today = new Date();
      const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
      if(props.budgets[budgetId]["amount"]){
-
       const newAmount=props.budgets[budgetId]["amount"];
       const expense = {
         budgetId:budgetId,

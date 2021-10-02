@@ -10,7 +10,8 @@ const reducers = {
             categories: action.value.categories,
             expenses: action.value.expenses,
             incomes:action.value.incomes,
-            email: action.value.email
+            email: action.value.email,
+            quotes: action.value.quotes
           };
     },
     

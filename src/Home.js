@@ -13,12 +13,20 @@ import LeftOver from "./components/charts/LeftOver";
 import IncomeTime from "./components/charts/IncomeTime";
 import Quotes from "./components/Quotes";
 
+import IncomeReport from "./components/reports/income.js";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faHome, faEdit, faStream } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faHome, faEdit, faStream)
+
 const Home = () => {
   const { state, addCategories, addIncome,createBudget,
     updateBudget,
     deleteBudget} = useApplicationData()
   console.log("state",state);
   return (
+   
     <div className="App">
       <style>
         @import
@@ -26,10 +34,12 @@ const Home = () => {
       </style>
       <Router>
         <nav>
+        
           <Nav name={state.username} />
         </nav>
         <div>
           <Sidebar email={state.email} />
+       
         </div>
         <div><Quotes /></div>
 

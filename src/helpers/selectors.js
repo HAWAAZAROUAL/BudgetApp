@@ -1,5 +1,10 @@
 // import expenses from "../../budget_api/src/routes/expenses";
-
+/**
+ * 
+ * @param {*} budgets 
+ * @param {*} userId 
+ * @returns EX:user_id=2 {books:200,food:500,2021-09-01,2021-09-30}
+ */
 export  function getBudgetByUserID(budgets,userId) {
   const budgetArr=[];
   for(const i in budgets){
@@ -10,11 +15,24 @@ export  function getBudgetByUserID(budgets,userId) {
   const result = budgetArr.reverse();
   return result;
 }
+/**
+ * 
+ * @param {*} day 
+ * @returns convert date to "yyyy-mm-dd" format
+ */
  function dateFormat(day){
      let d= new Date(day);
      d=d.toISOString().split('T')[0];
      return d;   
  }
+ /**
+  * 
+  * @param {*} budgets 
+  * @param {*} year 
+  * @param {*} month 
+  * @param {*} userId 
+  * @returns EX:2021-09 budget {food:600,books:400......}
+  */
 export  function getBudgetByMonth(budgets,year,month,userId) {
  
   const result={};
@@ -95,6 +113,14 @@ function getCategoryName(result,categories){
     });
     return obj;
 }
+/**
+ * 
+ * @param {*} expenses 
+ * @param {*} categories 
+ * @param {*} month 
+ * @param {*} userId 
+ * @returns EX:{food:600,gas:300,tuition:2000,clothes:500}
+ */
 export  function getExpenseByMonth(expenses,categories,month,userId) {
    const result={};
   let arr = Object.values(expenses);
@@ -114,6 +140,13 @@ export  function getExpenseByMonth(expenses,categories,month,userId) {
   }
   return getCategoryName(result,categories);
 }
+/**
+ * 
+ * @param {*} incomes 
+ * @param {*} month 
+ * @param {*} userId 
+ * @returns EX: {salary:8000, driver: 800, coach:600}
+ */
 export  function getincomeByMonth(incomes,month,userId) {
    const result={};
   let arr = Object.values(incomes);
@@ -133,7 +166,13 @@ export  function getincomeByMonth(incomes,month,userId) {
   }
   return result;
 }
-
+/**
+ * 
+ * @param {*} incomes 
+ * @param {*} userId 
+ * @returns EX:{'Jan':4000,'Feb':3900,'Mar':5000,'Apr':3000,'May':8000,
+ *            'Jun':7000,'Jul':7000,'Aug':4600,'Sep':8000,'Oct':9000,'Nov':9000,'Dec':100000}
+ */
  export  function getTotalIncome(incomes, userId) {
    const month=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
    const monthTotal={};

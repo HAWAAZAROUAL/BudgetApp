@@ -9,61 +9,8 @@
   content: '\e70b';
 }
 
-
 .sf-icon-starred:before {
   content: '\e708';
-}
-
-.sf-icon-star:before {
-  content: '\e707';
-  font-size: 15px;
-  color: #000;
-  float: right;
-
-}
-
-.sf-icon-recent:before {
-  content: '\e70c';
-}
-
-.sf-icon-important:before {
-  content: '\e713';
-}
-
-.e-sidebar.e-left {
-  border: none;
-}
-
-.sf-icon-offline:before {
-  content: '\e714';
-  font-size: 30px;
-}
-
-.sf-icon-backup:before {
-  content: '\e712';
-
-}
-
-.sf-icon-down:before {
-  content: '\e709';
-
-}
-
-.sf-icon-search:before {
-  content: '\e711';
-  font-size: 18px;
-
-}
-
-.sf-icon-sidebar {
-  content: '\e701';
-  color: #000000;
-  display: inline-block;
-  margin-right: 16px;
-  width: 40px;
-  text-align: left;
-  font-size: 20px ;
-  vertical-align: middle;
 }
 
 ul.nav.sidebar-nav {
@@ -88,9 +35,6 @@ a.sidebar-brand {
   background-color: lightsteelblue;
 }
 
-span.sf-icon-down.icon {
-  font-size: 12px;
-}
 
 .sidebar-nav li a {
   position: relative;
@@ -109,26 +53,6 @@ span.sf-icon-down.icon {
 }
 
 
-.sidebar-brand {
-  height: 48px;
-  line-height: 48px;
-  padding-left: 20px;
-  padding-right: 40px;
-  text-decoration: none;
-  font-weight: 500;
-  overflow: hidden;
-  display: inline-flex;
-}
-
-.sidebar-image img {
-  width: 54px;
-  height: 54px;
-  margin: 16px;
-  border-radius: 50%;
-  -webkit-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
 
 #default-sidebar {
   color: #ffffff;
@@ -210,4 +134,7 @@ span.sf-icon-down.icon {
 .list-items {
 border-radius: 10px;
   padding: 20px 0 20px 0;
+}
+.sidebar-icons {
+  padding-right: 30px;
 }

@@ -5,7 +5,7 @@ import DateRange from './DataRangePicker'
 import './Form.css'
 
 export default function Form(props) {
-  console.log('props', props)
+   
   const [name, setName] = useState(props.name || '')
   const [budget_limit, setbudget_limit] = useState(props.budgetLimit || 0)
   const [start_date, setstart_date] = useState(props.startDate || null)

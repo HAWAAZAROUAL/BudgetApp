@@ -75,14 +75,18 @@ const Home = () => {
           </Route>
 
           <Route path="/">
-            <div id="income">
-           < IncomeReport   incomes={state.incomes} month={10} userId={state.userId}/>
+            <div id="income-graph">
+              <p>Your current incomes</p>
+              < IncomeReport   incomes={state.incomes} month={10} userId={state.userId}/>
+              </div>
+              <div id="income">
               <Account
                 onAdd={addIncome}
                 userId={state.userId}
                 income={state.incomes}
               />{' '}
-            </div>
+              </div>
+            
 
             <div id="pie-chart">
               <p>Expenses</p>

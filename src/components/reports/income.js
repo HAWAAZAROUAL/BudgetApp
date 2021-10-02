@@ -19,7 +19,7 @@ export default class IncomeReport extends Component {
 				text:  `${this.props.month} Income`
 			},
 			subtitles: [{
-				text:  1000,
+				text:  '',
 				verticalAlign: "center",
 				fontSize: 24,
 				dockInsidePlotArea: true
@@ -28,7 +28,7 @@ export default class IncomeReport extends Component {
 				type: "doughnut",
 				showInLegend: true,
 				indexLabel: "{name}: {y}",
-				yValueFormatString: "#,###'%'",
+				yValueFormatString: "#,###''",
 				dataPoints: this.eachMonth()
 			}]
         }

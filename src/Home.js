@@ -16,7 +16,7 @@ import Quotes from "./components/Quotes";
 import IncomeReport from "./components/reports/income.js";
 
 const Home = () => {
-  const { state, addCategories, addIncome,createBudget,
+  const { state, addCategories, addIncome,createBudget,addExpense,
     updateBudget,
     deleteBudget} = useApplicationData()
   console.log("state",state);
@@ -50,7 +50,10 @@ const Home = () => {
 
           <Route path="/MyBudgets">
             <div id="budgets">
-              <MyBudgets />
+              <MyBudgets onAdd={addExpense} userId={state.userId} 
+              expense={state.expenses}
+              categories={state.categories}
+              budgets={state.budgets}/>
             </div>
           </Route>
 

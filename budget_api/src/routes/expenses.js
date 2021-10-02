@@ -7,7 +7,7 @@ module.exports = (db) => {
   router.get("/expenses", (request, response) => {
   
     db.query(`SELECT * FROM expenses`).then(({ rows: expenses}) => {
-      console.log(request.body);
+     
       response.json(
         expenses.reduce(
           (previous, current) => ({ ...previous, [current.id]: current }),
@@ -17,28 +17,42 @@ module.exports = (db) => {
     });
   });
 
-  router.put("/expenses", (request, response) => {
+  router.put("/expenses/:userid", (request, response) => {
      
-    console.log(request.body);
+    
         if (process.env.TEST_ERROR) {
           setTimeout(() => response.status(500).json({}), 1000);
           return;
         }
-        const {date, amount } = request.body.expenses;
+        const { amount,category_id ,available,date} = request.body.expense;
+         
+          
+            db.query(
+              ` UPDATE categories SET 
+                amount = $1::integer
+                where id=$2::integer`,
+        
+              [Number(available),category_id]
+            )
+            .then(() => {
+    
+                  db.query(
+                      `
+                      INSERT INTO expenses ( category_id, amount,user_id,date) VALUES ($1::INTEGER, $2::INTEGER,$3::INTEGER,$4::DATE) returning date;
+                       `,
+                        [Number(category_id), Number(amount),Number(request.params.userid),date]
+                     )
+              })
+              .then(() => {
+                         setTimeout(() => {
+                         response.status(204).json({});
+                
+                      }, 1000);
+              })
+              .catch(error => console.log(error))
+         
+  });
        
-        db.query(
-          `
-          INSERT INTO expenses ( date, amount) VALUES ($1::DATE, $2::INTEGER) 
-        `,
-          [date, amount]
-        )
-          .then(() => {
-            setTimeout(() => {
-              response.status(204).json({});
-            
-            }, 1000);
-          })
-          .catch(error => console.log(error));
-      });
+        
     return router;
 }

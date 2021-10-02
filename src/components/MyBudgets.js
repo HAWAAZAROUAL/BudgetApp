@@ -3,20 +3,30 @@ import Button from './Button';
 import './Update.css';
 import "./Button.css";
 import React, { useState } from 'react'
+import { getBudgetId,getBudgetByMonth } from '../helpers/selectors';
 // import budgets from '../../budget_api/src/routes/budgets';
 
 export default function MyBudgets (props) {
-   
+   console.log( "!!!!",props);
   const [category, setCategory] = useState('')
   const [amount, setAmount] = useState(0)
    
+ 
   function onSave() {
+     
+    const budgetId=getBudgetId(category,props.budgets);
+   
+ 
+   const today = new Date();
+   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     const expense = {
-      category: category,
+      date:  date,
+      available: props.budgets[budgetId]["amount"]-amount,
       amount: amount,  
+      category_id: props.budgets[budgetId]["category_id"]
     }
       props
-        .onSave(props.userId, expense)
+        .onAdd(props.userId, expense)
 
         .then((res) => {
           reset()
@@ -29,6 +39,19 @@ export default function MyBudgets (props) {
   }
   const currentMonth=((new Date()).getMonth())+1;
   
+  const budgets   = getBudgetByMonth(props.budgets,2021, currentMonth ,props.userId) ; 
+  console.log("======",budgets);
+  const myBudgets=   Object.keys(budgets).map((k)=>{
+    return (
+      <div>
+      <p> -------Budget---Available</p>
+       <p>{k} ---{budgets[k][0]} ---{budgets[k][1]}</p>
+      </div>
+    );
+  }
+  
+
+  );   
   return(
     <>
     <div className="input-form">
@@ -60,6 +83,7 @@ export default function MyBudgets (props) {
           Save Change{' '}
         </Button>
       </div>
+      {myBudgets}
   </>
   );
 }

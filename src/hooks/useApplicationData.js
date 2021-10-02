@@ -57,10 +57,11 @@ export default function useApplicatonData(){
       return axios.put(`http://localhost:8080/api/budgets/${userId}`, {budget}).then(res=> { 
        console.log("userid",userId);
         const result= JSON.parse(res.config.data)["budget"];
-        
+        console.log("@@@", res);
         dispatch({ 
           type: "createBudgets", 
           
+          amount: budget.budget_limit,
           user_id:   userId, 
           name:  result.name,
           budget_limit:  result.budget_limit,
@@ -124,8 +125,24 @@ export default function useApplicatonData(){
           user_id:   userId 
         });
     })
+  }
+    function addExpense(userId,expense){
+     console.log("@@@@@",expense);
+      return axios.put(`http://localhost:8080/api/expenses/${userId}`, {expense}).then(res=> { 
+      
+        const result= JSON.parse(res.config.data)["expense"];
+        console.log("expense Json",res);
+        dispatch({ 
+          type: "addExpense", 
+          
+          date: result.date,
+          category_id:  result.category_id,
+          amount: result.amount,
+          user_id:   userId 
+        });
+    });
     }
 
-    return {state,createBudget, addCategories,deleteBudget,updateBudget,addCategories,addIncome};
+    return {state,createBudget, addCategories,deleteBudget,updateBudget,addCategories,addIncome,addExpense};
     
 }

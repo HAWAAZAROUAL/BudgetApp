@@ -1,11 +1,15 @@
 import Button from './Button'
  
 import React, { useState } from 'react'
-export default function AccountForm(props) {const [income, setIncome] = useState(0)
+export default function AccountForm(props) {
+    const [income, setIncome] = useState(0)
   const [income_type, setIncome_type] = useState('')
+  const today = new Date();
+   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
   function onAdd() {
     const incomes = {
+      date: date,
       income: Number(income),
       income_type: income_type,
     }

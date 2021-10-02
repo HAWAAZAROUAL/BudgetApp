@@ -39,14 +39,13 @@ const reducers = {
         const incomes = {...state.incomes};
         incomes[newID]= {
           id:Number(newID),
-          user_id:   action.user_id,
+          
           income:  action.income,
-          income_type: action.income_type
+          income_type: action.income_type,
+          date: action.date,
+          user_id:   action.user_id
         };
-        const obj= {...state,incomes:incomes};
-       console.log(obj); 
         return {...state,incomes:incomes};
-
     },
        
     addExpense(state,action){
@@ -63,9 +62,11 @@ const reducers = {
           amount: action.amount,
           user_id:   action.user_id
        };
-       const obj= {...state,expenses:expenses};
-       console.log(obj); 
-       return {...state,expenses:expenses};
+       const budgets = {...state.budgets};
+       budgets[action.budgetId]["amount"]=action.available;
+       return { 
+         ...state,
+        budgets: budgets,expenses:expenses};
     },
 
      deleteBudget(state,action){
@@ -81,24 +82,18 @@ const reducers = {
   updateBudgets(state,action){
        
       const budgets = {...state.budgets};
-      const budget = {
-                    id:    action.id,
-                  name:    action.name,
-          budget_limit:    action.budget_limit ,
-            start_date:    action.start_date ,  
-              end_date:    action.end_date,   
-        };
-        const obj={
+       
+       budgets[action.id]["name"]=action.name;
+       budgets[action.id]["budget_limit"]= action.budget_limit;
+       budgets[action.id]["start_date"]=action.start_date;
+       budgets[action.id]["end_date"]=action.end_date;
+        
+       return { 
         ...state,
-        budgets: {...budgets,[action.id]: budget}
-        }
-      console.log("obj",obj);
-      return {
-        ...state,
-        budgets: {...budgets,[action.id]: budget}
-        };   
-   }
-};
+       budgets: budgets 
+      };  
+    }
+ };
   
   export default function reducer(state, action){
     return reducers[action.type](state, action) || state;

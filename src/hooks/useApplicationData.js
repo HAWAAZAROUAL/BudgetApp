@@ -119,7 +119,7 @@ export default function useApplicatonData(){
         dispatch({ 
           type: "addIncome", 
           
-          
+          date: result.date,
           income:  result.income,
           income_type: result.income_type,
           user_id:   userId 
@@ -134,11 +134,12 @@ export default function useApplicatonData(){
         console.log("expense Json",res);
         dispatch({ 
           type: "addExpense", 
-          
+          budgetId:result.budgetId,
           date: result.date,
           category_id:  result.category_id,
           amount: result.amount,
-          user_id:   userId 
+          available:result.available,
+          user_id: userId 
         });
     });
     }

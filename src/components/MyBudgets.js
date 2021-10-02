@@ -1,87 +1,34 @@
- 
-import Button from './Button';
 import './Update.css';
 import "./Button.css";
-import React, { useState } from 'react'
-import { getBudgetId,getBudgetByMonth } from '../helpers/selectors';
-// import budgets from '../../budget_api/src/routes/budgets';
-
+import {   getBudgetByMonth } from '../helpers/selectors';
+import MyBudgetsForm from './MyBudgetsForm';
+import ShowExpense from './ShowExpense'
 export default function MyBudgets (props) {
-   console.log( "!!!!",props);
-  const [category, setCategory] = useState('')
-  const [amount, setAmount] = useState(0)
-   
- 
-  function onSave() {
-     
-    const budgetId=getBudgetId(category,props.budgets);
-   
- 
-   const today = new Date();
-   const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    const expense = {
-      date:  date,
-      available: props.budgets[budgetId]["amount"]-amount,
-      amount: amount,  
-      category_id: props.budgets[budgetId]["category_id"]
-    }
-      props
-        .onAdd(props.userId, expense)
-
-        .then((res) => {
-          reset()
-        })
-    }
   
-  function reset() {
-    setCategory('')
-    setAmount( 0)
-  }
+ 
   const currentMonth=((new Date()).getMonth())+1;
   
-  const budgets   = getBudgetByMonth(props.budgets,2021, currentMonth ,props.userId) ; 
-  console.log("======",budgets);
+  const budgets   = getBudgetByMonth(props.budgets,new Date().getFullYear(), currentMonth ,props.userId) ; 
+  
   const myBudgets=   Object.keys(budgets).map((k)=>{
     return (
-      <div>
-      <p> -------Budget---Available</p>
-       <p>{k} ---{budgets[k][0]} ---{budgets[k][1]}</p>
-      </div>
+     <ShowExpense name={k} budget={budgets[k][0]}  available={budgets[k][1]}/>
     );
   }
   
-
   );   
   return(
     <>
-    <div className="input-form">
-     <form autoComplete="off">
-   {<h3>   </h3> }
-   
-    <p>Add Category</p>
-          <input
-            name="category"
-            value={category}
-            type="text"
-             
-            onChange={(event) => setCategory(event.target.value)}
-          /> 
-          <br></br>
-          <p>Add Expense</p> 
-          <input
-            name="amount"
-            value={amount}
-            type="text"
-             
-            onChange={(event) => setAmount(event.target.value)}
-          />
-        </form>
-        </div>
-        <div className="input-btns">
-        <Button confirm onClick={(event) => onSave()}>
-          {' '}
-          Save Change{' '}
-        </Button>
+    <MyBudgetsForm 
+    budgets={props.budgets} 
+    onAdd={props.onAdd} 
+    bugets={props.budgets}
+    userId={props.userId}/>
+    
+    <div>
+        <span className="budget-table">{"     "}</span>
+        <span className="budget-table">Budget</span>
+        <span className="budget-table">Available</span>
       </div>
       {myBudgets}
   </>

@@ -9,6 +9,7 @@ import Sidebar from './components/Sidebar'
 import Pie from './components/charts/Pie'
 import BarGraph from './components/charts/BarGraph'
 import CreateBudget from './components/budgets/index'
+import { getQuotesKey } from './helpers/selectors'
 import LeftOver from './components/charts/LeftOver'
 import IncomeTime from './components/charts/IncomeTime'
 import Quotes from './components/Quotes'
@@ -31,7 +32,10 @@ const Home = () => {
     updateBudget,
     deleteBudget,
   } = useApplicationData()
-  console.log('state', state)
+  const quoteKey = getQuotesKey(state.quotes)
+  // console.log('quoteKey', quoteKey)
+  // console.log('state', state)
+  // console.log("QUOTESSSS", state.quotes[quoteKey])
   return (
     <div className="App">
       <style>
@@ -46,7 +50,7 @@ const Home = () => {
           <Sidebar email={state.email} />
         </div>
         <div>
-          <Quotes />
+          <Quotes quote={state.quotes[quoteKey].quote} author={state.quotes[quoteKey].author} />
         </div>
         <div className="budget-calendar">
         <Calendar  />

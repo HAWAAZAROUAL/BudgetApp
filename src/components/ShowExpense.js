@@ -4,8 +4,8 @@ export default function ShowExpense(props){
        
         <div>
         <span className="budget-table">{props.name}</span>------
-        <span className="budget-table">{props.budget}</span>------
-        <span className="budget-table">{props.available}</span>
+        
+        <span className="budget-table">{props.amount}</span>
         
          
       </div>

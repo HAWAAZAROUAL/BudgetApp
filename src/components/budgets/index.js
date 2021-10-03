@@ -1,6 +1,6 @@
-import useApplicatonData from '../../hooks/useApplicationData';
+ 
 
-import { getBudgetByUserID,getBudgetByMonth,getExpenseByMonth } from '../../helpers/selectors';
+import { getBudgetByUserID  } from '../../helpers/selectors';
 import BudgetShow from './Budget_Show'
 import Form from './Form';
 import './style.css'
@@ -14,7 +14,7 @@ export default function CreateBudget(props) {
       startDate = budget.start_date.split('T')[0];
       endDate = budget.end_date.split('T')[0];
     }
-
+   
     return (
       <div id="budgetshow">
       <BudgetShow
@@ -27,6 +27,7 @@ export default function CreateBudget(props) {
         deleteBudget={props.deleteBudget}
         updateBudget={props.updateBudget}
         userid={budget.user_id}
+        amount={budget.amount}
       />
       </div>
       );
@@ -39,6 +40,7 @@ export default function CreateBudget(props) {
      <Form
              onSave={props.createBudget} 
              userId={props.userId} 
+             
              />
              </div>
              </div>

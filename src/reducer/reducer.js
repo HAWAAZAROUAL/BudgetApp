@@ -10,7 +10,8 @@ const reducers = {
             categories: action.value.categories,
             expenses: action.value.expenses,
             incomes:action.value.incomes,
-            email: action.value.email
+            email: action.value.email,
+            quotes: action.value.quotes
           };
     },
     
@@ -49,6 +50,7 @@ const reducers = {
     },
        
     addExpense(state,action){
+      
       console.log("addstate...",state);
       const arr=Object.keys(state.expenses);
        const id= arr[arr.length-1] ;
@@ -67,6 +69,8 @@ const reducers = {
        return { 
          ...state,
         budgets: budgets,expenses:expenses};
+     
+      
     },
 
      deleteBudget(state,action){

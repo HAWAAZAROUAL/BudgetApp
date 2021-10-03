@@ -43,9 +43,10 @@ export default function BudgetShow(props) {
         onCancel={back}
         name={props.budgetName}
         budgetLimit={props.budgetLimit}
+        id={props.id}
         startDate={props.startDate}
         endDate={props.endDate}
-        id={props.id}
+        amount={props.amount}
       />
       }
     </>

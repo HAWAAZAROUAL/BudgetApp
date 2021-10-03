@@ -55,4 +55,14 @@ Insert into expenses(category_id, date, amount,user_id)
 (3, '2021-09-21', 10,2),
 (4, '2021-09-20', 0,2),
  (5, '2021-9-13', 300,2);
+
+ Insert into quotes (quote, author) 
+ values
+ ('If you would be wealthy, think of saving as well as getting.', 'Ben Franklin'),
+ ('The money you have gives you freedom; the money you pursue enslaves you.', 'Jean-Jacques Rousseau'),
+ ('Making money is a common sense. It’s not rocket science. But unfortunately, when it comes to money, common sense is uncommon.', 'Robert Kiyosaki'),
+ ('If we command our wealth, we shall be rich and free. If our wealth commands us, we are poor indeed.', 'Edmund Burke'),
+ ('Do not save what is left after spending, but spend what is left after saving.', 'Warren Buffett'),
+ ('It’s not how much money you make, but how much money you keep, how hard it works for you, and how many generations you keep it for.', 'Robert Kiyosaki');
+ 
  

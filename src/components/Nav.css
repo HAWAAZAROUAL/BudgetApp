@@ -1,14 +1,14 @@
 .nav-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1.5em 0 1em 0;
   top: 0;
   height: 50px;
   /* background: url('../img/Home-Four-Banner-Background-Image.png'); */
-  background-color: rgb(247, 242, 185);
+  background-color: rgb(74, 150, 248);
   color: rgb(48, 43, 38);
-  font-size: 3rem;
+  font-size: 20px;
   font-family: 'Arima Madurai', cursive;
 }
 

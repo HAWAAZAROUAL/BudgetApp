@@ -20,13 +20,13 @@ body {
   font-size: 20px;
   margin: 0;
   border-radius: 10px;
-  background-color: #491386;
+  background-color: rgb(97, 163, 238);
   padding: 30px;
   color: whitesmoke;
   width: 494px;
   position: relative;
   top: -60px;
-  box-shadow: 0 0 10px blueviolet;
+  box-shadow: 0 0 10px rgb(97, 163, 238);
 }
 #create {
   width: 750px;

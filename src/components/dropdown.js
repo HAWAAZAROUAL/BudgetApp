@@ -24,7 +24,7 @@ function DropdownMenu(props) {
    }
    
    return (
-     <div className="App container">
+     <div  >
       
        <DropdownButton
        alignRight

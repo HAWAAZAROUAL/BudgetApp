@@ -50,12 +50,13 @@ export default function MyBudgetsForm(props) {
 
   return (
     <>
-    <DropdownMenu getValue={getValue} categories={props.categories}/>
+    
       <div className="input-form">
+      <p>Add Expense</p>
+      <DropdownMenu getValue={getValue} categories={props.categories}/>
         <form autoComplete="off">
-        <h6>You selected {category}</h6>
-          <br></br>
-          <p>Add Expense</p>
+        <h6>{category}</h6>
+         
           <input
             name="amount"
             value={amount}

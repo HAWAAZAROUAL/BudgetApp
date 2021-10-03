@@ -78,11 +78,10 @@ module.exports = (db) => {
       ` UPDATE budgets SET 
         name = $1::text, 
         budget_limit = $2::integer,
-        start_date =$3::DATE,
-        end_date=$4::DATE ,
-        user_id=$5::integer
-      where id=$6::integer`,
-      [name, Number(budget_limit), start_date, end_date, Number(request.params.userid),Number(request.params.budgetid)]
+         
+        user_id=$3::integer
+      where id=$4::integer`,
+      [name, Number(budget_limit),   Number(request.params.userid),Number(request.params.budgetid)]
       )
       .then(() => {
         setTimeout(() => {

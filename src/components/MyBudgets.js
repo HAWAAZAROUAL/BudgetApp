@@ -34,20 +34,23 @@ export default function MyBudgets (props) {
 
   return(
     <>
-     <h3> {new Date().toLocaleString('default', { month: 'long' })} Expenses  </h3>
-    {myExpenses}
+     
+    
     <MyBudgetsForm 
     budgets={props.budgets} 
     onAdd={props.onAdd} 
     categories={props.categories}
     userId={props.userId}/>
     
-    <div>
+    <h3> {new Date().toLocaleString('default', { month: 'long' })} Expenses  </h3>
+      {myExpenses}
+      
+      <div>
+       <h3> {new Date().toLocaleString('default', { month: 'long' })} Budgets  </h3>
         <span className="budget-table">{"     "}</span>
         <span className="budget-table">Budget</span>
-        <span className="budget-table">Available</span>
+        <span className="budget-table">Remaining</span>
       </div>
-      <h3> {new Date().toLocaleString('default', { month: 'long' })} Budgets  </h3>
       {myBudgets}
       
   </>

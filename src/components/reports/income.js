@@ -16,7 +16,7 @@ export default class IncomeReport extends Component {
 		const options = {
 			animationEnabled: true,
 			title: {
-				text:  `${this.props.month} Income`
+				text:  `${new Date().toLocaleString('default', { month: 'long' })} Income`
 			},
 			subtitles: [{
 				text:  '',

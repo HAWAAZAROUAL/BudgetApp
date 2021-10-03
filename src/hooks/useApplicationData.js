@@ -131,7 +131,7 @@ export default function useApplicatonData(){
     })
   }
     function addExpense(userId,expense){
-     console.log("@@@@@",expense);
+      console.log("@@@@@",expense);
       return axios.put(`http://localhost:8080/api/expenses/${userId}`, {expense}).then(res=> { 
       
         const result= JSON.parse(res.config.data)["expense"];

@@ -1,11 +1,14 @@
 import React,{Component} from 'react';
-import { getincomeByMonth } from '../../helpers/selectors';
+import { getincomeByMonth ,getTotalIncome} from '../../helpers/selectors';
 import {CanvasJSChart} from 'canvasjs-react-charts'
 
  
 
 export default class IncomeReport extends Component {
-
+   eachMonthTotal=()=>{
+    const total=	getTotalIncome(this.props.incomes, this.props.userId);
+	return total;
+   }
 	eachMonth = () => {
 		const monthIncome=getincomeByMonth(this.props.incomes,this.props.month,this.props.userId);
 		return Object.keys(monthIncome).map((k)=>{ 
@@ -19,7 +22,7 @@ export default class IncomeReport extends Component {
 				text:  `${new Date().toLocaleString('default', { month: 'long' })} Income`
 			},
 			subtitles: [{
-				text:  '',
+				text:  this.eachMonthTotal()['Oct'],
 				verticalAlign: "center",
 				fontSize: 24,
 				dockInsidePlotArea: true

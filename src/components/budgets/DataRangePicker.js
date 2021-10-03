@@ -35,14 +35,12 @@ class DateRange extends React.Component {
     }
   }
 
-
+ 
   render() {
     return (
       <div className="DateRange" >
         <pre style={{ textAlign: "left" }}>
-
           <p>  start date:  {this.state.startDateFormatted}   end date:  {this.state.endDateFormatted}</p>
-
         </pre>
         <Mobile>
           <DateRangePicker
@@ -80,6 +78,7 @@ class DateRange extends React.Component {
     );
   }
 }
+ 
 export default DateRange;
 
 export const Mobile = (props) => <Responsive {...props} maxWidth={400} />;

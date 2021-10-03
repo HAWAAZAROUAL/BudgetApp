@@ -72,8 +72,8 @@ module.exports = (db) => {
       setTimeout(() => response.status(500).json({}), 1000);
       return;
     }
-    const { name, budget_limit, start_date, end_date } = request.body.budget;
-
+    const { name, budget_limit,amount } = request.body.budget;
+    console.log("%%%%%%%%",amount);
     db.query(
       ` UPDATE budgets SET 
         name = $1::text, 
@@ -84,6 +84,14 @@ module.exports = (db) => {
       [name, Number(budget_limit),   Number(request.params.userid),Number(request.params.budgetid)]
       )
       .then(() => {
+        db.query(
+          `
+          UPDATE categories SET
+          amount=$1::INTEGER  
+          WHERE budget_id=$2::INTEGER
+              `,
+          [ Number(amount), Number(request.params.budgetid)]
+        )
         setTimeout(() => {
           response.status(204).json({});
         }, 1000);

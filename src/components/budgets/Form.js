@@ -19,13 +19,16 @@ export default function Form(props) {
     props.id ? props.onCancel() : reset()
   }
   function onSave() {
+
     const budget = {
       name: name,
       budget_limit: budget_limit,
       start_date: start_date,
       end_date: end_date,
+      amount: Number(budget_limit)-Number(props.budgetLimit)+Number(props.amount)
     }
-
+     
+     
     if (props.id) {
       props.onSave(props.id, budget, props.userId).then((res) => {
         props.onCancel()
@@ -33,7 +36,6 @@ export default function Form(props) {
     } else {
       props
         .onSave(props.userId, budget)
-
         .then((res) => {
           reset()
         })
@@ -43,46 +45,85 @@ export default function Form(props) {
     setstart_date(startDate)
     setend_date(endDate)
   }
-  return (
-    <div>
-      <div className="input-form">
-        <form autoComplete="off">
-          <input
-            name="name"
-            value={name}
-            type="text"
-            placeholder="Enter Budget Name"
-            onChange={(event) => setName(event.target.value)}
-          />
-          <input
-            name="budget_imit"
-            value={budget_limit}
-            type="text"
-            placeholder="Enter Budget Limit"
-            onChange={(event) => setbudget_limit(event.target.value)}
-          />
-        </form>
+  if(props.name){
+    return (
+      <div>
+        <div className="input-form">
+          <form autoComplete="off">
+            <input readOnly
+              name="name"
+              value={props.name}
+              type="text"
+              placeholder="Enter Budget Name"
+              onChange={(event) => setName(event.target.value)}
+            />
+            <input
+              name="budget_imit"
+              value={budget_limit}
+              type="text"
+              placeholder="Enter Budget Limit"
+              onChange={(event) => setbudget_limit(event.target.value)}
+            />
+          </form>
+        </div>
+        
+        <div className="input-btns">
+          {' '}
+          <Button danger onClick={cancel}>
+            Cancel
+          </Button>
+          </div>
+          <div className="input-btns">
+          <Button confirm onClick={(event) => onSave()}>
+            {' '}
+            Save{' '}
+          </Button>
+        </div>
       </div>
-      <div className="date-range">
-        <DateRange
-          getDate={getDate}
-          startDate={props}
-          endDate={props.endDate}
-          mode={props.mode}
-        />
-      </div>
-      <div className="input-btns">
-        {' '}
-        <Button danger onClick={cancel}>
-          Cancel
-        </Button>
+    )
+  } else {
+    return (
+      <div>
+        <div className="input-form">
+          <form autoComplete="off">
+            <input
+              name="name"
+              value={name}
+              type="text"
+              placeholder="Enter Budget Name"
+              onChange={(event) => setName(event.target.value)}
+            />
+            <input
+              name="budget_imit"
+              value={budget_limit}
+              type="text"
+              placeholder="Enter Budget Limit"
+              onChange={(event) => setbudget_limit(event.target.value)}
+            />
+          </form>
+        </div>
+        <div className="date-range">
+          <DateRange
+            getDate={getDate}
+            startDate={props.startDate}
+            endDate={props.endDate}
+            mode={props.mode}
+          />
         </div>
         <div className="input-btns">
-        <Button confirm onClick={(event) => onSave()}>
           {' '}
-          Save{' '}
-        </Button>
+          <Button danger onClick={cancel}>
+            Cancel
+          </Button>
+          </div>
+          <div className="input-btns">
+          <Button confirm onClick={(event) => onSave()}>
+            {' '}
+            Save{' '}
+          </Button>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
+ 
 }

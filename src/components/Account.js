@@ -9,7 +9,7 @@ const monthIncome = getincomeByMonth(props.income,currentMonth,props.userId);
  
  const data = Object.keys(monthIncome).map(key=>{
      return(
-      <ShowIncome income_type={key} income={monthIncome[key]}/>
+      <ShowIncome income_type={key} income={monthIncome[key]} />
       ); 
    });
  

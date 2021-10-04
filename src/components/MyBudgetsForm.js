@@ -1,5 +1,5 @@
 import Button from './Button'
-import { getBudgetId } from '../helpers/selectors';
+import { getBudgetId,getCategoryId } from '../helpers/selectors';
 import React, { useState } from 'react';
 import DropdownMenu from './dropdown';
 export default function MyBudgetsForm(props) {
@@ -18,17 +18,21 @@ export default function MyBudgetsForm(props) {
    const today = new Date();
    const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
    if(props.budgets[budgetId]){
-    if(props.budgets[budgetId]["amount"]){
+    console.log("....budgets",props.budgets ,props.categories);
+    if(props.budgets[budgetId]){
       const newAmount=props.budgets[budgetId]["amount"];
+     //const category_id= props.budgets[budgetId]["category_id"];
+     const category_id= getCategoryId(category, props.categories)
+      console.log('category_id',category_id);
       const expense = {
         budgetId:budgetId,
         date:  date,
         available: newAmount-amount,
         amount: amount,  
-        category_id: props.budgets[budgetId]["category_id"]
+        category_id: category_id
       }
     
-    props
+          props
           .onAdd(props.userId, expense)
   
           .then((res) => {
@@ -52,8 +56,8 @@ export default function MyBudgetsForm(props) {
     <>
     
       <div className="input-form">
-      <p>Add Expense</p>
-      <DropdownMenu getValue={getValue} categories={props.categories}/>
+      {/* <p>Add Expense</p> */}
+      <DropdownMenu getValue={getValue} categories={props.categories} budgets={props.budgets}/>
         <form autoComplete="off">
         <h6>{category}</h6>
          
@@ -69,7 +73,7 @@ export default function MyBudgetsForm(props) {
       <div className="input-btns">
         <Button confirm onClick={(event) => onSave()}>
           {' '}
-          Save Change{' '}
+          Save{' '}
         </Button>
       </div>
     </>

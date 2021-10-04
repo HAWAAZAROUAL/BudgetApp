@@ -10,7 +10,7 @@ import Pie from './components/charts/Pie'
 import BarGraph from './components/charts/BarGraph'
 import CreateBudget from './components/budgets/index'
 import { getQuotesKey } from './helpers/selectors'
-import LeftOver from './components/charts/LeftOver'
+
 import IncomeTime from './components/charts/IncomeTime'
 import Quotes from './components/Quotes'
 import Calendar from 'react-calendar'
@@ -28,7 +28,7 @@ import {
 library.add(fab, faCheckSquare, faHome, faEdit, faStream)
 
 const Home = () => {
-  const { state, addCategories, addIncome,createBudget,addExpense,
+  const { state,  addIncome,createBudget,addExpense,
     updateBudget,
     deleteBudget,
   } = useApplicationData()

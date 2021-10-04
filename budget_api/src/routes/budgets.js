@@ -26,7 +26,7 @@ module.exports = (db) => {
       setTimeout(() => response.status(500).json({}), 1000);
       return;
     }
-    const { name, budget_limit, start_date, end_date } = request.body.budget;
+    const { name, budget_limit, start_date, end_date} = request.body.budget;
 
     db.query(
       `
@@ -39,7 +39,7 @@ module.exports = (db) => {
         const budgetId=data.rows[0]["id"];
         db.query(
           `
-              INSERT INTO categories ( category_type ,amount ,budget_id) VALUES ($1::TEXT, $2::INTEGER,  $3::INTEGER) returning *;
+              INSERT INTO categories ( category_type ,amount ,budget_id) VALUES ($1::TEXT, $2::INTEGER,  $3::INTEGER) returning id;
               `,
           [name, Number(budget_limit),  Number(budgetId)]
         )

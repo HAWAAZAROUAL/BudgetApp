@@ -16,10 +16,16 @@ const reducers = {
     },
     
     createBudgets(state,action){
-    
+        let id;
+        let newID;
         const arr=Object.keys(state.budgets);
-        const id= arr[arr.length-1] ;
-        const newID= Number(id)+1;
+        if(arr.length===0){
+          newID=1;
+        } else{
+          id= arr[arr.length-1] ;
+          newID= Number(id)+1;
+        }
+       
         const budgets = {...state.budgets};
         budgets[newID]= {
           id:Number(newID),
@@ -28,9 +34,31 @@ const reducers = {
           start_date: action.start_date ,  
           end_date:  action.end_date,
           user_id: action.user_id,
-          amount:action.budget_limit
+          amount:action.budget_limit,
+           
         };
-        return {...state,budgets:budgets};
+
+        const arr1=Object.keys(state.categories);
+        let id1 ;
+        let newID1 ;
+        if(arr1.length===0){
+              newID1= 1;
+        } else{
+            id1= arr1[arr1.length-1] ;
+            newID1= Number(id1)+1;
+        }
+        
+        const categories={...state.categories};
+        categories[newID1]= {
+          id:Number(newID1),
+          amount:action.budget_limit,
+          category_type:action.name,
+          budget_id :Number(newID)
+        };
+
+
+        console.log("?????",categories,budgets);
+        return {...state,budgets:budgets,categories:categories};
         },
     addIncome(state,action){
        
@@ -91,7 +119,7 @@ const reducers = {
        budgets[action.id]["budget_limit"]= action.budget_limit;
        budgets[action.id]["start_date"]=action.start_date;
        budgets[action.id]["end_date"]=action.end_date;
-        
+       budgets[action.id]["amount"]=action.amount;
        return { 
         ...state,
        budgets: budgets 

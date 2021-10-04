@@ -39,7 +39,7 @@ export function getBudgetByMonth(budgets, year, month, userId) {
   const result = {};
   let arr = Object.values(budgets);
   for (const budget of arr) {
-
+    if(budget.start_date && budget.end_date){
     const startDate = budget.start_date.split('T')[0];
     const endDate = budget.end_date.split('T')[0];
     const userid = budget.user_id;
@@ -102,7 +102,7 @@ export function getBudgetByMonth(budgets, year, month, userId) {
     if ((startDate >= d1) && (endDate <= d2) && (userid === userId)) {
       result[budget["name"]] = [budget["budget_limit"], budget["amount"]];
     }
-  }
+  }}
   return result;
 }
 function getCategoryName(result, categories) {
@@ -130,13 +130,15 @@ export function getExpenseByMonth(expenses, categories, month, userId) {
     const m = (new Date(expense.date)).getMonth() + 1;
 
     if (m === month && expense.user_id === userId) {
+       if(expense.category_id){
+        if (Object.keys(result).includes((expense.category_id).toString())) {
 
-      if (Object.keys(result).includes((expense.category_id).toString())) {
-
-        result[expense.category_id] += Number(expense.amount);
-      } else {
-        result[expense.category_id] = Number(expense.amount);
-      }
+          result[expense.category_id] += Number(expense.amount);
+        } else {
+          result[expense.category_id] = Number(expense.amount);
+        }
+       }
+     
     }
   }
   return getCategoryName(result, categories);
@@ -218,11 +220,13 @@ export function getQuotesKey(quotes) {
 }
 export function getCategoryId(name, categories) {
   let categoryId;
-  if (Object.values(categories)) {
+  
+  if (Object.keys(categories)) {
     Object.keys(categories).map((k) => {
 
-      if (categories[k]["category_id"] === name) {
+      if (categories[k]["category_type"] === name) {
         categoryId = k;
+        
       }
     });
   }

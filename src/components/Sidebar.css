@@ -16,7 +16,7 @@
 ul.nav.sidebar-nav {
   padding: 5px 0 5px 0;
   margin: 0px;
-  max-height:200px;
+  max-height: 200px;
 }
 
 .sidebar-nav {
@@ -32,7 +32,7 @@ a.sidebar-brand {
 
 .nav.sidebar-nav li:hover {
   text-decoration: none;
-  background-color: lightsteelblue;
+  background-color: rgb(211, 223, 238);
 }
 
 
@@ -43,7 +43,7 @@ a.sidebar-brand {
   display: block;
   height: 48px;
   line-height: 48px;
-  width:241px;
+  width: 241px;
   padding: 0 56px 0 20px;
   text-decoration: none;
   font-weight: 500;
@@ -118,24 +118,53 @@ a.sidebar-brand {
   width: 200px;
   font-size: 25px;
 }
+
 .e-text {
   font-family: 'Dosis', sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 25px;
-  font-weight:bold;
+  font-size: 20px;
+  font-weight: bold;
   /* padding-bottom: 40px; */
   color: grey;
 }
+
 .sidebar-header {
   padding-top: 20px;
   padding-left: 40px;
 }
+
 .list-items {
-border-radius: 10px;
+  border-radius: 10px;
   padding: 20px 0 20px 0;
 }
+
 .sidebar-icons {
   padding-right: 30px;
+}
+
+.e-text.home {
+  background-color: #36b4e4;
+  display: inline-block;
+  width: 180px;
+  border-radius: 20px;
+  color: white;
+}
+
+.e-text.create {
+  background-color: #efa620;
+  display: inline-block;
+  width: 180px;
+  border-radius: 20px;
+  color: white;
+  position: absolute;
+  left: 50px;
+}
+
+.e-text.mybudgets {
+  background-color: #e4647b;
+  color: white;
+  display: inline-block;
+  width: 180px;
+  border-radius: 20px;
 }

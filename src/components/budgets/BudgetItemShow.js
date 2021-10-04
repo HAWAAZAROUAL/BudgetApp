@@ -1,5 +1,5 @@
 import Button from '../Button'
-import './Budget_Show.css'
+// import './Budget_Show.css'
 
 export default function ShowBudgetItem(props) {
   return (

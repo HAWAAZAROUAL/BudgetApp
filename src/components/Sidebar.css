@@ -111,7 +111,7 @@ a.sidebar-brand {
 
 
 .control-section {
-  position: absolute;
+  position: fixed;
   background-color: white;
   /* background: url('../img/Home-Four-Banner-Background-Image.png'); */
   height: 1700px;

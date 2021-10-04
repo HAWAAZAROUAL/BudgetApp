@@ -24,7 +24,7 @@ module.exports = (db) => {
       return;
     }
     const { amount,category_id ,available,date} = request.body.expense;
-     
+     console.log("%%%%%%%%%%%%....",request.body.expense);
       
         db.query(
           ` UPDATE categories SET 

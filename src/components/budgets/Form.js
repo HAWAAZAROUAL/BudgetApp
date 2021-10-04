@@ -25,7 +25,8 @@ export default function Form(props) {
       budget_limit: budget_limit,
       start_date: start_date,
       end_date: end_date,
-      amount: Number(budget_limit)-Number(props.budgetLimit)+Number(props.amount)
+      amount: Number(budget_limit)-Number(props.budgetLimit)+Number(props.amount),
+       
     }
      
      

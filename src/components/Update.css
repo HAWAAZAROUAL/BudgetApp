@@ -24,3 +24,12 @@
   background-color: #dc98ae;
   border-color: #dc98ae;
 }
+
+span.budget-table.budget-alert {
+  display: initial;
+  background-color: crimson;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 0;
+  color: white;
+}

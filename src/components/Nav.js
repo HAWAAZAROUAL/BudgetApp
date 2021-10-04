@@ -12,7 +12,7 @@ export default function Nav(props) {
       </style>
       {/* <h1>{props.name}</h1> */}
       <h1>Budget Buddy</h1>
-      <h6><em>Be your money's master, not its slave.</em></h6>
+      <h5><em>Be your money's master, not its slave.</em></h5>
     </div>
   )
 }

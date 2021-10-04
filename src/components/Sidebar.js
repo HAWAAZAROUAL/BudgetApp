@@ -3,10 +3,7 @@ import { Link } from 'react-router-dom'
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations'
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
-// import font
-
+import { faEdit } from '@fortawesome/free-solid-svg-icons'
 export default class App extends React.Component {
   constructor(props) {
     super(props)
@@ -47,7 +44,7 @@ export default class App extends React.Component {
                   @import
                   url('https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap');
                 </style>
-                <span className="e-text">
+                <span className="e-text home">
                   <span>
                     <FontAwesomeIcon className="sidebar-icons" icon="home" />
                   </span>
@@ -57,16 +54,16 @@ export default class App extends React.Component {
             </li>
             <li className="list-items">
               <Link to="/Create">
-                <span className="e-text">
+                <span className="e-text create">
                 <span>
-                    <FontAwesomeIcon className="sidebar-icons" icon="edit" />
+                    <FontAwesomeIcon className="sidebar-icons" icon={faEdit} />
                   </span>
                    Create</span>
               </Link>
             </li>
             <li className="list-items">
               <Link path to="/MyBudgets">
-                <span className="e-text">
+                <span className="e-text mybudgets">
                 <span>
                     <FontAwesomeIcon className="sidebar-icons" icon="stream" />
                   </span>

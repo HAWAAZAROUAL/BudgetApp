@@ -1,0 +1,26 @@
+.my-budgets-expenses, .my-budgets-budgets, .my-budgets-form {
+  margin: 60px 0 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+}
+.my-budgets-expenses p, .my-budgets-budgets p, .my-budgets-form p {
+  background-color: pink;
+  padding: 20px;
+  margin-bottom: 0;
+  font-size: 20px;
+  border-radius: 10px;
+  position: relative;
+  top: -20px;
+  left: 20px;
+  width: 460px;
+
+}
+.my-budgets-expenses-data, .my-budgets-budgets-data, .my-budgets-form-data {
+  padding: 0 30px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+#dropdown-menu-align-right {
+  background-color: #dc98ae;
+  border-color: #dc98ae;
+}

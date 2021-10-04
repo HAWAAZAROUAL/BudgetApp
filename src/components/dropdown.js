@@ -2,7 +2,7 @@ import React,{useState} from 'react';
  import 'bootstrap/dist/css/bootstrap.min.css';
  import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown'
-
+import './Update.css'
 
 function DropdownMenu(props) {
   const [value,setValue]=useState('');

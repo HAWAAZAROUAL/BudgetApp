@@ -52,7 +52,7 @@ export default function MyBudgetsForm(props) {
     <>
     
       <div className="input-form">
-      <p>Add Expense</p>
+      {/* <p>Add Expense</p> */}
       <DropdownMenu getValue={getValue} categories={props.categories}/>
         <form autoComplete="off">
         <h6>{category}</h6>
@@ -69,7 +69,7 @@ export default function MyBudgetsForm(props) {
       <div className="input-btns">
         <Button confirm onClick={(event) => onSave()}>
           {' '}
-          Save Change{' '}
+          Save{' '}
         </Button>
       </div>
     </>

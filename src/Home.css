@@ -17,6 +17,8 @@ body {
 }
 
 #pie-chart p, #bar-graph p, #time-graph p, #account p, #income-graph p {
+  /* display: grid;
+  grid-template-columns: 100px 100px 100px; */
   font-size: 20px;
   margin: 0;
   border-radius: 10px;

@@ -1,7 +1,7 @@
 import './Update.css'
 export default function ShowMybudgets(props) {
   let alert;
-  if(Number(props.available)<=0){
+  if(Number(props.available)<0){
     alert="You are over budget";
   }
   return (

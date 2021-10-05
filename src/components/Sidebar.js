@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import { SidebarComponent } from '@syncfusion/ej2-react-navigations'
 import './Sidebar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit } from '@fortawesome/free-solid-svg-icons'
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
 export default class App extends React.Component {
   constructor(props) {
     super(props)
@@ -72,6 +73,7 @@ export default class App extends React.Component {
             </li>
           </ul>
         </SidebarComponent>
+       
       </div>
     )
   }

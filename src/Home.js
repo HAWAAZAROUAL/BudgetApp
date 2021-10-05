@@ -10,7 +10,7 @@ import Pie from './components/charts/Pie'
 import BarGraph from './components/charts/BarGraph'
 import CreateBudget from './components/budgets/index'
 import { getQuotesKey } from './helpers/selectors'
-
+import Summary from './components/summary'
 import IncomeTime from './components/charts/IncomeTime'
 import Quotes from './components/Quotes'
 import Calendar from 'react-calendar'
@@ -53,12 +53,18 @@ const Home = () => {
           <Quotes quote={state.quotes[quoteKey].quote} author={state.quotes[quoteKey].author} />
         </div>
         <div className="budget-calendar">
+        
         <Calendar  />
+       
         </div>
-
+        
         <Switch>
           <Route path="/Create">
+         
             <div id="create">
+            <Summary incomes={state.incomes} 
+               const totalIncome  userId={state.userId}
+                categories={state.categories} expenses={state.expenses}  /> 
               <CreateBudget
                 budgets={state.budgets}
                 userId={state.userId}

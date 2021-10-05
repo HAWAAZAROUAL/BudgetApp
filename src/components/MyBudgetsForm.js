@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import DropdownMenu from './dropdown';
 export default function MyBudgetsForm(props) {
   const [category, setCategory] = useState('')
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState('')
 
 
   function onSave() {
@@ -42,7 +42,7 @@ export default function MyBudgetsForm(props) {
 
   function reset() {
     setCategory('')
-    setAmount(0)
+    setAmount('')
   }
   function getValue(e) {
     setCategory(e)
@@ -61,6 +61,7 @@ export default function MyBudgetsForm(props) {
             name="amount"
             value={amount}
             type="text"
+            placeholder="Enter amount"
             onChange={(event) => setAmount(event.target.value)}
           />
         </form>

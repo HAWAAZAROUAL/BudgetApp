@@ -7,13 +7,13 @@ import './Form.css'
 export default function Form(props) {
    
   const [name, setName] = useState(props.name || '')
-  const [budget_limit, setbudget_limit] = useState(props.budgetLimit || 0)
+  const [budget_limit, setbudget_limit] = useState(props.budgetLimit || '')
   const [start_date, setstart_date] = useState(props.startDate || null)
   const [end_date, setend_date] = useState(props.endDate || null)
 
   function reset() {
     setName('')
-    setbudget_limit(0)
+    setbudget_limit('')
   }
   function cancel() {
     props.id ? props.onCancel() : reset()

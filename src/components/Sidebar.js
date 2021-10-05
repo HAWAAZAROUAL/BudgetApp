@@ -22,6 +22,7 @@ export default class App extends React.Component {
   create() {
     this.mode = 'CREATE'
   }
+
   render() {
     return (
       // Sidebar Element Declaration

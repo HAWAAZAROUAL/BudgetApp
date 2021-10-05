@@ -8,12 +8,18 @@ export default function ShowSummary(props){
                 <tr>
                     <th>
                         Total Income
+                    
+                        
                     </th>
                     <th>
-                        Total Expenses
+                       Total Expenses 
+                    
+                        
                     </th>
                     <th>
-                        Balance
+                       Balance 
+                    
+                        
                     </th>
                 </tr>
                 <tr>

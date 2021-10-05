@@ -10,7 +10,7 @@ export default function ShowMybudgets(props) {
 // }
 let alert;
   if(Number(props.available)<0){
-    alert="You are over budget";
+    alert="You are over budget!!!";
   }
 
 
@@ -21,7 +21,7 @@ let alert;
         <span className="budget-table">{props.budget}</span>
         <span className="budget-table">{props.available}</span>
         <div>
-        <span className="budget-table budget-alert">{alert}
+        <span className="budget-table budget-alert"><b>{alert}</b>
         
         </span>
 

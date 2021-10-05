@@ -28,11 +28,12 @@
 
 span.budget-table.budget-alert {
   display: initial;
-  background-color: crimson;
-  border-radius: 10px;
-  font-size: 15px;
+  /* background-color: crimson; */
+  /* border-radius: 10px; */
+  font-weight: 300px;
+  font-size: 20px;
   padding: 0;
-  color: white;
+  color: crimson;
 }
 
 .my-budgets-table-summary th, .my-budgets-table-summary td {

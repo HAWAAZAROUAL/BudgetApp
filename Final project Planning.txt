@@ -209,3 +209,23 @@ Create Page "/Create"
 My Budgets "/MyBudgets"
   - Display the Special budget names
   - Add expenses to Budget (category and amount)
+
+
+
+  -----PRESENTATION OUTLINE------
+Introduce what our app is:
+    - It is an easy to use budgeting app that allows users to track their spending.
+  
+  Talk about the tech stack that was used:
+    - For the front end we used react, css, and javascript. For the backend we used node, postgres, and react router.
+
+  Do a walk through of how the app works:
+    - When a user logs in they are immediately shown a summary of their income, their expenses, and their income over time.
+    - Next we will create a budget
+    - When a budget is created it goes to the My budgets page which is where users can add expenses to specific budgets. 
+    - As we add expenses, the expenses diagram on the homepage gets updated.
+    - When a user goes over budget they get a an alert on screen. This helps the user stay mindful of their spending.
+    - We also have a balance tracker which calculates the income vs expenses
+
+    While the app provides solid services it can be further improved:
+      - This would be a handy mobile app that a user can have on their phone for easy updating.

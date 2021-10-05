@@ -59,5 +59,8 @@ body {
 .react-calendar {
  border: 0;
 }
+a.canvasjs-chart-credit {
+  display: none;
+}
 
 

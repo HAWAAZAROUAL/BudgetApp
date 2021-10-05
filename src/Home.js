@@ -85,6 +85,9 @@ const Home = () => {
           </Route>
 
           <Route path="/">
+            <div className="both-income-graphs">
+
+            
             <div id="income-graph">
               <p>Your current incomes</p>
               < IncomeReport   incomes={state.incomes} month={10} userId={state.userId}/>
@@ -96,12 +99,15 @@ const Home = () => {
                 income={state.incomes}
               />{' '}
               </div>
-            
+            </div>
 
             {/* <div id="pie-chart">
               <p>Expenses</p>
               <Pie categories={state.categories} expenses={state.expenses} />
             </div> */}
+
+<div className="expense-and-time-graphs">
+
 
             <div id="bar-graph">
               <p>Expenses</p>
@@ -118,6 +124,8 @@ const Home = () => {
               </section>
               {/* <LeftOver /> */}
             </div>
+            </div>
+
           </Route>
         </Switch>
       </Router>

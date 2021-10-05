@@ -2,7 +2,7 @@ import Button from './Button'
 
 import React, { useState } from 'react'
 export default function AccountForm(props) {
-  const [income, setIncome] = useState(0)
+  const [income, setIncome] = useState('')
   const [income_type, setIncome_type] = useState('')
   const today = new Date();
   const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -19,7 +19,7 @@ export default function AccountForm(props) {
   }
 
   function reset() {
-    setIncome(0)
+    setIncome('')
     setIncome_type('')
   }
   return (

@@ -9,7 +9,7 @@ module.exports = (db) => {
     select categories.id as category_id,budgets.*,categories.amount from categories 
     join budgets on categories.budget_id= budgets.id;`
     ).then(({ rows: budgets }) => {
-      
+
       response.json(
         budgets.reduce(
           (previous, current) => ({ ...previous, [current.id]: current }),
@@ -26,7 +26,7 @@ module.exports = (db) => {
       setTimeout(() => response.status(500).json({}), 1000);
       return;
     }
-    const { name, budget_limit, start_date, end_date} = request.body.budget;
+    const { name, budget_limit, start_date, end_date } = request.body.budget;
 
     db.query(
       `
@@ -35,13 +35,13 @@ module.exports = (db) => {
       [name, Number(budget_limit), start_date, end_date, Number(request.params.userid)]
     )
       .then((data) => {
-        
-        const budgetId=data.rows[0]["id"];
+
+        const budgetId = data.rows[0]["id"];
         db.query(
           `
               INSERT INTO categories ( category_type ,amount ,budget_id) VALUES ($1::TEXT, $2::INTEGER,  $3::INTEGER) returning id;
               `,
-          [name, Number(budget_limit),  Number(budgetId)]
+          [name, Number(budget_limit), Number(budgetId)]
         )
         setTimeout(() => {
           response.status(204).json({});
@@ -67,13 +67,13 @@ module.exports = (db) => {
   });
 
 
- router.put("/budgets/:userid/:budgetid", (request, response) => {
+  router.put("/budgets/:userid/:budgetid", (request, response) => {
     if (process.env.TEST_ERROR) {
       setTimeout(() => response.status(500).json({}), 1000);
       return;
     }
-    const { name, budget_limit,amount } = request.body.budget;
-    console.log("%%%%%%%%",amount);
+    const { name, budget_limit, amount } = request.body.budget;
+    console.log("%%%%%%%%", amount);
     db.query(
       ` UPDATE budgets SET 
         name = $1::text, 
@@ -81,8 +81,8 @@ module.exports = (db) => {
          
         user_id=$3::integer
       where id=$4::integer`,
-      [name, Number(budget_limit),   Number(request.params.userid),Number(request.params.budgetid)]
-      )
+      [name, Number(budget_limit), Number(request.params.userid), Number(request.params.budgetid)]
+    )
       .then(() => {
         db.query(
           `
@@ -90,7 +90,7 @@ module.exports = (db) => {
           amount=$1::INTEGER  
           WHERE budget_id=$2::INTEGER
               `,
-          [ Number(amount), Number(request.params.budgetid)]
+          [Number(amount), Number(request.params.budgetid)]
         )
         setTimeout(() => {
           response.status(204).json({});
@@ -99,7 +99,7 @@ module.exports = (db) => {
       .catch(error => console.log(error));
   });
 
- 
+
 
 
 

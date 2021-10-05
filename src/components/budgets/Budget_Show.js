@@ -6,7 +6,7 @@ import useVisualMode from "../../hooks/useVisulMode";
 export default function BudgetShow(props) {
 
   const SHOW = "SHOW";
- 
+
   const EDIT = "EDIT";
   const { mode, transition, back } = useVisualMode(
     SHOW
@@ -36,9 +36,9 @@ export default function BudgetShow(props) {
         onDelete={deleteBudget}
       />
       }
-      
+
       {mode === EDIT && <Form
-        userId={props.userid} 
+        userId={props.userid}
         onSave={props.updateBudget}
         onCancel={back}
         name={props.budgetName}

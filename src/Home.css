@@ -5,7 +5,7 @@ body {
 #homepage, #income, #budgets, #create, #pie-chart, #bar-graph, #time-graph, #income-graph {
   margin:auto;
   width: 550px;
-  margin-top: 70px;
+  margin-top: 225px;
   border-radius: 10px;
   background-color: white;
   box-shadow: 0 0 15px rgb(192, 155, 173);
@@ -14,10 +14,15 @@ body {
   font-weight: bold;
   letter-spacing: 1.5px;
   margin-bottom: 70px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
 }
 
 #pie-chart p, #bar-graph p, #time-graph p, #account p, #income-graph p {
   font-size: 20px;
+  display: flex;
+  /* align-items: flex-start; */
   margin: 0;
   border-radius: 10px;
   background-color: rgb(97, 163, 238);
@@ -77,15 +82,4 @@ a.canvasjs-chart-credit {
 }
 .expense-and-time-graphs {
   margin-top: 40px;
-}
-
-.both-income-graphs, .expense-and-time-graphs {
-  margin-top: 220px;
-  margin-left: 350px;
-  display: flex;
-    justify-content: center;
-}
-#income, #income-graph, #bar-graph, #time-graph {
-  width: 450px;
-  margin: 30px;
 }

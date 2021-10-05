@@ -152,13 +152,14 @@ export function getExpenseByMonth(expenses, categories, month, userId) {
  */
 export function getincomeByMonth(incomes, month, userId) {
   const result = {};
+
   let arr = Object.values(incomes);
   for (const income of arr) {
 
     const m = (new Date(income.date)).getMonth() + 1;
 
     if (m === month && income.user_id === userId) {
-
+      
       if (Object.keys(result).includes((income.income_type).toString())) {
 
         result[income.income_type] += income.income;
@@ -182,9 +183,12 @@ export function getTotalIncome(incomes, userId) {
   for (let i = 1; i <= 12; i++) {
     const result = getincomeByMonth(incomes, i, userId);
     let total = 0;
-    Object.values(result).map((val) => { total += val; }
-    );
-    monthTotal[month[i - 1]] = total;
+    if(result){
+      Object.values(result).map((val) => { total += val; }
+      );
+      monthTotal[month[i - 1]] = total;
+    }
+   
   }
   return monthTotal;
 }

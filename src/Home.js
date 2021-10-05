@@ -14,7 +14,7 @@ import Summary from './components/summary'
 import IncomeTime from './components/charts/IncomeTime'
 import Quotes from './components/Quotes'
 import Calendar from 'react-calendar'
-import 'react-calendar/dist/Calendar.css';
+import 'react-calendar/dist/Calendar.css'
 import IncomeReport from './components/reports/income.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -28,7 +28,11 @@ import {
 library.add(fab, faCheckSquare, faHome, faEdit, faStream)
 
 const Home = () => {
-  const { state,  addIncome,createBudget,addExpense,
+  const {
+    state,
+    addIncome,
+    createBudget,
+    addExpense,
     updateBudget,
     deleteBudget,
   } = useApplicationData()
@@ -50,17 +54,19 @@ const Home = () => {
           <Sidebar email={state.email} />
         </div>
         <div>
-          <Quotes quote={state.quotes[quoteKey].quote} author={state.quotes[quoteKey].author} />
+          <Quotes
+            quote={state.quotes[quoteKey].quote}
+            author={state.quotes[quoteKey].author}
+          />
         </div>
-        <div className="budget-calendar">
+        {/* <div className="budget-calendar">
         
         <Calendar  />
        
-        </div>
-        
+        </div> */}
+
         <Switch>
           <Route path="/Create">
-         
             <div id="create">
               <CreateBudget
                 budgets={state.budgets}
@@ -74,30 +80,40 @@ const Home = () => {
 
           <Route path="/MyBudgets">
             <div id="budgets">
-            <Summary incomes={state.incomes} 
-               const totalIncome  userId={state.userId}
-                categories={state.categories} expenses={state.expenses}  /> 
-              <MyBudgets onAdd={addExpense} userId={state.userId} 
-              expense={state.expenses}
-              categories={state.categories}
-              budgets={state.budgets}/>
+              <Summary
+                incomes={state.incomes}
+                const
+                totalIncome
+                userId={state.userId}
+                categories={state.categories}
+                expenses={state.expenses}
+              />
+              <MyBudgets
+                onAdd={addExpense}
+                userId={state.userId}
+                expense={state.expenses}
+                categories={state.categories}
+                budgets={state.budgets}
+              />
             </div>
           </Route>
 
           <Route path="/">
             <div className="both-income-graphs">
-
-            
-            <div id="income-graph">
-              <p>Your current incomes</p>
-              < IncomeReport   incomes={state.incomes} month={10} userId={state.userId}/>
+              <div id="income-graph">
+                <p>Your current incomes</p>
+                <IncomeReport
+                  incomes={state.incomes}
+                  month={10}
+                  userId={state.userId}
+                />
               </div>
               <div id="income">
-              <Account
-                onAdd={addIncome}
-                userId={state.userId}
-                income={state.incomes}
-              />{' '}
+                <Account
+                  onAdd={addIncome}
+                  userId={state.userId}
+                  income={state.incomes}
+                />{' '}
               </div>
             </div>
 
@@ -106,26 +122,23 @@ const Home = () => {
               <Pie categories={state.categories} expenses={state.expenses} />
             </div> */}
 
-<div className="expense-and-time-graphs">
+            <div className="expense-and-time-graphs">
+              <div id="bar-graph">
+                <p>Expenses</p>
+                <BarGraph
+                  categories={state.categories}
+                  expenses={state.expenses}
+                />
+              </div>
 
-
-            <div id="bar-graph">
-              <p>Expenses</p>
-              <BarGraph
-                categories={state.categories}
-                expenses={state.expenses}
-              />
+              <div id="time-graph">
+                <p>Income</p>
+                <section>
+                  <IncomeTime className="income-time" incomes={state.incomes} />
+                </section>
+                {/* <LeftOver /> */}
+              </div>
             </div>
-
-            <div id="time-graph">
-              <p>Income</p>
-              <section>
-                <IncomeTime className="income-time" incomes={state.incomes} />
-              </section>
-              {/* <LeftOver /> */}
-            </div>
-            </div>
-
           </Route>
         </Switch>
       </Router>

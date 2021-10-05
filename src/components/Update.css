@@ -1,10 +1,11 @@
-.my-budgets-expenses, .my-budgets-budgets, .my-budgets-form {
+.my-budgets-expenses, .my-budgets-budgets, .my-budgets-form, .my-budgets-summary {
   margin: 60px 0 20px 0;
   border-radius: 10px;
-  box-shadow: 0 0 20px black;
+  box-shadow: 0 0 15px black;
 }
-.my-budgets-expenses p, .my-budgets-budgets p, .my-budgets-form p {
+.my-budgets-expenses p, .my-budgets-budgets p, .my-budgets-form p, .my-budgets-summary p {
   background-color: #e4647b;
+  box-shadow: 0 0 10px #e4647b;
   padding: 20px;
   margin-bottom: 0;
   font-size: 20px;
@@ -15,7 +16,7 @@
   width: 460px;
 
 }
-.my-budgets-expenses-data, .my-budgets-budgets-data, .my-budgets-form-data {
+.my-budgets-expenses-data, .my-budgets-budgets-data, .my-budgets-form-data, .my-budgets-table-summary {
   padding: 0 30px;
   border-radius: 10px;
   font-size: 18px;
@@ -32,4 +33,17 @@ span.budget-table.budget-alert {
   font-size: 15px;
   padding: 0;
   color: white;
+}
+
+.my-budgets-table-summary th, .my-budgets-table-summary td {
+  padding: 10px;
+  border: solid 1px black;
+}
+
+.my-budgets-table-summary {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  text-align: center;
 }

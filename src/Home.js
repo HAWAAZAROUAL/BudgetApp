@@ -62,9 +62,6 @@ const Home = () => {
           <Route path="/Create">
          
             <div id="create">
-            <Summary incomes={state.incomes} 
-               const totalIncome  userId={state.userId}
-                categories={state.categories} expenses={state.expenses}  /> 
               <CreateBudget
                 budgets={state.budgets}
                 userId={state.userId}
@@ -77,6 +74,9 @@ const Home = () => {
 
           <Route path="/MyBudgets">
             <div id="budgets">
+            <Summary incomes={state.incomes} 
+               const totalIncome  userId={state.userId}
+                categories={state.categories} expenses={state.expenses}  /> 
               <MyBudgets onAdd={addExpense} userId={state.userId} 
               expense={state.expenses}
               categories={state.categories}

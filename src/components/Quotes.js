@@ -1,5 +1,6 @@
 import React from "react";
-import './Quotes.css'
+// import './Quotes.css'
+import './Sidebar.css';
 
 export default function Quotes(props) {
   

@@ -1,16 +1,17 @@
-.quotes {
+/* .quotes {
   position: fixed;
   top: 600px;
   left: 30px;
+  margin-bottom: 500px;
   
-  /* position: absolute; */
+  position: absolute;
   width: 300px;
-  /* right: 40px;
-  margin-top: 150px; */
+  right: 40px;
+  margin-top: 150px;
   padding: 20px;
   font-size: 20px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 15px rgb(192, 155, 173);
   text-align: center;
-}
+} */

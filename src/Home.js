@@ -9,7 +9,7 @@ import Sidebar from './components/Sidebar'
 // import Pie from './components/charts/Pie'
 import BarGraph from './components/charts/BarGraph'
 import CreateBudget from './components/budgets/index'
-import { getQuotesKey } from './helpers/selectors'
+// import { getQuotesKey } from './helpers/selectors'
 import Summary from './components/summary'
 import IncomeTime from './components/charts/IncomeTime'
 import Quotes from './components/Quotes'
@@ -36,7 +36,7 @@ const Home = () => {
     updateBudget,
     deleteBudget,
   } = useApplicationData()
-  const quoteKey = getQuotesKey(state.quotes)
+  // const quoteKey = getQuotesKey(state.quotes)
   // console.log('quoteKey', quoteKey)
   // console.log('state', state)
   // console.log("QUOTESSSS", state.quotes[quoteKey])
@@ -53,12 +53,12 @@ const Home = () => {
         <div>
           <Sidebar email={state.email} />
         </div>
-        <div>
+        {/* <div>
           <Quotes
             quote={state.quotes[quoteKey].quote}
             author={state.quotes[quoteKey].author}
           />
-        </div>
+        </div> */}
         {/* <div className="budget-calendar">
         
         <Calendar  />
@@ -100,6 +100,14 @@ const Home = () => {
 
           <Route path="/">
             <div className="both-income-graphs">
+              
+              <div id="income">
+                <Account
+                  onAdd={addIncome}
+                  userId={state.userId}
+                  income={state.incomes}
+                />{' '}
+              </div>
               <div id="income-graph">
                 <p>Your current incomes</p>
                 <IncomeReport
@@ -107,13 +115,6 @@ const Home = () => {
                   month={10}
                   userId={state.userId}
                 />
-              </div>
-              <div id="income">
-                <Account
-                  onAdd={addIncome}
-                  userId={state.userId}
-                  income={state.incomes}
-                />{' '}
               </div>
             </div>
 

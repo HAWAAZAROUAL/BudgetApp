@@ -37,7 +37,7 @@ export default class App extends React.Component {
           <ul className="nav sidebar-nav">
             <div>
               {' '}
-              <b>Alice Smith</b>
+              <b className="user-name">Emma Brown</b>
             </div>
             <li className="list-items">
               <Link path to="/">

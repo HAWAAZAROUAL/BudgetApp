@@ -98,10 +98,10 @@ const Home = () => {
               </div>
             
 
-            <div id="pie-chart">
+            {/* <div id="pie-chart">
               <p>Expenses</p>
               <Pie categories={state.categories} expenses={state.expenses} />
-            </div>
+            </div> */}
 
             <div id="bar-graph">
               <p>Expenses</p>

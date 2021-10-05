@@ -4,7 +4,7 @@
   box-shadow: 0 0 20px black;
 }
 .my-budgets-expenses p, .my-budgets-budgets p, .my-budgets-form p {
-  background-color: pink;
+  background-color: #e4647b;
   padding: 20px;
   margin-bottom: 0;
   font-size: 20px;
@@ -21,8 +21,8 @@
   font-size: 18px;
 }
 #dropdown-menu-align-right {
-  background-color: #dc98ae;
-  border-color: #dc98ae;
+  background-color: #e4647b;
+  border-color: #e4647b;
 }
 
 span.budget-table.budget-alert {

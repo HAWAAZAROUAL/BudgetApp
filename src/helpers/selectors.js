@@ -189,18 +189,7 @@ export function getTotalIncome(incomes, userId) {
   return monthTotal;
 }
 
-// this expense calculation will be done for each category
-// export default function getTotalExpense (expense, category_id) {
-//   const expenseTotal = {};
-//   for (let i = 1; i <= expense.length; i++) {
-//     const result = 
 
-//   let total = 0;
-//   Object.values(result).map((val) =>
-//   { total += val}
-//   )
-//   }
-// }
 export function getBudgetId(name, budgets) {
   let budgetId;
   if(Object.keys(budgets)){
@@ -233,4 +222,12 @@ export function getCategoryId(name, categories) {
 
 
   return categoryId;
+}
+export function totalExpenseByMonth(expenses,  categories, month,  userId){
+  const  monthExpense= getExpenseByMonth( expenses, categories, month, userId);
+ let total = 0;
+ for(const val of Object.values(monthExpense)){ 
+      total += val;
+  }
+ return total;
 }

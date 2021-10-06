@@ -24,13 +24,13 @@ export default function ShowSummary(props){
                 </tr>
                 <tr>
                     <td>
-                       {props.totalIncome} 
+                       ${props.totalIncome} 
                     </td>
                     <td>
-                       {props.totalExpense} 
+                       ${props.totalExpense} 
                     </td>
                     <td>
-                    {props.balance} 
+                    ${props.balance} 
                     </td>
                 </tr>
             </table>

@@ -78,6 +78,16 @@ body {
 a.canvasjs-chart-credit {
   display: none;
 }
+.both-income-graphs, .expense-and-time-graphs {
+  margin-top: 220px;
+  margin-left: 350px;
+  display: flex;
+    justify-content: center;
+}
+#income, #income-graph, #bar-graph, #time-graph {
+  width: 450px;
+  margin: 30px;
+}
 
 .both-income-graphs {
   margin-top: 250px;
@@ -98,11 +108,7 @@ a.canvasjs-chart-credit {
 #income p, #income-graph p, #bar-graph p, #time-graph p {
   width: 400px;
 }
-
-
-.bar-expense {
-  display:flex;
-  flex-direction: row;
-  justify-content: flex-start;
-align-items: center;
+.expense-and-time-graphs {
+  margin-top: 40px;
+  margin-bottom: 100px;
 }

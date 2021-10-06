@@ -17,7 +17,9 @@ const monthIncome = getincomeByMonth(props.income,currentMonth,props.userId);
   return (
     <>
      <AccountForm onAdd={props.onAdd} userId={props.userId}/>
+     <hr></hr>
      <table>{data}</table>
+     <hr></hr>
     </>
   )
 }

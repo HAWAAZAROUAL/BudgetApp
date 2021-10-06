@@ -16,10 +16,10 @@ import './Pie.css'
 
     
     return <>
-    <div >
+    <div className="bar-expense">
       <BarChart
     
-    className="bar-expense"
+    
     height={300}
     width={450}
     data={displayData(props.categories, props.expenses)}

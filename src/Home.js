@@ -133,10 +133,10 @@ const Home = () => {
               </div>
 
               <div id="time-graph">
-                {/* <p>Income</p>
+                <p>Income</p>
                 <section>
-                  {Object.keys(state.incomes).length > 0 && <IncomeTime className="income-time" incomes={state.incomes} />}
-                </section> */}
+                  <IncomeTime className="income-time" incomes={state.incomes} />
+                </section>
                 {/* <LeftOver /> */}
               </div>
             </div>

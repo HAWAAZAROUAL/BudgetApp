@@ -12,7 +12,7 @@ export default class IncomeReport extends Component {
 	eachMonth = () => {
 		const monthIncome=getincomeByMonth(this.props.incomes,this.props.month,this.props.userId);
 		return Object.keys(monthIncome).map((k)=>{ 
-		  return {name:`${k}`,y:`${monthIncome[k]}`}	;
+		  return {name:`${k}`,y: `${monthIncome[k]}`}	;
 		});
 	  };
 	render()  {
@@ -22,7 +22,7 @@ export default class IncomeReport extends Component {
 				text:  `${new Date().toLocaleString('default', { month: 'long' })} Income`
 			},
 			subtitles: [{
-				text:  this.eachMonthTotal()['Oct'],
+				text: '$'+ this.eachMonthTotal()['Oct'],
 				verticalAlign: "center",
 				fontSize: 24,
 				dockInsidePlotArea: true

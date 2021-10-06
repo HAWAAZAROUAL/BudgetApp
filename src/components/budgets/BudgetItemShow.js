@@ -6,7 +6,7 @@ export default function ShowBudgetItem(props) {
     
     <div>
       <span className="budget-table">{props.budgetName}</span>
-      <span className="budget-table">{props.budgetLimit}</span>
+      <span className="budget-table">${props.budgetLimit}</span>
       <span className="budget-table period">{props.startDate}</span>
       <span className="budget-table period">{props.endDate}</span>
       <div>

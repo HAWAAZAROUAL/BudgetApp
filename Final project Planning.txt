@@ -129,70 +129,6 @@ We want the app to dynamically update spending daily as the person updates their
   When a person stays below budget, by the end of their time period they will be congratulated. 
 
 
-DAILY GOALS:
-
-Thursday/23
-
-Friday/24
-  - Complete ERD - DONE
-  - Setup boilerplate (if we will use it) - DONE
-  - Setup Database - DONE
-  - Start making components files:
-    - for Account page
-    - Create page
-    - Update page
-  - Setup routes
-
-Saturday/25
-  - Have all pieces of a page set up
-  - be able to switch from page to page
-
-Sunday/26
-
-Monday/27
-
-Tuesday/28
-
-Wednesday/29
-What is done:
-- Add, delete Update
-- Create Budget
-- 
-
-What needs to be done:
-- Make the routes using react router
-- Add new expenses
-- 
-
-
-Thursday/30
-
-Friday/1
-- MUST BE FINISHED THE MAJOR FEATURES!!!!!!!! 
-
-Saturday/2
-
-Sunday/3
-
-Monday/4
-
-Tuesday/5
-
-Wednesday/6
-
-Thursday/7
-
-
-
-
-
-
-
-
-
-
-
-
 
 Pages:
 Home page "/"
@@ -213,12 +149,16 @@ My Budgets "/MyBudgets"
 
 
   -----PRESENTATION OUTLINE------
+
+  Introduction:
 Introduce what our app is:
     - It is an easy to use budgeting app that allows users to track their spending.
   
   Talk about the tech stack that was used:
-    - For the front end we used react, css, and javascript. For the backend we used node, postgres, and react router.
+    - The tech stack we used included react and redux, css, and javascript,axios. We also used node, postgres, express and react router.
 
+
+Walkthrough:
   Do a walk through of how the app works:
     - When a user logs in they are immediately shown a summary of their income, their expenses, and their income over time.
     - Next we will create a budget
@@ -227,5 +167,7 @@ Introduce what our app is:
     - When a user goes over budget they get a an alert on screen. This helps the user stay mindful of their spending.
     - We also have a balance tracker which calculates the income vs expenses
 
+
+Conclusion: 
     While the app provides solid services it can be further improved:
       - This would be a handy mobile app that a user can have on their phone for easy updating.

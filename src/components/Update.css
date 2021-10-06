@@ -1,7 +1,7 @@
 .my-budgets-expenses, .my-budgets-budgets, .my-budgets-form, .my-budgets-summary {
   margin: 60px 0 20px 0;
   border-radius: 10px;
-  box-shadow: 0 0 15px black;
+  box-shadow: 0 0 5px black;
 }
 .my-budgets-expenses p, .my-budgets-budgets p, .my-budgets-form p, .my-budgets-summary p {
   background-color: #e4647b;

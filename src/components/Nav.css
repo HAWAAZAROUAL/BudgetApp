@@ -38,6 +38,8 @@
   /* bottom: -2px; */
 /* width: viewport; */
 height: 200px;
+border: black 5px solid;
+border-radius: 5px;
 }
 
 

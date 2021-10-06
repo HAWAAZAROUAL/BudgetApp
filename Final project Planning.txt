@@ -153,25 +153,29 @@ My Budgets "/MyBudgets"
   Introduction:
   Introduced themselves and why they were in the bootcamp
     -Hawaa: Hi everyone, my name is Hawaa and I am really happy to have had the opportunity to partake in this bootcamp as I want to switch gears and begin a career in web development
+
     - Mila: Hi everyone, my name is Mila, I am an accontant in the past, but I always wanted to learn programming and the bootcamp gave me this opportunity.
+
     -Amy : Hi,I am Amy. My major is CS. But I didn't really work in this field as programmer....
 
-
+Hawaa:
 Introduce what our app is:
     - Enough about us, let's talk about Budget Buddy! Budget Buddy is an easy to use budgeting app that allows users to track their spending and expenses.
   
-  Talk about the tech stack that was used:
+  Mila:
     - For this project the tech stack we used includes react and redux, css, javascript,and axios. We also used node, postgres, express and react router.
 
-
+Mila:
 Let's see how this app works.
-Homepage:
+
   - A user will begin by entering their income, this will appear in the graph on the right. As a user adds expenses to their budgets, and as they collect income over time we can see this data in the graphs below, let's create a budget to see how this works.
  
 
+Amy:
   Create Page
     - To make a budget, we first enter the budget name, then the limit we don't want to surpass. When we save, it will appear in the table below. We can also edit the budget name and limit if we change our minds and delete a budget. All these changes will appear on the My Budgets Page.
 
+Hawaa:
     My Budgets Page:
     - On this page users can add expenses to specific budgets. 
     - When a user goes over budget they get an alert on screen. This helps the user stay mindful of their spending.
@@ -179,9 +183,10 @@ Homepage:
     - As we add expenses, the expenses diagram on the homepage gets updated.
     * go to home page to show changes**
 
-
+Hawaa:
 Conclusion: 
     While the app provides solid services it can be further improved:
-      - This could be convered into a handy mobile app that a user can have on their phone for easy updating.
+      - This could be convered into a handy mobile app that a user can have on their phone for easy updating throughout their day.
 
-    This final project was a challenge for all of us as 
+Mila:
+    This final project was a challenge for all of us as we hesitated to use react router but once we tried it our project ran smoothly.

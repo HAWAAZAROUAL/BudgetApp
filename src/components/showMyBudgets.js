@@ -18,8 +18,8 @@ let alert;
     <>
       <div>
         <span className="budget-table">{props.name}</span>
-        <span className="budget-table">{props.budget}</span>
-        <span className="budget-table">{props.available}</span>
+        <span className="budget-table">${props.budget}</span>
+        <span className="budget-table">${props.available}</span>
         <div>
         <span className="budget-table budget-alert"><b>{alert}</b>
         
